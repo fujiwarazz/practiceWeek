@@ -2,4 +2,37 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.peels.mapper.StatisticsMapper">
 
+    <select id="listAqiTrendTotalStatis" resultType="com.peels.dto.AqiTrendTotalStatisDto">
+        <foreach collection="list" item="dto" open="" close="" separator="union all">
+            select #{dto.month} month,
+            count(*) total
+            from statistics
+            where left(confirm_date,7)=#{dto.month} and aqi_id>2
+        </foreach>
+    </select>
+    <select id="listAqiDistributeTotalStatis" resultType="com.peels.dto.AqiDistributeTotalStatisDto">
+        select a.aqi_id aqi_id,
+               a.aqi_explain aqi_explain,
+               count(s.aqi_id) total
+        from aqi a left join statistics s on a.aqi_id=s.aqi_id
+        group by a.aqi_id
+        order by a.aqi_id
+    </select>
+    <select id="listProvinceItemTotalStatis" resultType="com.peels.dto.ProvinceItemTotalStatisDto">
+        select gp.province_id province_id,
+               gp.province_abbr province_abbr,
+               gp.province_name province_name,
+               (select count(s.so2_level) from statistics s where s.so2_level>2 and s.province_id=gp.province_id) so2_total,
+               (select count(s.co_level) from statistics s where s.co_level>2 and s.province_id=gp.province_id) co_total,
+               (select count(s.spm_level) from statistics s where s.spm_level>2 and s.province_id=gp.province_id) spm_total,
+               (select count(s.aqi_id) from statistics s where s.aqi_id>2 and s.province_id=gp.province_id) aqi_total
+        from grid_province gp
+        order by gp.province_id
+    </select>
+    <select id="getStatisticsById" resultType="com.peels.entity.Statistics">
+        select *
+        from statistics
+        where id=#{id}
+    </select>
+
 </mapper>
