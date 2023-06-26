@@ -1,6 +1,7 @@
 package com.peels.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 
 import java.io.Serializable;
@@ -30,6 +31,7 @@ public class Admins implements Serializable {
     private Integer adminId;
 
     @ApiModelProperty("系统管理员登录编码")
+    @TableField("admin_code")
     private String adminCode;
 
     @ApiModelProperty("系统管理员登录密码")

@@ -5,7 +5,7 @@ spring:
     name: enviroment
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://43.139.34.35:3306/kob?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://43.139.34.35:3306/environment?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
     username: root
     password: 20020217
   jackson:
@@ -66,7 +66,7 @@ logging:
   file:
     path: ./log/
   level:
-    com.kob: debug
+    com.peels: debug
 
 aliyun:
   oss:

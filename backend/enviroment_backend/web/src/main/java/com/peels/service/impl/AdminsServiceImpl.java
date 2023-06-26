@@ -1,10 +1,18 @@
 package com.peels.service.impl;
 
+import cn.hutool.core.util.StrUtil;
+import com.alibaba.fastjson.JSON;
+import com.peels.annotation.Prevent;
 import com.peels.entity.Admins;
 import com.peels.mapper.AdminsMapper;
 import com.peels.service.IAdminsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.peels.utils.AppHttpCodeEnum;
+import com.peels.utils.ResponseResult;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+
+import javax.annotation.Resource;
 
 /**
  * <p>
@@ -17,4 +25,27 @@ import org.springframework.stereotype.Service;
 @Service
 public class AdminsServiceImpl extends ServiceImpl<AdminsMapper, Admins> implements IAdminsService {
 
+    @Resource
+    private AdminsMapper adminsMapper;
+
+    @Override
+    @Prevent
+    public ResponseResult<?> getAdminByCode(Admins admins) {
+
+        System.out.println(JSON.toJSONString(admins));
+
+
+        if(StrUtil.isBlank(admins.getAdminCode())|| StrUtil.isBlank(admins.getPassword())){
+            throw new RuntimeException(AppHttpCodeEnum.LOGIN_PARAMS_ERROR.getErrorMessage());
+        }
+
+        Admins one = this.lambdaQuery()
+                .eq(Admins::getAdminCode, admins.getAdminCode())
+                .eq(Admins::getPassword, admins.getPassword()).one();
+        if(one==null){
+            return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST);
+        }else{
+            return ResponseResult.okResult(admins);
+        }
+    }
 }

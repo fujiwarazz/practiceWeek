@@ -4,69 +4,99 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbb89fea-e17d-4f0c-89fe-aba102712f81" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/config/MyBatisPlusConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/config/RedissonConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/config/RestTemplateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/config/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/interceptor/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/AliyunProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/AppHttpCodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/Base64Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/IpUtil/IpInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/IpUtil/IpUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/JacksonObjectMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/RSAUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/ResponseResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/TypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/Admins.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/Aqi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/AqiFeedback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridCity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridMember.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridProvince.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/Statistics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/Supervisor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/AdminsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/AqiFeedbackMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/AqiMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/GridCityMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/GridMemberMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/GridProvinceMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/StatisticsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/SupervisorMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAdminsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiFeedbackService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IGridCityService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IGridMemberService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IGridProvinceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IStatisticsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/ISupervisorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/GridCityService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/GridMemberService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/StatisticsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/SupervisorServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/AdminsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/AqiFeedbackMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/AqiMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/GridCityMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/GridMemberMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/GridProvinceMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/StatisticsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/SupervisorMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/test/java/CodeGenerator.java" afterDir="false" />
+    <list default="true" id="bbb89fea-e17d-4f0c-89fe-aba102712f81" name="Changes" comment="init commit">
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/config/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/handler/MyMetaObjectHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/interception/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/annotation/Prevent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/annotation/PreventStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/aspect/PreventAop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/utils/AliyunProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/utils/AppHttpCodeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/utils/Base64Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/utils/IpUtil/IpInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/utils/IpUtil/IpUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/utils/JacksonObjectMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/utils/RSAUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/utils/ResponseResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/utils/TypeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c69bd9d0-ce7c-4a5a-9eb0-985016fc18e7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c69bd9d0-ce7c-4a5a-9eb0-985016fc18e7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f3031dc2-8662-499e-8765-15683b1f871f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f3031dc2-8662-499e-8765-15683b1f871f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/src/main/java/com/peels/interceptor/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/interception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/config/MyBatisPlusConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/config/RedissonConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/config/RestTemplateConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/config/WebSocketConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/interceptor/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/AliyunProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/AppHttpCodeEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/Base64Utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/IpUtil/IpInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/IpUtil/IpUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/JacksonObjectMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/RSAUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/ResponseResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/TypeEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/spring.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/Admins.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/Admins.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/Admins.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/Aqi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/AqiFeedback.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/GridCity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/GridMember.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/GridProvince.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/Statistics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/Supervisor.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AdminsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AdminsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/AdminsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/AdminsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAdminsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAdminsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/WebApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AdminsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiFeedbackController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/StatisticsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/SupervisorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/AdminsMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/AqiFeedbackMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/AqiMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/GridCityMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/GridMemberMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/GridProvinceMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/StatisticsMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/SupervisorMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAdminsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiFeedbackService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IGridCityService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IGridMemberService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IGridProvinceService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IStatisticsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/ISupervisorService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AdminsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiFeedbackServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/GridCityService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/GridMemberService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/StatisticsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/SupervisorServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/AdminsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/AqiFeedbackMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/AqiMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/GridCityMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/GridMemberMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/GridProvinceMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/StatisticsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/SupervisorMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/test-classes/CodeGenerator.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +113,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -90,6 +131,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\Java_enviroment\apache-maven-3.8.5\maven-repo" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../Java_enviroment/apache-maven-3.8.5" />
         <option name="userSettingsFile" value="D:\Java_enviroment\apache-maven-3.8.5\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -106,11 +148,14 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/model/src/main/java/com/peels/entity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/main/java/com/peels" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -119,15 +164,17 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels" />
       <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\entity" />
       <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\mapper" />
       <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service" />
       <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\resources\mapper" />
-      <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
+      <recent name="com.peels.interception" />
+      <recent name="com.peels.handler" />
       <recent name="com.peels.interceptor" />
+      <recent name="" />
       <recent name="com.peels.config" />
     </key>
   </component>
@@ -178,7 +225,9 @@
       <option name="presentableId" value="Default" />
       <updated>1687744326751</updated>
       <workItem from="1687744328192" duration="1442000" />
-      <workItem from="1687745943792" duration="7020000" />
+      <workItem from="1687745943792" duration="8249000" />
+      <workItem from="1687762976981" duration="1129000" />
+      <workItem from="1687764439459" duration="1244000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1687746307591</created>
@@ -187,7 +236,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687746307591</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="init commit">
+      <created>1687761529035</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687761529035</updated>
+    </task>
+    <task id="LOCAL-00003" summary="init commit">
+      <created>1687761573364</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687761573364</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +270,17 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

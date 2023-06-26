@@ -2,6 +2,7 @@ package com.peels.service;
 
 import com.peels.entity.Admins;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.peels.utils.ResponseResult;
 
 /**
  * <p>
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IAdminsService extends IService<Admins> {
 
+    ResponseResult<?> getAdminByCode(Admins admins);
 }
