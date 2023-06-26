@@ -34,6 +34,10 @@ public class SupervisorController {
         public ResponseResult<?> getSupervisorsById(@RequestBody Supervisor supervisor) {
             return supervisorService.getSupervisorById(supervisor);
         }
+    @PostMapping("/saveSupervisor")
+    public ResponseResult<?> saveSupervisor(@RequestBody Supervisor supervisor) {
+        return supervisorService.saveSupervisor(supervisor);
+    }
     }
 
 

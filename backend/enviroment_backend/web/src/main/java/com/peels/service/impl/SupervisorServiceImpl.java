@@ -47,4 +47,15 @@ public class SupervisorServiceImpl extends ServiceImpl<SupervisorMapper, Supervi
         }
 
     }
+
+    @Override
+    public ResponseResult<?> saveSupervisor(Supervisor supervisor) {
+        System.out.println(JSON.toJSONString(supervisor));
+        if(StrUtil.isBlank(supervisor.getTelId())||StrUtil.isBlank(supervisor.getPassword())){
+            throw new RuntimeException(AppHttpCodeEnum.LOGIN_PARAMS_ERROR.getErrorMessage());
+        }
+        this.saveOrUpdate(supervisor);
+        return ResponseResult.okResult();
+
+    }
 }

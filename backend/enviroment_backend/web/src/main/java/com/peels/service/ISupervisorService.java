@@ -15,4 +15,6 @@ import com.peels.utils.ResponseResult;
 public interface ISupervisorService extends IService<Supervisor> {
 
     ResponseResult<?> getSupervisorById(Supervisor supervisor);
+
+    ResponseResult<?> saveSupervisor(Supervisor supervisor);
 }
