@@ -5,18 +5,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbb89fea-e17d-4f0c-89fe-aba102712f81" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/WebApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/config/MyBatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/config/RedissonConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/config/RestTemplateConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/config/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/interceptor/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/AliyunProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/AppHttpCodeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/Base64Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/IpUtil/IpInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/IpUtil/IpUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/JacksonObjectMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/RSAUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/ResponseResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/peels/utils/TypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/Admins.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/Aqi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/AqiFeedback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridCity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridMember.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridProvince.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/Statistics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/Supervisor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/AdminsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/AqiFeedbackMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/AqiMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/GridCityMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/GridMemberMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/GridProvinceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/StatisticsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/SupervisorMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAdminsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiFeedbackService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IGridCityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IGridMemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IGridProvinceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IStatisticsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/ISupervisorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/GridCityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/GridMemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/StatisticsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/SupervisorServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/AdminsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/AqiFeedbackMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/AqiMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/GridCityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/GridMemberMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/GridProvinceMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/StatisticsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/SupervisorMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/test/java/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,19 +95,63 @@
     </option>
   </component>
   <component name="ProjectId" id="2RisdqHAOLzlCYaxb9tNBN9N3N6" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="sortByType" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/model/src/main/java/com/peels/entity" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.32670808" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\entity" />
+      <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\mapper" />
+      <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service" />
+      <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\resources\mapper" />
+      <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\mapper" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="com.peels.interceptor" />
+      <recent name="com.peels.config" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.WebApplication">
+    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CodeGenerator" />
+      <module name="web" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.peels.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.peels.WebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="lua.app" factoryName="Lua Application">
       <option name="program" value="lua.exe" />
       <option name="file" value="" />
@@ -68,6 +162,12 @@
       <option name="showConsole" value="true" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.WebApplication" />
+        <item itemvalue="Application.CodeGenerator" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -78,8 +178,16 @@
       <option name="presentableId" value="Default" />
       <updated>1687744326751</updated>
       <workItem from="1687744328192" duration="1442000" />
-      <workItem from="1687745943792" duration="315000" />
+      <workItem from="1687745943792" duration="7020000" />
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1687746307591</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687746307591</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +205,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit" />
     <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
