@@ -35,10 +35,17 @@ public class SupervisorController {
             return supervisorService.getSupervisorById(supervisor);
         }
     @PostMapping("/saveSupervisor")
-    public ResponseResult<?> saveSupervisor(@RequestBody Supervisor supervisor) {
+    public int saveSupervisor(@RequestBody Supervisor supervisor) {
         return supervisorService.saveSupervisor(supervisor);
     }
+
+    @PostMapping("/getSupervisorByIdByPass")
+    public ResponseResult<?> getSupervisorByIdByPass(@RequestBody Supervisor supervisor) {
+        return supervisorService.getSupervisorByIdByPass(supervisor);
     }
+
+
+}
 
 
 

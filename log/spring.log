@@ -1,0 +1,778 @@
+2023-06-26 16:19:26.537  INFO 25512 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:19:27.400  INFO 25512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:19:27.403  INFO 25512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:19:27.438  INFO 25512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+2023-06-26 16:19:27.710  INFO 25512 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8f6dac6e-2054-3c09-a681-007deea51606
+2023-06-26 16:19:28.536  INFO 25512 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:19:28.546  INFO 25512 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:19:28.547  INFO 25512 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:19:28.760  INFO 25512 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:19:28.760  INFO 25512 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2201 ms
+2023-06-26 16:19:29.901  WARN 25512 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:19:30.467  INFO 25512 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:19:30.695  INFO 25512 --- [main] org.redisson.Version                     : Redisson 3.13.6
+2023-06-26 16:19:31.000  WARN 25512 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/peels/config/RedissonConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+2023-06-26 16:19:31.012  INFO 25512 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-06-26 16:19:31.022  INFO 25512 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-26 16:19:31.027 ERROR 25512 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/peels/config/RedissonConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:485) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1341) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1181) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at com.peels.WebApplication.main(WebApplication.java:22) ~[classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:652) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	... 20 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+	at org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:159) ~[redisson-3.13.6.jar:3.13.6]
+	at org.redisson.misc.RedissonPromise.lambda$onComplete$0(RedissonPromise.java:183) ~[redisson-3.13.6.jar:3.13.6]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:552) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at org.redisson.misc.RedissonPromise.tryFailure(RedissonPromise.java:96) ~[redisson-3.13.6.jar:3.13.6]
+	at org.redisson.connection.pool.ConnectionPool.promiseFailure(ConnectionPool.java:329) ~[redisson-3.13.6.jar:3.13.6]
+	at org.redisson.connection.pool.ConnectionPool.lambda$createConnection$1(ConnectionPool.java:295) ~[redisson-3.13.6.jar:3.13.6]
+	at org.redisson.misc.RedissonPromise.lambda$onComplete$0(RedissonPromise.java:183) ~[redisson-3.13.6.jar:3.13.6]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at org.redisson.misc.RedissonPromise.tryFailure(RedissonPromise.java:96) ~[redisson-3.13.6.jar:3.13.6]
+	at org.redisson.client.RedisClient$2$2.run(RedisClient.java:248) ~[redisson-3.13.6.jar:3.13.6]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500) ~[netty-transport-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:669) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:944) ~[na:na]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707) ~[netty-transport-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655) ~[netty-transport-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581) ~[netty-transport-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.59.Final.jar:4.1.59.Final]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+
+2023-06-26 16:21:04.597  INFO 27420 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:21:05.369  INFO 27420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:21:05.371  INFO 27420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:21:05.402  INFO 27420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+2023-06-26 16:21:05.637  INFO 27420 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:21:06.322  INFO 27420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:21:06.331  INFO 27420 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:21:06.332  INFO 27420 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:21:06.535  INFO 27420 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:21:06.535  INFO 27420 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1918 ms
+2023-06-26 16:21:07.549  WARN 27420 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:21:08.089  INFO 27420 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:21:08.130  WARN 27420 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:21:08.130  INFO 27420 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:21:08.136  WARN 27420 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:21:08.136  INFO 27420 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:21:08.234  INFO 27420 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:21:08.676  INFO 27420 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:21:09.906  INFO 27420 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:21:10.106  INFO 27420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:21:11.335  INFO 27420 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:21:11.336  INFO 27420 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:21:11.357  INFO 27420 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:21:11.390  INFO 27420 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:21:11.569  INFO 27420 --- [main] com.peels.WebApplication                 : Started WebApplication in 9.992 seconds (JVM running for 10.753)
+2023-06-26 16:23:01.024  INFO 27420 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:23:01.025  INFO 27420 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:23:10.640  INFO 904 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:23:11.406  INFO 904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:23:11.408  INFO 904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:23:11.444  INFO 904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 Redis repository interfaces.
+2023-06-26 16:23:11.667  INFO 904 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:23:12.353  INFO 904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:23:12.362  INFO 904 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:23:12.362  INFO 904 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:23:12.573  INFO 904 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:23:12.573  INFO 904 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1914 ms
+2023-06-26 16:23:13.576  WARN 904 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:23:14.113  INFO 904 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:23:14.148  WARN 904 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:23:14.148  INFO 904 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:23:14.153  WARN 904 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:23:14.153  INFO 904 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:23:14.246  INFO 904 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:23:14.645  INFO 904 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:23:15.891  INFO 904 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:23:16.085  INFO 904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:23:17.289  INFO 904 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:23:17.289  INFO 904 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:23:17.312  INFO 904 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:23:17.348  INFO 904 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:23:17.512  INFO 904 --- [main] com.peels.WebApplication                 : Started WebApplication in 9.932 seconds (JVM running for 10.788)
+2023-06-26 16:23:56.864  INFO 904 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:23:56.864  INFO 904 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:23:56.874  INFO 904 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2023-06-26 16:28:25.095  INFO 904 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:28:25.096  INFO 904 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:28:35.111  INFO 22084 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:28:35.972  INFO 22084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:28:35.975  INFO 22084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:28:36.012  INFO 22084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23ms. Found 0 Redis repository interfaces.
+2023-06-26 16:28:36.281  INFO 22084 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:28:37.038  INFO 22084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:28:37.049  INFO 22084 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:28:37.050  INFO 22084 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:28:37.283  INFO 22084 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:28:37.283  INFO 22084 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2148 ms
+2023-06-26 16:28:38.362  WARN 22084 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:28:38.980  INFO 22084 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:28:39.022  WARN 22084 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:28:39.022  INFO 22084 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:28:39.027  WARN 22084 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:28:39.027  INFO 22084 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:28:39.134  INFO 22084 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:28:39.572  INFO 22084 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:28:40.836  INFO 22084 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:28:41.063  INFO 22084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:28:42.276  INFO 22084 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:28:42.277  INFO 22084 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:28:42.297  INFO 22084 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:28:42.330  INFO 22084 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:28:42.525  INFO 22084 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.559 seconds (JVM running for 11.74)
+2023-06-26 16:29:55.270  INFO 22084 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:29:55.271  INFO 22084 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:29:55.278  INFO 22084 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2023-06-26 16:31:04.590  INFO 22084 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:31:04.592  INFO 22084 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:31:11.446  INFO 12492 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:31:12.302  INFO 12492 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:31:12.304  INFO 12492 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:31:12.338  INFO 12492 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 0 Redis repository interfaces.
+2023-06-26 16:31:12.612  INFO 12492 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:31:13.439  INFO 12492 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:31:13.449  INFO 12492 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:31:13.450  INFO 12492 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:31:13.675  INFO 12492 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:31:13.675  INFO 12492 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2206 ms
+2023-06-26 16:31:14.795  WARN 12492 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:31:15.412  INFO 12492 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:31:15.454  WARN 12492 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:31:15.454  INFO 12492 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:31:15.459  WARN 12492 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:31:15.459  INFO 12492 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:31:15.567  INFO 12492 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:31:16.009  INFO 12492 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:31:17.243  INFO 12492 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:31:17.463  INFO 12492 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:31:18.689  INFO 12492 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:31:18.689  INFO 12492 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:31:18.709  INFO 12492 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:31:18.750  INFO 12492 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:31:18.940  INFO 12492 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.6 seconds (JVM running for 11.749)
+2023-06-26 16:31:45.663  INFO 12492 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:31:45.663  INFO 12492 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:31:45.671  INFO 12492 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2023-06-26 16:33:07.598  INFO 12492 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:33:07.600  INFO 12492 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:33:17.102  INFO 4460 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:33:17.939  INFO 4460 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:33:17.941  INFO 4460 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:33:17.974  INFO 4460 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 0 Redis repository interfaces.
+2023-06-26 16:33:18.230  INFO 4460 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:33:18.967  INFO 4460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:33:18.978  INFO 4460 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:33:18.979  INFO 4460 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:33:19.213  INFO 4460 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:33:19.213  INFO 4460 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2090 ms
+2023-06-26 16:33:20.305  WARN 4460 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:33:20.906  INFO 4460 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:33:20.946  WARN 4460 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:33:20.947  INFO 4460 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:33:20.951  WARN 4460 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:33:20.952  INFO 4460 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:33:21.059  INFO 4460 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:33:21.499  INFO 4460 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:33:22.749  INFO 4460 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:33:22.977  INFO 4460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:33:24.192  INFO 4460 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:33:24.193  INFO 4460 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:33:24.218  INFO 4460 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:33:24.253  INFO 4460 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:33:24.432  INFO 4460 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.444 seconds (JVM running for 11.319)
+2023-06-26 16:33:28.741  INFO 4460 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:33:28.741  INFO 4460 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:33:28.748  INFO 4460 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2023-06-26 16:35:19.326  INFO 4460 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:35:19.327  INFO 4460 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:35:28.869  INFO 27260 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:35:29.748  INFO 27260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:35:29.750  INFO 27260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:35:29.781  INFO 27260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+2023-06-26 16:35:30.035  INFO 27260 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:35:30.789  INFO 27260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:35:30.799  INFO 27260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:35:30.800  INFO 27260 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:35:31.018  INFO 27260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:35:31.018  INFO 27260 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2129 ms
+2023-06-26 16:35:32.110  WARN 27260 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:35:32.714  INFO 27260 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:35:32.756  WARN 27260 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:35:32.756  INFO 27260 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:35:32.761  WARN 27260 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:35:32.761  INFO 27260 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:35:32.863  INFO 27260 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:35:33.291  INFO 27260 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:35:34.537  INFO 27260 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:35:34.741  INFO 27260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:35:35.957  INFO 27260 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:35:35.958  INFO 27260 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:35:35.975  INFO 27260 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:35:36.010  INFO 27260 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:35:36.203  INFO 27260 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.429 seconds (JVM running for 11.338)
+2023-06-26 16:35:39.872  INFO 27260 --- [http-nio-9999-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:35:39.872  INFO 27260 --- [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:35:39.879  INFO 27260 --- [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2023-06-26 16:37:13.888  INFO 27260 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:37:13.891  INFO 27260 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:37:20.454  INFO 21212 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:37:21.302  INFO 21212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:37:21.304  INFO 21212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:37:21.334  INFO 21212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+2023-06-26 16:37:21.589  INFO 21212 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:37:22.321  INFO 21212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:37:22.330  INFO 21212 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:37:22.330  INFO 21212 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:37:22.533  INFO 21212 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:37:22.533  INFO 21212 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2060 ms
+2023-06-26 16:37:23.548  WARN 21212 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:37:24.099  INFO 21212 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:37:24.138  WARN 21212 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:37:24.138  INFO 21212 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:37:24.142  WARN 21212 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:37:24.143  INFO 21212 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:37:24.239  INFO 21212 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:37:24.650  INFO 21212 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:37:25.911  INFO 21212 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:37:26.121  INFO 21212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:37:27.335  INFO 21212 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:37:27.335  INFO 21212 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:37:27.359  INFO 21212 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:37:27.396  INFO 21212 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:37:27.578  INFO 21212 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.213 seconds (JVM running for 11.184)
+2023-06-26 16:37:46.984  INFO 21212 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:37:46.984  INFO 21212 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:37:46.991  INFO 21212 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2023-06-26 16:38:36.264  INFO 21212 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:38:36.266  INFO 21212 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:38:45.588  INFO 27636 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:38:46.436  INFO 27636 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:38:46.439  INFO 27636 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:38:46.473  INFO 27636 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 0 Redis repository interfaces.
+2023-06-26 16:38:46.738  INFO 27636 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:38:47.501  INFO 27636 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:38:47.511  INFO 27636 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:38:47.511  INFO 27636 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:38:47.739  INFO 27636 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:38:47.739  INFO 27636 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2127 ms
+2023-06-26 16:38:48.837  WARN 27636 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:38:49.447  INFO 27636 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:38:49.491  WARN 27636 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:38:49.492  INFO 27636 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:38:49.497  WARN 27636 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:38:49.497  INFO 27636 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:38:49.612  INFO 27636 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:38:50.048  INFO 27636 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:38:51.290  INFO 27636 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:38:51.504  INFO 27636 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:38:52.711  INFO 27636 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:38:52.712  INFO 27636 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:38:52.729  INFO 27636 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:38:52.763  INFO 27636 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:38:52.954  INFO 27636 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.478 seconds (JVM running for 11.328)
+2023-06-26 16:38:55.331  INFO 27636 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:38:55.331  INFO 27636 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:38:55.340  INFO 27636 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2023-06-26 16:39:44.634  INFO 27636 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:39:44.636  INFO 27636 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:39:51.071  INFO 16252 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:39:51.907  INFO 16252 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:39:51.909  INFO 16252 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:39:51.940  INFO 16252 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+2023-06-26 16:39:52.188  INFO 16252 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:39:52.943  INFO 16252 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:39:52.954  INFO 16252 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:39:52.954  INFO 16252 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:39:53.205  INFO 16252 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:39:53.205  INFO 16252 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2113 ms
+2023-06-26 16:39:54.295  WARN 16252 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:39:54.894  INFO 16252 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:39:54.934  WARN 16252 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:39:54.934  INFO 16252 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:39:54.938  WARN 16252 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:39:54.939  INFO 16252 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:39:55.042  INFO 16252 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:39:55.471  INFO 16252 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:39:56.710  INFO 16252 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:39:56.921  INFO 16252 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:39:58.135  INFO 16252 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:39:58.135  INFO 16252 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:39:58.154  INFO 16252 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:39:58.189  INFO 16252 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:39:58.373  INFO 16252 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.352 seconds (JVM running for 11.428)
+2023-06-26 16:40:01.610  INFO 16252 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:40:01.610  INFO 16252 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:40:01.617  INFO 16252 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2023-06-26 16:40:57.220  INFO 16252 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:40:57.222  INFO 16252 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:41:03.752  INFO 15524 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:41:04.599  INFO 15524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:41:04.601  INFO 15524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:41:04.634  INFO 15524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+2023-06-26 16:41:04.896  INFO 15524 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:41:05.641  INFO 15524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:41:05.651  INFO 15524 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:41:05.651  INFO 15524 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:41:05.875  INFO 15524 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:41:05.875  INFO 15524 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2102 ms
+2023-06-26 16:41:06.951  WARN 15524 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:41:07.550  INFO 15524 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:41:07.593  WARN 15524 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:41:07.593  INFO 15524 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:41:07.598  WARN 15524 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:41:07.598  INFO 15524 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:41:07.706  INFO 15524 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:41:08.140  INFO 15524 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:41:09.380  INFO 15524 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:41:09.583  INFO 15524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:41:10.790  INFO 15524 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:41:10.791  INFO 15524 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:41:10.811  INFO 15524 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:41:10.845  INFO 15524 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:41:11.031  INFO 15524 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.403 seconds (JVM running for 11.49)
+2023-06-26 16:41:16.055  INFO 15524 --- [http-nio-9999-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:41:16.055  INFO 15524 --- [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:41:16.062  INFO 15524 --- [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2023-06-26 16:43:48.379  INFO 15524 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:43:48.383  INFO 15524 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:43:57.694  INFO 14292 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:43:58.467  INFO 14292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:43:58.470  INFO 14292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:43:58.500  INFO 14292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+2023-06-26 16:43:58.727  INFO 14292 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:43:59.407  INFO 14292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:43:59.416  INFO 14292 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:43:59.416  INFO 14292 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:43:59.623  INFO 14292 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:43:59.623  INFO 14292 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1910 ms
+2023-06-26 16:44:00.627  WARN 14292 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:44:01.184  INFO 14292 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:44:01.223  WARN 14292 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:44:01.224  INFO 14292 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:44:01.228  WARN 14292 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:44:01.228  INFO 14292 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:44:01.348  INFO 14292 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:44:01.880  INFO 14292 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:44:03.129  INFO 14292 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:44:03.314  INFO 14292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:44:03.810  INFO 14292 --- [http-nio-9999-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:44:03.811  INFO 14292 --- [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:44:03.817  INFO 14292 --- [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2023-06-26 16:44:04.519  INFO 14292 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:44:04.520  INFO 14292 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:44:04.545  INFO 14292 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:44:04.575  INFO 14292 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:44:04.713  INFO 14292 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.096 seconds (JVM running for 10.907)
+2023-06-26 16:45:54.593  INFO 14292 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:45:54.595  INFO 14292 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:46:03.904  INFO 20508 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:46:04.677  INFO 20508 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:46:04.679  INFO 20508 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:46:04.710  INFO 20508 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 Redis repository interfaces.
+2023-06-26 16:46:04.954  INFO 20508 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:46:05.630  INFO 20508 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:46:05.640  INFO 20508 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:46:05.640  INFO 20508 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:46:05.857  INFO 20508 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:46:05.858  INFO 20508 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1935 ms
+2023-06-26 16:46:06.893  WARN 20508 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:46:07.443  INFO 20508 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:46:07.481  WARN 20508 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:46:07.481  INFO 20508 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:46:07.487  WARN 20508 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:46:07.487  INFO 20508 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:46:07.580  INFO 20508 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:46:07.987  INFO 20508 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:46:09.222  INFO 20508 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:46:09.412  INFO 20508 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:46:10.616  INFO 20508 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:46:10.617  INFO 20508 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:46:10.636  INFO 20508 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:46:10.667  INFO 20508 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:46:10.821  INFO 20508 --- [main] com.peels.WebApplication                 : Started WebApplication in 9.932 seconds (JVM running for 10.703)
+2023-06-26 16:46:17.293  INFO 20508 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:46:17.293  INFO 20508 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:46:17.299  INFO 20508 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2023-06-26 16:47:02.533  INFO 20508 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:47:02.535  INFO 20508 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:47:11.797  INFO 26096 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:47:12.600  INFO 26096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:47:12.602  INFO 26096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:47:12.638  INFO 26096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25ms. Found 0 Redis repository interfaces.
+2023-06-26 16:47:12.861  INFO 26096 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:47:13.601  INFO 26096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:47:13.612  INFO 26096 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:47:13.612  INFO 26096 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:47:13.847  INFO 26096 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:47:13.847  INFO 26096 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2032 ms
+2023-06-26 16:47:14.850  WARN 26096 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:47:15.386  INFO 26096 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:47:15.421  WARN 26096 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:47:15.422  INFO 26096 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:47:15.426  WARN 26096 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:47:15.426  INFO 26096 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:47:15.523  INFO 26096 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:47:15.916  INFO 26096 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:47:17.149  INFO 26096 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:47:17.379  INFO 26096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:47:18.574  INFO 26096 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:47:18.575  INFO 26096 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:47:18.591  INFO 26096 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:47:18.622  INFO 26096 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:47:18.809  INFO 26096 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.042 seconds (JVM running for 10.824)
+2023-06-26 16:47:31.323  INFO 26096 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:47:31.323  INFO 26096 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:47:31.330  INFO 26096 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2023-06-26 16:48:58.747  INFO 26096 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:48:58.749  INFO 26096 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:49:08.179  INFO 23288 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:49:08.955  INFO 23288 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:49:08.957  INFO 23288 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:49:08.992  INFO 23288 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 0 Redis repository interfaces.
+2023-06-26 16:49:09.227  INFO 23288 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:49:09.911  INFO 23288 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:49:09.920  INFO 23288 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:49:09.920  INFO 23288 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:49:10.123  INFO 23288 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:49:10.124  INFO 23288 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1926 ms
+2023-06-26 16:49:11.158  WARN 23288 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.peels.entity.Supervisor".
+2023-06-26 16:49:11.709  INFO 23288 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:49:11.746  WARN 23288 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:49:11.746  INFO 23288 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:49:11.750  WARN 23288 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:49:11.751  INFO 23288 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:49:11.845  INFO 23288 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:49:12.253  INFO 23288 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:49:13.489  INFO 23288 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:49:13.694  INFO 23288 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:49:14.903  INFO 23288 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:49:14.904  INFO 23288 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:49:14.920  INFO 23288 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:49:14.951  INFO 23288 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:49:15.123  INFO 23288 --- [main] com.peels.WebApplication                 : Started WebApplication in 9.958 seconds (JVM running for 10.744)
+2023-06-26 16:49:21.447  INFO 23288 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:49:21.448  INFO 23288 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:49:21.455  INFO 23288 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2023-06-26 16:49:21.629  INFO 23288 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-26 16:49:22.247  INFO 23288 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-26 16:49:22.254 DEBUG 23288 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : ==>  Preparing: SELECT tel_id,password,real_name,birthday,sex,remarks FROM supervisor WHERE null=?
+2023-06-26 16:49:22.282 DEBUG 23288 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : ==> Parameters: 13147859658(String)
+2023-06-26 16:49:22.327 DEBUG 23288 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : <==      Total: 0
+2023-06-26 16:51:47.565  INFO 23288 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:51:47.567  INFO 23288 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:51:47.572  INFO 23288 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-26 16:51:47.820  INFO 23288 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-26 16:51:58.126  INFO 26712 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:51:58.881  INFO 26712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:51:58.883  INFO 26712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:51:58.913  INFO 26712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+2023-06-26 16:51:59.159  INFO 26712 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:51:59.835  INFO 26712 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:51:59.844  INFO 26712 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:51:59.844  INFO 26712 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:52:00.045  INFO 26712 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:52:00.045  INFO 26712 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1899 ms
+2023-06-26 16:52:01.636  INFO 26712 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:52:01.675  WARN 26712 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:52:01.675  INFO 26712 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:52:01.680  WARN 26712 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:52:01.680  INFO 26712 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:52:01.772  INFO 26712 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:52:02.164  INFO 26712 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:52:03.390  INFO 26712 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:52:03.582  INFO 26712 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:52:04.782  INFO 26712 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:52:04.783  INFO 26712 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:52:04.820  INFO 26712 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:52:04.858  INFO 26712 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:52:05.062  INFO 26712 --- [main] com.peels.WebApplication                 : Started WebApplication in 9.923 seconds (JVM running for 10.883)
+2023-06-26 16:52:06.759  INFO 26712 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:52:06.760  INFO 26712 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:52:06.767  INFO 26712 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2023-06-26 16:52:06.930  INFO 26712 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-26 16:52:07.510  INFO 26712 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-26 16:52:07.518 DEBUG 26712 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : ==>  Preparing: SELECT tel_id,password,real_name,birthday,sex,remarks FROM supervisor WHERE tel_id=?
+2023-06-26 16:52:07.541 DEBUG 26712 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : ==> Parameters: 13147859658(String)
+2023-06-26 16:52:07.591 DEBUG 26712 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : <==      Total: 1
+2023-06-26 16:53:23.580  INFO 26712 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 16:53:23.582  INFO 26712 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:53:23.586  INFO 26712 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-26 16:53:23.846  INFO 26712 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-26 16:53:33.179  INFO 27236 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 16:53:33.945  INFO 27236 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 16:53:33.947  INFO 27236 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 16:53:33.985  INFO 27236 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 Redis repository interfaces.
+2023-06-26 16:53:34.216  INFO 27236 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 16:53:34.908  INFO 27236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 16:53:34.917  INFO 27236 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 16:53:34.917  INFO 27236 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 16:53:35.124  INFO 27236 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 16:53:35.124  INFO 27236 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1926 ms
+2023-06-26 16:53:36.696  INFO 27236 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 16:53:36.732  WARN 27236 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:53:36.732  INFO 27236 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:53:36.736  WARN 27236 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 16:53:36.736  INFO 27236 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 16:53:36.839  INFO 27236 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 16:53:37.239  INFO 27236 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 16:53:38.499  INFO 27236 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:53:38.704  INFO 27236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 16:53:39.922  INFO 27236 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 16:53:39.922  INFO 27236 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 16:53:39.938  INFO 27236 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 16:53:39.975  INFO 27236 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 16:53:40.146  INFO 27236 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.036 seconds (JVM running for 10.845)
+2023-06-26 16:53:44.801  INFO 27236 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 16:53:44.801  INFO 27236 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 16:53:44.808  INFO 27236 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2023-06-26 16:53:44.972  INFO 27236 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-26 16:53:45.552  INFO 27236 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-26 16:53:45.559 DEBUG 27236 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : ==>  Preparing: SELECT tel_id,password,real_name,birthday,sex,remarks FROM supervisor WHERE tel_id=?
+2023-06-26 16:53:45.582 DEBUG 27236 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : ==> Parameters: 13147859658(String)
+2023-06-26 16:53:45.634 DEBUG 27236 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : <==      Total: 1
+2023-06-26 17:08:50.817  INFO 27236 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 17:08:50.819  INFO 27236 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 17:08:50.823  INFO 27236 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-26 17:09:00.836  INFO 27236 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-26 17:09:13.707  INFO 28292 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 17:09:14.516  INFO 28292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 17:09:14.518  INFO 28292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 17:09:14.548  INFO 28292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 Redis repository interfaces.
+2023-06-26 17:09:14.782  INFO 28292 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 17:09:15.484  INFO 28292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 17:09:15.492  INFO 28292 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 17:09:15.493  INFO 28292 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 17:09:15.693  INFO 28292 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 17:09:15.693  INFO 28292 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1967 ms
+2023-06-26 17:09:17.270  INFO 28292 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 17:09:17.309  WARN 28292 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 17:09:17.309  INFO 28292 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 17:09:17.314  WARN 28292 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 17:09:17.314  INFO 28292 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 17:09:17.414  INFO 28292 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 17:09:17.804  INFO 28292 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 17:09:19.055  INFO 28292 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 17:09:19.241  INFO 28292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 17:09:20.458  INFO 28292 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 17:09:20.459  INFO 28292 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 17:09:20.485  INFO 28292 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 17:09:20.518  INFO 28292 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 17:09:20.714  INFO 28292 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.11 seconds (JVM running for 11.064)
+2023-06-26 17:10:09.066  INFO 28292 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 17:10:09.066  INFO 28292 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 17:10:09.073  INFO 28292 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2023-06-26 17:10:56.121  INFO 28292 --- [http-nio-9999-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-26 17:10:56.666  INFO 28292 --- [http-nio-9999-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-26 17:10:56.677 DEBUG 28292 --- [http-nio-9999-exec-10] c.p.mapper.SupervisorMapper.selectById   : ==>  Preparing: SELECT tel_id,password,real_name,birthday,sex,remarks FROM supervisor WHERE tel_id=?
+2023-06-26 17:10:56.699 DEBUG 28292 --- [http-nio-9999-exec-10] c.p.mapper.SupervisorMapper.selectById   : ==> Parameters: 13878469863(String)
+2023-06-26 17:10:56.751 DEBUG 28292 --- [http-nio-9999-exec-10] c.p.mapper.SupervisorMapper.selectById   : <==      Total: 0
+2023-06-26 17:10:56.774 DEBUG 28292 --- [http-nio-9999-exec-10] c.peels.mapper.SupervisorMapper.insert   : ==>  Preparing: INSERT INTO supervisor ( tel_id, password, real_name, birthday, sex ) VALUES ( ?, ?, ?, ?, ? )
+2023-06-26 17:10:56.775 DEBUG 28292 --- [http-nio-9999-exec-10] c.peels.mapper.SupervisorMapper.insert   : ==> Parameters: 13878469863(String), 123(String), HLH(String), 2001-05-28(String), 1(Integer)
+2023-06-26 17:10:56.833 DEBUG 28292 --- [http-nio-9999-exec-10] c.peels.mapper.SupervisorMapper.insert   : <==    Updates: 1
+2023-06-26 17:11:25.958  INFO 28292 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 17:11:25.960  INFO 28292 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 17:11:25.963  INFO 28292 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-26 17:11:26.215  INFO 28292 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-26 17:11:32.754  INFO 28500 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 17:11:33.616  INFO 28500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 17:11:33.618  INFO 28500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 17:11:33.656  INFO 28500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23ms. Found 0 Redis repository interfaces.
+2023-06-26 17:11:33.919  INFO 28500 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 17:11:34.660  INFO 28500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 17:11:34.670  INFO 28500 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 17:11:34.670  INFO 28500 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 17:11:34.891  INFO 28500 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 17:11:34.891  INFO 28500 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2116 ms
+2023-06-26 17:11:36.575  INFO 28500 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 17:11:36.615  WARN 28500 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 17:11:36.616  INFO 28500 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 17:11:36.620  WARN 28500 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 17:11:36.620  INFO 28500 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 17:11:36.726  INFO 28500 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 17:11:37.157  INFO 28500 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 17:11:38.387  INFO 28500 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 17:11:38.605  INFO 28500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 17:11:39.800  INFO 28500 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 17:11:39.801  INFO 28500 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 17:11:39.818  INFO 28500 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 17:11:39.853  INFO 28500 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 17:11:40.060  INFO 28500 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.489 seconds (JVM running for 11.52)
+2023-06-26 17:11:48.880  INFO 28500 --- [http-nio-9999-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 17:11:48.880  INFO 28500 --- [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 17:11:48.888  INFO 28500 --- [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2023-06-26 17:11:49.074  INFO 28500 --- [http-nio-9999-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-26 17:11:49.633  INFO 28500 --- [http-nio-9999-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-26 17:11:49.644 DEBUG 28500 --- [http-nio-9999-exec-2] c.p.mapper.SupervisorMapper.selectById   : ==>  Preparing: SELECT tel_id,password,real_name,birthday,sex,remarks FROM supervisor WHERE tel_id=?
+2023-06-26 17:11:49.669 DEBUG 28500 --- [http-nio-9999-exec-2] c.p.mapper.SupervisorMapper.selectById   : ==> Parameters: 13878469863(String)
+2023-06-26 17:11:49.720 DEBUG 28500 --- [http-nio-9999-exec-2] c.p.mapper.SupervisorMapper.selectById   : <==      Total: 1
+2023-06-26 17:11:49.749 DEBUG 28500 --- [http-nio-9999-exec-2] c.p.mapper.SupervisorMapper.updateById   : ==>  Preparing: UPDATE supervisor SET password=?, real_name=?, birthday=?, sex=? WHERE tel_id=?
+2023-06-26 17:11:49.754 DEBUG 28500 --- [http-nio-9999-exec-2] c.p.mapper.SupervisorMapper.updateById   : ==> Parameters: 123(String), HLH(String), 2001-05-28(String), 1(Integer), 13878469863(String)
+2023-06-26 17:11:49.801 DEBUG 28500 --- [http-nio-9999-exec-2] c.p.mapper.SupervisorMapper.updateById   : <==    Updates: 1
+2023-06-26 17:12:16.075 DEBUG 28500 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : ==>  Preparing: SELECT tel_id,password,real_name,birthday,sex,remarks FROM supervisor WHERE tel_id=?
+2023-06-26 17:12:16.077 DEBUG 28500 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : ==> Parameters: 13878469863(String)
+2023-06-26 17:12:16.106 DEBUG 28500 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : <==      Total: 1
+2023-06-26 17:12:16.109 DEBUG 28500 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.updateById   : ==>  Preparing: UPDATE supervisor SET password=?, real_name=?, birthday=?, sex=? WHERE tel_id=?
+2023-06-26 17:12:16.111 DEBUG 28500 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.updateById   : ==> Parameters: 123(String), HLH(String), 2001-05-28(String), 1(Integer), 13878469863(String)
+2023-06-26 17:12:16.161 DEBUG 28500 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.updateById   : <==    Updates: 1
+2023-06-26 17:13:25.304  INFO 28500 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 17:13:25.306  INFO 28500 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 17:13:25.310  INFO 28500 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-26 17:13:25.559  INFO 28500 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-26 17:13:56.424  INFO 4444 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 17:13:57.194  INFO 4444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 17:13:57.196  INFO 4444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 17:13:57.233  INFO 4444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+2023-06-26 17:13:57.474  INFO 4444 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 17:13:58.167  INFO 4444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 17:13:58.177  INFO 4444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 17:13:58.177  INFO 4444 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 17:13:58.387  INFO 4444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 17:13:58.387  INFO 4444 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1944 ms
+2023-06-26 17:14:00.035  INFO 4444 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 17:14:00.075  WARN 4444 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 17:14:00.075  INFO 4444 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 17:14:00.079  WARN 4444 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 17:14:00.079  INFO 4444 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 17:14:00.178  INFO 4444 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 17:14:00.585  INFO 4444 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 17:14:01.823  INFO 4444 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 17:14:02.019  INFO 4444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 17:14:03.250  INFO 4444 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 17:14:03.251  INFO 4444 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 17:14:03.271  INFO 4444 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 17:14:03.307  INFO 4444 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 17:14:03.496  INFO 4444 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.147 seconds (JVM running for 11.099)
+2023-06-26 17:14:05.728  INFO 4444 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 17:14:05.729  INFO 4444 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 17:14:05.735  INFO 4444 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2023-06-26 17:14:27.872  INFO 4444 --- [http-nio-9999-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-26 17:14:28.413  INFO 4444 --- [http-nio-9999-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-26 17:14:28.420 DEBUG 4444 --- [http-nio-9999-exec-5] c.p.mapper.SupervisorMapper.selectById   : ==>  Preparing: SELECT tel_id,password,real_name,birthday,sex,remarks FROM supervisor WHERE tel_id=?
+2023-06-26 17:14:28.443 DEBUG 4444 --- [http-nio-9999-exec-5] c.p.mapper.SupervisorMapper.selectById   : ==> Parameters: 13878469863(String)
+2023-06-26 17:14:28.491 DEBUG 4444 --- [http-nio-9999-exec-5] c.p.mapper.SupervisorMapper.selectById   : <==      Total: 1
+2023-06-26 17:14:28.517 DEBUG 4444 --- [http-nio-9999-exec-5] c.p.mapper.SupervisorMapper.updateById   : ==>  Preparing: UPDATE supervisor SET password=?, real_name=?, birthday=?, sex=? WHERE tel_id=?
+2023-06-26 17:14:28.523 DEBUG 4444 --- [http-nio-9999-exec-5] c.p.mapper.SupervisorMapper.updateById   : ==> Parameters: 123(String), HLH(String), 2001-05-28(String), 1(Integer), 13878469863(String)
+2023-06-26 17:14:28.574 DEBUG 4444 --- [http-nio-9999-exec-5] c.p.mapper.SupervisorMapper.updateById   : <==    Updates: 1
+2023-06-26 17:28:16.098  WARN 4444 --- [http-nio-9999-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@692c1d6f (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2023-06-26 17:28:29.603  INFO 18060 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 17:28:30.381  INFO 18060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 17:28:30.383  INFO 18060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 17:28:30.414  INFO 18060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 Redis repository interfaces.
+2023-06-26 17:28:30.663  INFO 18060 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 17:28:31.390  INFO 18060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 17:28:31.399  INFO 18060 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 17:28:31.399  INFO 18060 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 17:28:31.605  INFO 18060 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 17:28:31.605  INFO 18060 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1982 ms
+2023-06-26 17:28:33.235  INFO 18060 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 17:28:33.278  WARN 18060 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 17:28:33.279  INFO 18060 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 17:28:33.283  WARN 18060 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 17:28:33.283  INFO 18060 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 17:28:33.389  INFO 18060 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 17:28:33.805  INFO 18060 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 17:28:35.052  INFO 18060 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 17:28:35.250  INFO 18060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 17:28:36.479  INFO 18060 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 17:28:36.479  INFO 18060 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 17:28:36.496  INFO 18060 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 17:28:36.527  INFO 18060 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 17:28:36.719  INFO 18060 --- [main] com.peels.WebApplication                 : Started WebApplication in 10.261 seconds (JVM running for 11.277)
+2023-06-26 17:28:47.003  INFO 18060 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 17:28:47.003  INFO 18060 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 17:28:47.010  INFO 18060 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2023-06-26 17:28:47.116  INFO 18060 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-26 17:28:47.659  INFO 18060 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-26 17:28:47.665 DEBUG 18060 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : ==>  Preparing: SELECT tel_id,password,real_name,birthday,sex,remarks FROM supervisor WHERE tel_id=?
+2023-06-26 17:28:47.688 DEBUG 18060 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : ==> Parameters: 13878469863(String)
+2023-06-26 17:28:47.732 DEBUG 18060 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectById   : <==      Total: 1
+2023-06-26 17:28:47.759 DEBUG 18060 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.updateById   : ==>  Preparing: UPDATE supervisor SET password=?, real_name=?, birthday=?, sex=? WHERE tel_id=?
+2023-06-26 17:28:47.764 DEBUG 18060 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.updateById   : ==> Parameters: 123(String), HLH(String), 2001-05-28(String), 1(Integer), 13878469863(String)
+2023-06-26 17:28:47.812 DEBUG 18060 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.updateById   : <==    Updates: 1
+2023-06-26 17:31:34.446  INFO 18060 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 17:31:34.448  INFO 18060 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 17:31:34.452  INFO 18060 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-26 17:31:34.703  INFO 18060 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-26 17:31:43.855  INFO 27808 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-26 17:31:44.627  INFO 27808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-26 17:31:44.629  INFO 27808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-26 17:31:44.661  INFO 27808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 Redis repository interfaces.
+2023-06-26 17:31:44.903  INFO 27808 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92ae6ac5-a6ce-3299-a2b7-d8ede1098378
+2023-06-26 17:31:45.571  INFO 27808 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-26 17:31:45.579  INFO 27808 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-26 17:31:45.580  INFO 27808 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-26 17:31:45.785  INFO 27808 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-26 17:31:45.785  INFO 27808 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1911 ms
+2023-06-26 17:31:47.338  INFO 27808 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-26 17:31:47.374  WARN 27808 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 17:31:47.374  INFO 27808 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 17:31:47.379  WARN 27808 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-26 17:31:47.379  INFO 27808 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-26 17:31:47.471  INFO 27808 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-26 17:31:47.863  INFO 27808 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-26 17:31:49.106  INFO 27808 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 17:31:49.307  INFO 27808 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-26 17:31:50.521  INFO 27808 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-06-26 17:31:50.522  INFO 27808 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-26 17:31:50.537  INFO 27808 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-26 17:31:50.569  INFO 27808 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-26 17:31:50.750  INFO 27808 --- [main] com.peels.WebApplication                 : Started WebApplication in 9.894 seconds (JVM running for 10.681)
+2023-06-26 17:32:00.756  INFO 27808 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-26 17:32:00.756  INFO 27808 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-26 17:32:00.764  INFO 27808 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2023-06-26 17:32:00.894  INFO 27808 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-26 17:32:01.416  INFO 27808 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-26 17:32:01.422 DEBUG 27808 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectOne    : ==>  Preparing: SELECT tel_id,password,real_name,birthday,sex,remarks FROM supervisor WHERE (tel_id = ? AND password = ?)
+2023-06-26 17:32:01.448 DEBUG 27808 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectOne    : ==> Parameters: 13878469863(String), 123(String)
+2023-06-26 17:32:01.491 DEBUG 27808 --- [http-nio-9999-exec-1] c.p.mapper.SupervisorMapper.selectOne    : <==      Total: 1

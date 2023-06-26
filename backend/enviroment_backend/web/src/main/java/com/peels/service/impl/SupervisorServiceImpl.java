@@ -2,6 +2,7 @@ package com.peels.service.impl;
 
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.peels.annotation.Prevent;
 import com.peels.entity.Supervisor;
 import com.peels.mapper.SupervisorMapper;
@@ -15,7 +16,7 @@ import javax.annotation.Resource;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author peelsannaw
@@ -31,7 +32,7 @@ public class SupervisorServiceImpl extends ServiceImpl<SupervisorMapper, Supervi
     public ResponseResult<?> getSupervisorById(Supervisor supervisor) {
 
         System.out.println(JSON.toJSONString(supervisor));
-        if(StrUtil.isBlank(supervisor.getTelId())){
+        if (StrUtil.isBlank(supervisor.getTelId())) {
             throw new RuntimeException(AppHttpCodeEnum.LOGIN_PARAMS_ERROR.getErrorMessage());
         }
 
@@ -39,23 +40,41 @@ public class SupervisorServiceImpl extends ServiceImpl<SupervisorMapper, Supervi
 //                .eq(Supervisor::getTelId, supervisor.getTelId()).one();
         Supervisor one = this.getById(supervisor.getTelId());
         System.out.println(JSON.toJSONString(one));
-        if(one==null){
+        if (one == null) {
             return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST);
-        }else{
-            one.setPassword("");
+        } else {
+            one.setPassword(null);
             return ResponseResult.okResult(one);
         }
 
     }
 
     @Override
-    public ResponseResult<?> saveSupervisor(Supervisor supervisor) {
-        System.out.println(JSON.toJSONString(supervisor));
-        if(StrUtil.isBlank(supervisor.getTelId())||StrUtil.isBlank(supervisor.getPassword())){
+    public int saveSupervisor(Supervisor supervisor) {
+        if (StrUtil.isBlank(supervisor.getTelId()) || StrUtil.isBlank(supervisor.getPassword())) {
             throw new RuntimeException(AppHttpCodeEnum.LOGIN_PARAMS_ERROR.getErrorMessage());
         }
         this.saveOrUpdate(supervisor);
-        return ResponseResult.okResult();
+        return 200;
+
+    }
+
+    @Override
+    public ResponseResult<?> getSupervisorByIdByPass(Supervisor supervisor) {
+        if (StrUtil.isBlank(supervisor.getTelId()) || StrUtil.isBlank(supervisor.getPassword())) {
+            throw new RuntimeException(AppHttpCodeEnum.LOGIN_PARAMS_ERROR.getErrorMessage());
+        }
+        Supervisor one = supervisorMapper.selectOne(new QueryWrapper<Supervisor>()
+                .eq("tel_id", supervisor.getTelId())
+                .eq("password", supervisor.getPassword()));
+
+        if (one == null) {
+            return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST);
+        } else {
+             one.setPassword(null);
+            return ResponseResult.okResult(one);
+        }
+
 
     }
 }

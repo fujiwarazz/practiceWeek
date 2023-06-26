@@ -17,4 +17,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statistics> implements IStatisticsService {
 
+    @Override
+    public String getCityCoverage() {
+        return null;
+
+    }
 }

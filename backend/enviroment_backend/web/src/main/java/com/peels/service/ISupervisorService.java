@@ -16,5 +16,7 @@ public interface ISupervisorService extends IService<Supervisor> {
 
     ResponseResult<?> getSupervisorById(Supervisor supervisor);
 
-    ResponseResult<?> saveSupervisor(Supervisor supervisor);
+    int saveSupervisor(Supervisor supervisor);
+
+    ResponseResult<?> getSupervisorByIdByPass(Supervisor supervisor);
 }
