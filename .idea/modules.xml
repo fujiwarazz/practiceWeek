@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/backend/enviroment_backend/enviroment_backend.iml" filepath="$PROJECT_DIR$/backend/enviroment_backend/enviroment_backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/enviroment_backend/framework/framework.iml" filepath="$PROJECT_DIR$/backend/enviroment_backend/framework/framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/enviroment_backend/model/model.iml" filepath="$PROJECT_DIR$/backend/enviroment_backend/model/model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/practiceWeek.iml" filepath="$PROJECT_DIR$/.idea/practiceWeek.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/enviroment_backend/web/web.iml" filepath="$PROJECT_DIR$/backend/enviroment_backend/web/web.iml" />
+    </modules>
+  </component>
+</project>
