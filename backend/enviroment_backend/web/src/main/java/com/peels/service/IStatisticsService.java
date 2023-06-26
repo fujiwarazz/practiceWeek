@@ -2,6 +2,7 @@ package com.peels.service;
 
 import com.peels.entity.Statistics;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.peels.utils.ResponseResult;
 
 /**
  * <p>
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IStatisticsService extends IService<Statistics> {
 
+    String getCityCoverage();
 }
