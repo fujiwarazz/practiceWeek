@@ -2,6 +2,8 @@ package com.peels.service;
 
 import com.peels.entity.Aqi;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.peels.entity.AqiFeedback;
+import com.peels.utils.ResponseResult;
 
 /**
  * <p>
@@ -13,4 +15,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IAqiService extends IService<Aqi> {
 
+    ResponseResult<?> getAqiList();
+
+    ResponseResult<?> saveFeedBack(AqiFeedback aqiFeedback);
 }

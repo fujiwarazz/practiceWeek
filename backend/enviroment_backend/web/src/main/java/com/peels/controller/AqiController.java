@@ -1,9 +1,17 @@
 package com.peels.controller;
 
 
+import com.peels.entity.AqiFeedback;
+import com.peels.service.IAqiService;
+import com.peels.utils.ResponseResult;
+import org.checkerframework.checker.units.qual.A;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
+
+import javax.annotation.Resource;
 
 /**
  * <p>
@@ -16,6 +24,14 @@ import org.springframework.stereotype.Controller;
 @Controller
 @RequestMapping("/aqi")
 public class AqiController {
+
+    @Resource
+    private IAqiService aqiService;
+
+    @PostMapping("/listAqiAll")
+    public ResponseResult<?> getAqiList(){
+        return aqiService.getAqiList();
+    }
 
 }
 

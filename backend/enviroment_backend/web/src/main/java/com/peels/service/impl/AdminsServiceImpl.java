@@ -1,5 +1,6 @@
 package com.peels.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSON;
 import com.peels.annotation.Prevent;
@@ -9,6 +10,7 @@ import com.peels.service.IAdminsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.peels.utils.AppHttpCodeEnum;
 import com.peels.utils.ResponseResult;
+import com.peels.vo.AdminsVo;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -42,10 +44,11 @@ public class AdminsServiceImpl extends ServiceImpl<AdminsMapper, Admins> impleme
         Admins one = this.lambdaQuery()
                 .eq(Admins::getAdminCode, admins.getAdminCode())
                 .eq(Admins::getPassword, admins.getPassword()).one();
+        AdminsVo adminsVo = BeanUtil.copyProperties(one, AdminsVo.class);
         if(one==null){
             return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST);
         }else{
-            return ResponseResult.okResult(admins);
+            return ResponseResult.okResult(adminsVo);
         }
     }
 }
