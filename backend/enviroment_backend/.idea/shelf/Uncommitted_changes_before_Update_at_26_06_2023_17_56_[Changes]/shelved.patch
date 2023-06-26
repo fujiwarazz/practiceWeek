@@ -1,0 +1,625 @@
+Index: web/src/main/java/com/peels/controller/SupervisorController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.peels.controller;\r\n\r\n\r\nimport org.springframework.web.bind.annotation.PostMapping;\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\n\r\nimport org.springframework.stereotype.Controller;\r\n\r\n/**\r\n * <p>\r\n *  前端控制器\r\n * </p>\r\n *\r\n * @author peelsannaw\r\n * @since 2023-06-26\r\n */\r\n@Controller\r\n@RequestMapping(\"/supervisor\")\r\npublic class SupervisorController {\r\n\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/web/src/main/java/com/peels/controller/SupervisorController.java b/web/src/main/java/com/peels/controller/SupervisorController.java
+--- a/web/src/main/java/com/peels/controller/SupervisorController.java	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/web/src/main/java/com/peels/controller/SupervisorController.java	(date 1687773032088)
+@@ -5,6 +5,7 @@
+ import org.springframework.web.bind.annotation.RequestMapping;
+ 
+ import org.springframework.stereotype.Controller;
++import org.springframework.web.bind.annotation.RestController;
+ 
+ /**
+  * <p>
+@@ -14,7 +15,7 @@
+  * @author peelsannaw
+  * @since 2023-06-26
+  */
+-@Controller
++@RestController
+ @RequestMapping("/supervisor")
+ public class SupervisorController {
+ 
+Index: web/src/main/java/com/peels/controller/AqiFeedbackController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.peels.controller;\r\n\r\n\r\nimport com.peels.entity.Aqi;\r\nimport com.peels.entity.AqiFeedback;\r\nimport com.peels.service.IAqiFeedbackService;\r\nimport com.peels.utils.ResponseResult;\r\nimport org.checkerframework.checker.units.qual.A;\r\nimport org.springframework.web.bind.annotation.PostMapping;\r\nimport org.springframework.web.bind.annotation.RequestBody;\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\n\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.web.bind.annotation.ResponseBody;\r\n\r\nimport javax.annotation.Resource;\r\n\r\n/**\r\n * <p>\r\n *  前端控制器\r\n * </p>\r\n *\r\n * @author peelsannaw\r\n * @since 2023-06-26\r\n */\r\n@Controller\r\n@RequestMapping(\"/aqiFeedback\")\r\npublic class AqiFeedbackController {\r\n    @Resource\r\n    private IAqiFeedbackService aqiFeedbackService;\r\n\r\n    @PostMapping(\"/saveAqiFeedback\")\r\n    public ResponseResult<?> saveFeedBack(@RequestBody AqiFeedback aqiFeedback){\r\n        return aqiFeedbackService.saveFeedBack(aqiFeedback);\r\n    }\r\n    @PostMapping(\"/listAqiFeedbackByTelId\")\r\n    public ResponseResult<?> getAqiFeedbackByTelId(){\r\n        return aqiFeedbackService.getAqiList();\r\n    }\r\n\r\n    @PostMapping(\"/getAqiFeedbackById\")\r\n    public ResponseResult<?> getAqiFeedbackById(@RequestBody AqiFeedback aqiFeedback){\r\n        return aqiFeedbackService.getAqiFeedbackById(aqiFeedback);\r\n    }\r\n    @PostMapping(\"/updateAqiFeedbackAssign\")\r\n    public ResponseResult<?> updateAqiFeedbackAssign(@RequestBody AqiFeedback aqiFeedback){\r\n        return aqiFeedbackService.updateAqiFeedBackAssign(aqiFeedback);\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/web/src/main/java/com/peels/controller/AqiFeedbackController.java b/web/src/main/java/com/peels/controller/AqiFeedbackController.java
+--- a/web/src/main/java/com/peels/controller/AqiFeedbackController.java	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/web/src/main/java/com/peels/controller/AqiFeedbackController.java	(date 1687773032074)
+@@ -6,45 +6,50 @@
+ import com.peels.service.IAqiFeedbackService;
+ import com.peels.utils.ResponseResult;
+ import org.checkerframework.checker.units.qual.A;
+-import org.springframework.web.bind.annotation.PostMapping;
+-import org.springframework.web.bind.annotation.RequestBody;
+-import org.springframework.web.bind.annotation.RequestMapping;
++import org.springframework.web.bind.annotation.*;
+ 
+ import org.springframework.stereotype.Controller;
+-import org.springframework.web.bind.annotation.ResponseBody;
+ 
+ import javax.annotation.Resource;
+ 
+ /**
+  * <p>
+- *  前端控制器
++ * 前端控制器
+  * </p>
+  *
+  * @author peelsannaw
+  * @since 2023-06-26
+  */
+-@Controller
++@RestController
+ @RequestMapping("/aqiFeedback")
+ public class AqiFeedbackController {
+     @Resource
+     private IAqiFeedbackService aqiFeedbackService;
+ 
+     @PostMapping("/saveAqiFeedback")
+-    public ResponseResult<?> saveFeedBack(@RequestBody AqiFeedback aqiFeedback){
++    public ResponseResult<?> saveFeedBack(@RequestBody AqiFeedback aqiFeedback) {
+         return aqiFeedbackService.saveFeedBack(aqiFeedback);
+     }
++
+     @PostMapping("/listAqiFeedbackByTelId")
+-    public ResponseResult<?> getAqiFeedbackByTelId(){
++    public ResponseResult<?> getAqiFeedbackByTelId() {
+         return aqiFeedbackService.getAqiList();
+     }
+ 
+     @PostMapping("/getAqiFeedbackById")
+-    public ResponseResult<?> getAqiFeedbackById(@RequestBody AqiFeedback aqiFeedback){
++    public ResponseResult<?> getAqiFeedbackById(@RequestBody AqiFeedback aqiFeedback) {
+         return aqiFeedbackService.getAqiFeedbackById(aqiFeedback);
+     }
++
+     @PostMapping("/updateAqiFeedbackAssign")
+-    public ResponseResult<?> updateAqiFeedbackAssign(@RequestBody AqiFeedback aqiFeedback){
++    public ResponseResult<?> updateAqiFeedbackAssign(@RequestBody AqiFeedback aqiFeedback) {
+         return aqiFeedbackService.updateAqiFeedBackAssign(aqiFeedback);
+     }
++
++    @PostMapping("/listAqiFeedbackByGmId")
++    public ResponseResult<?> listAqiFeedbackByGmId(@RequestBody AqiFeedback aqiFeedback) {
++        return aqiFeedbackService.listAqiFeedbackByGmId(aqiFeedback);
++    }
++
+ }
+ 
+Index: model/src/main/java/com/peels/entity/GridProvince.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.peels.entity;\r\n\r\nimport com.baomidou.mybatisplus.annotation.IdType;\r\nimport com.baomidou.mybatisplus.annotation.TableId;\r\nimport com.baomidou.mybatisplus.annotation.TableName;\r\nimport java.io.Serializable;\r\nimport io.swagger.annotations.ApiModel;\r\nimport io.swagger.annotations.ApiModelProperty;\r\nimport lombok.Getter;\r\nimport lombok.Setter;\r\n\r\n/**\r\n * <p>\r\n * \r\n * </p>\r\n *\r\n * @author peelsannaw\r\n * @since 2023-06-26\r\n */\r\n@Getter\r\n@Setter\r\n@TableName(\"grid_province\")\r\n@ApiModel(value = \"GridProvince对象\", description = \"\")\r\npublic class GridProvince implements Serializable {\r\n\r\n    private static final long serialVersionUID = 1L;\r\n\r\n    @ApiModelProperty(\"系统网格覆盖省区域编号\")\r\n      @TableId(value = \"province_id\", type = IdType.AUTO)\r\n    private Integer provinceId;\r\n\r\n    @ApiModelProperty(\"系统网格覆盖省区域名称\")\r\n    private String provinceName;\r\n\r\n    @ApiModelProperty(\"系统网格覆盖省区域简称\")\r\n    private String provinceAbbr;\r\n\r\n    @ApiModelProperty(\"备注\")\r\n    private String remarks;\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/model/src/main/java/com/peels/entity/GridProvince.java b/model/src/main/java/com/peels/entity/GridProvince.java
+--- a/model/src/main/java/com/peels/entity/GridProvince.java	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/model/src/main/java/com/peels/entity/GridProvince.java	(date 1687773280071)
+@@ -37,6 +37,4 @@
+ 
+     @ApiModelProperty("备注")
+     private String remarks;
+-
+-
+ }
+Index: web/src/main/java/com/peels/controller/AqiController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.peels.controller;\r\n\r\n\r\nimport com.peels.entity.AqiFeedback;\r\nimport com.peels.service.IAqiService;\r\nimport com.peels.utils.ResponseResult;\r\nimport org.checkerframework.checker.units.qual.A;\r\nimport org.springframework.web.bind.annotation.PostMapping;\r\nimport org.springframework.web.bind.annotation.RequestBody;\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\n\r\nimport org.springframework.stereotype.Controller;\r\n\r\nimport javax.annotation.Resource;\r\n\r\n/**\r\n * <p>\r\n *  前端控制器\r\n * </p>\r\n *\r\n * @author peelsannaw\r\n * @since 2023-06-26\r\n */\r\n@Controller\r\n@RequestMapping(\"/aqi\")\r\npublic class AqiController {\r\n\r\n    @Resource\r\n    private IAqiService aqiService;\r\n\r\n    @PostMapping(\"/listAqiAll\")\r\n    public ResponseResult<?> getAqiList(){\r\n        return aqiService.getAqiList();\r\n    }\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/web/src/main/java/com/peels/controller/AqiController.java b/web/src/main/java/com/peels/controller/AqiController.java
+--- a/web/src/main/java/com/peels/controller/AqiController.java	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/web/src/main/java/com/peels/controller/AqiController.java	(date 1687773032106)
+@@ -10,6 +10,7 @@
+ import org.springframework.web.bind.annotation.RequestMapping;
+ 
+ import org.springframework.stereotype.Controller;
++import org.springframework.web.bind.annotation.RestController;
+ 
+ import javax.annotation.Resource;
+ 
+@@ -21,7 +22,7 @@
+  * @author peelsannaw
+  * @since 2023-06-26
+  */
+-@Controller
++@RestController
+ @RequestMapping("/aqi")
+ public class AqiController {
+ 
+Index: model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>D:\\JavaProjects\\sjz\\backend\\enviroment_backend\\model\\src\\main\\java\\com\\peels\\entity\\AqiFeedback.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\model\\src\\main\\java\\com\\peels\\entity\\GridMember.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\model\\src\\main\\java\\com\\peels\\entity\\Supervisor.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\model\\src\\main\\java\\com\\peels\\entity\\Aqi.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\model\\src\\main\\java\\com\\peels\\entity\\GridProvince.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\model\\src\\main\\java\\com\\peels\\entity\\Admins.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\model\\src\\main\\java\\com\\peels\\entity\\GridCity.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\model\\src\\main\\java\\com\\peels\\entity\\Statistics.java\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst b/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+--- a/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(date 1687771627033)
+@@ -1,6 +1,8 @@
+ D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\entity\AqiFeedback.java
++D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\dto\AqiFeedBack.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\entity\GridMember.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\entity\Supervisor.java
++D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\vo\AdminsVo.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\entity\Aqi.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\entity\GridProvince.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\entity\Admins.java
+Index: web/src/main/java/com/peels/service/IAqiFeedbackService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.peels.service;\r\n\r\nimport com.peels.entity.AqiFeedback;\r\nimport com.baomidou.mybatisplus.extension.service.IService;\r\nimport com.peels.utils.ResponseResult;\r\n\r\n/**\r\n * <p>\r\n *  服务类\r\n * </p>\r\n *\r\n * @author peelsannaw\r\n * @since 2023-06-26\r\n */\r\npublic interface IAqiFeedbackService extends IService<AqiFeedback> {\r\n\r\n    ResponseResult<?> saveFeedBack(AqiFeedback aqiFeedback);\r\n\r\n    ResponseResult<?> getAqiList();\r\n\r\n    ResponseResult<?> getAqiFeedbackById(AqiFeedback aqiFeedback);\r\n\r\n    ResponseResult<?> updateAqiFeedBackAssign(AqiFeedback aqiFeedback);\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/web/src/main/java/com/peels/service/IAqiFeedbackService.java b/web/src/main/java/com/peels/service/IAqiFeedbackService.java
+--- a/web/src/main/java/com/peels/service/IAqiFeedbackService.java	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/web/src/main/java/com/peels/service/IAqiFeedbackService.java	(date 1687770609370)
+@@ -21,4 +21,6 @@
+     ResponseResult<?> getAqiFeedbackById(AqiFeedback aqiFeedback);
+ 
+     ResponseResult<?> updateAqiFeedBackAssign(AqiFeedback aqiFeedback);
++
++    ResponseResult<?> listAqiFeedbackByGmId(AqiFeedback aqiFeedback);
+ }
+Index: web/src/main/java/com/peels/controller/GridCityController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.peels.controller;\r\n\r\n\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\n\r\nimport org.springframework.stereotype.Controller;\r\n\r\n/**\r\n * <p>\r\n *  前端控制器\r\n * </p>\r\n *\r\n * @author peelsannaw\r\n * @since 2023-06-26\r\n */\r\n@Controller\r\n@RequestMapping(\"/gridCity\")\r\npublic class GridCityController {\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/web/src/main/java/com/peels/controller/GridCityController.java b/web/src/main/java/com/peels/controller/GridCityController.java
+--- a/web/src/main/java/com/peels/controller/GridCityController.java	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/web/src/main/java/com/peels/controller/GridCityController.java	(date 1687773032112)
+@@ -4,6 +4,7 @@
+ import org.springframework.web.bind.annotation.RequestMapping;
+ 
+ import org.springframework.stereotype.Controller;
++import org.springframework.web.bind.annotation.RestController;
+ 
+ /**
+  * <p>
+@@ -13,7 +14,7 @@
+  * @author peelsannaw
+  * @since 2023-06-26
+  */
+-@Controller
++@RestController
+ @RequestMapping("/gridCity")
+ public class GridCityController {
+ 
+Index: web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.peels.service.impl;\r\n\r\nimport cn.hutool.core.util.StrUtil;\r\nimport com.peels.entity.AqiFeedback;\r\nimport com.peels.mapper.AqiFeedbackMapper;\r\nimport com.peels.service.IAqiFeedbackService;\r\nimport com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;\r\nimport com.peels.utils.AppHttpCodeEnum;\r\nimport com.peels.utils.ResponseResult;\r\nimport org.springframework.stereotype.Service;\r\nimport org.springframework.transaction.annotation.Transactional;\r\n\r\nimport javax.annotation.Resource;\r\nimport java.text.SimpleDateFormat;\r\nimport java.util.Date;\r\nimport java.util.List;\r\n\r\n/**\r\n * <p>\r\n *  服务实现类\r\n * </p>\r\n *\r\n * @author peelsannaw\r\n * @since 2023-06-26\r\n */\r\n@Service\r\npublic class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFeedback> implements IAqiFeedbackService {\r\n\r\n    @Resource\r\n    private AqiFeedbackMapper aqiFeedbackMapper;\r\n\r\n    @Override\r\n    public ResponseResult<?> updateAqiFeedBackAssign(AqiFeedback aqiFeedback) {\r\n        return null;\r\n    }\r\n\r\n    @Override\r\n    @Transactional\r\n    public ResponseResult<?> saveFeedBack(AqiFeedback aqiFeedback) {\r\n        try {\r\n            if (StrUtil.isBlank(aqiFeedback.getTelId())\r\n                    || aqiFeedback.getProvinceId() == null\r\n                    || aqiFeedback.getCityId() == null\r\n                    || aqiFeedback.getGmId() == null\r\n                    || aqiFeedback.getInformation() == null) {\r\n                return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);\r\n            }\r\n            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(\"yyyy-MM-dd hh:mm:ss\");\r\n            String format = simpleDateFormat.format(new Date(System.currentTimeMillis()));\r\n            String[] date = format.split(\" \");\r\n\r\n            aqiFeedback.setAfDate(date[0]);\r\n            aqiFeedback.setAfTime(date[1]);\r\n\r\n            int flag = aqiFeedbackMapper.insert(aqiFeedback);\r\n\r\n            if (flag != 0) {\r\n                return ResponseResult.okResult();\r\n            } else return ResponseResult.errorResult(AppHttpCodeEnum.SERVER_ERROR);\r\n\r\n        } catch (Exception e) {\r\n            e.printStackTrace();\r\n            return ResponseResult.errorResult(AppHttpCodeEnum.SERVER_ERROR);\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public ResponseResult<?> getAqiList() {\r\n        List<AqiFeedback> list = this.lambdaQuery().orderByDesc(AqiFeedback::getAfTime).list();\r\n        if(list.size()==0){\r\n            return ResponseResult.okResult(200,\"查询不到数据\");\r\n        }\r\n        else return ResponseResult.okResult(list);\r\n    }\r\n\r\n    @Override\r\n    public ResponseResult<?> getAqiFeedbackById(AqiFeedback aqiFeedback) {\r\n        if(aqiFeedback.getTelId()==null){\r\n            return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_REQUIRE);\r\n        }\r\n        AqiFeedback byId = this.getById(aqiFeedback.getTelId());\r\n        if(byId==null){\r\n            return ResponseResult.okResult(AppHttpCodeEnum.DATA_NOT_EXIST);\r\n        }else {\r\n            return ResponseResult.okResult(byId);\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java b/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java
+--- a/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java	(date 1687771489734)
+@@ -14,10 +14,11 @@
+ import java.text.SimpleDateFormat;
+ import java.util.Date;
+ import java.util.List;
++import java.util.concurrent.TimeUnit;
+ 
+ /**
+  * <p>
+- *  服务实现类
++ * 服务实现类
+  * </p>
+  *
+  * @author peelsannaw
+@@ -30,8 +31,40 @@
+     private AqiFeedbackMapper aqiFeedbackMapper;
+ 
+     @Override
++    @Transactional
+     public ResponseResult<?> updateAqiFeedBackAssign(AqiFeedback aqiFeedback) {
+-        return null;
++
++        try {
++            if (aqiFeedback.getAfId() == null) {
++                return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);
++            }
++
++            if (StrUtil.isBlank(aqiFeedback.getTelId())
++                    || aqiFeedback.getProvinceId() == null
++                    || aqiFeedback.getCityId() == null
++                    || aqiFeedback.getGmId() == null
++                    || aqiFeedback.getInformation() == null) {
++                return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);
++            }
++            boolean flag = this.updateById(aqiFeedback);
++            return flag ? ResponseResult.okResult() : ResponseResult.errorResult(AppHttpCodeEnum.PARAM_REQUIRE);
++        } catch (Exception e) {
++            throw new RuntimeException(e.getMessage());
++        }
++    }
++
++    @Override
++    public ResponseResult<?> listAqiFeedbackByGmId(AqiFeedback aqiFeedback) {
++
++        if(aqiFeedback.getGmId()==null){
++            return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_REQUIRE);
++        }
++        List<AqiFeedback> list = this.lambdaQuery().eq(AqiFeedback::getGmId, aqiFeedback.getGmId()).list();
++        if(list.size()>0){
++            return ResponseResult.okResult(list);
++        }else {
++            return ResponseResult.okResult(AppHttpCodeEnum.DATA_NOT_EXIST);
++        }
+     }
+ 
+     @Override
+@@ -45,12 +78,8 @@
+                     || aqiFeedback.getInformation() == null) {
+                 return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);
+             }
+-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+-            String format = simpleDateFormat.format(new Date(System.currentTimeMillis()));
+-            String[] date = format.split(" ");
+ 
+-            aqiFeedback.setAfDate(date[0]);
+-            aqiFeedback.setAfTime(date[1]);
++            getTime(aqiFeedback);
+ 
+             int flag = aqiFeedbackMapper.insert(aqiFeedback);
+ 
+@@ -64,24 +93,32 @@
+         }
+     }
+ 
++    private void getTime(AqiFeedback aqiFeedback) {
++        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
++        String format = simpleDateFormat.format(new Date(System.currentTimeMillis()));
++        String[] date = format.split(" ");
++
++        aqiFeedback.setAfDate(date[0]);
++        aqiFeedback.setAfTime(date[1]);
++    }
++
+     @Override
+     public ResponseResult<?> getAqiList() {
+         List<AqiFeedback> list = this.lambdaQuery().orderByDesc(AqiFeedback::getAfTime).list();
+-        if(list.size()==0){
+-            return ResponseResult.okResult(200,"查询不到数据");
+-        }
+-        else return ResponseResult.okResult(list);
++        if (list.size() == 0) {
++            return ResponseResult.okResult(200, "查询不到数据");
++        } else return ResponseResult.okResult(list);
+     }
+ 
+     @Override
+     public ResponseResult<?> getAqiFeedbackById(AqiFeedback aqiFeedback) {
+-        if(aqiFeedback.getTelId()==null){
++        if (aqiFeedback.getTelId() == null) {
+             return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_REQUIRE);
+         }
+         AqiFeedback byId = this.getById(aqiFeedback.getTelId());
+-        if(byId==null){
++        if (byId == null) {
+             return ResponseResult.okResult(AppHttpCodeEnum.DATA_NOT_EXIST);
+-        }else {
++        } else {
+             return ResponseResult.okResult(byId);
+         }
+     }
+Index: web/src/main/java/com/peels/controller/GridMemberController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.peels.controller;\r\n\r\n\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\n\r\nimport org.springframework.stereotype.Controller;\r\n\r\n/**\r\n * <p>\r\n *  前端控制器\r\n * </p>\r\n *\r\n * @author peelsannaw\r\n * @since 2023-06-26\r\n */\r\n@Controller\r\n@RequestMapping(\"/gridMember\")\r\npublic class GridMemberController {\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/web/src/main/java/com/peels/controller/GridMemberController.java b/web/src/main/java/com/peels/controller/GridMemberController.java
+--- a/web/src/main/java/com/peels/controller/GridMemberController.java	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/web/src/main/java/com/peels/controller/GridMemberController.java	(date 1687773032094)
+@@ -4,16 +4,17 @@
+ import org.springframework.web.bind.annotation.RequestMapping;
+ 
+ import org.springframework.stereotype.Controller;
++import org.springframework.web.bind.annotation.RestController;
+ 
+ /**
+  * <p>
+- *  前端控制器
++ * 前端控制器
+  * </p>
+  *
+  * @author peelsannaw
+  * @since 2023-06-26
+  */
+-@Controller
++@RestController
+ @RequestMapping("/gridMember")
+ public class GridMemberController {
+ 
+Index: web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>com\\peels\\service\\IAqiService.class\r\ncom\\peels\\mapper\\GridProvinceMapper.class\r\ncom\\peels\\mapper\\SupervisorMapper.class\r\ncom\\peels\\controller\\StatisticsController.class\r\ncom\\peels\\mapper\\AqiMapper.class\r\ncom\\peels\\service\\impl\\SupervisorServiceImpl.class\r\ncom\\peels\\mapper\\AqiFeedbackMapper.class\r\ncom\\peels\\service\\IAdminsService.class\r\ncom\\peels\\annotation\\Prevent.class\r\ncom\\peels\\service\\impl\\AqiServiceImpl.class\r\ncom\\peels\\service\\IStatisticsService.class\r\ncom\\peels\\WebApplication.class\r\ncom\\peels\\service\\IAqiFeedbackService.class\r\ncom\\peels\\service\\impl\\StatisticsServiceImpl.class\r\ncom\\peels\\mapper\\AdminsMapper.class\r\ncom\\peels\\aspect\\PreventAop.class\r\ncom\\peels\\controller\\GridCityController.class\r\ncom\\peels\\mapper\\StatisticsMapper.class\r\ncom\\peels\\controller\\GridProvinceController.class\r\ncom\\peels\\controller\\GridMemberController.class\r\ncom\\peels\\mapper\\GridCityMapper.class\r\ncom\\peels\\controller\\SupervisorController.class\r\ncom\\peels\\service\\IGridCityService.class\r\ncom\\peels\\service\\ISupervisorService.class\r\ncom\\peels\\service\\IGridProvinceService.class\r\ncom\\peels\\mapper\\GridMemberMapper.class\r\ncom\\peels\\service\\impl\\AdminsServiceImpl.class\r\ncom\\peels\\controller\\AqiFeedbackController.class\r\ncom\\peels\\controller\\AqiController.class\r\ncom\\peels\\service\\impl\\GridCityService.class\r\ncom\\peels\\service\\IGridMemberService.class\r\ncom\\peels\\service\\impl\\AqiFeedbackServiceImpl.class\r\ncom\\peels\\annotation\\PreventStrategy.class\r\ncom\\peels\\service\\impl\\GridMemberService.class\r\ncom\\peels\\aspect\\PreventAop$1.class\r\ncom\\peels\\controller\\AdminsController.class\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst b/web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+--- a/web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(date 1687771630294)
+@@ -1,36 +1,45 @@
+-com\peels\service\IAqiService.class
+-com\peels\mapper\GridProvinceMapper.class
++com\peels\utils\JacksonObjectMapper.class
+ com\peels\mapper\SupervisorMapper.class
+-com\peels\controller\StatisticsController.class
+-com\peels\mapper\AqiMapper.class
++com\peels\utils\Base64Utils.class
++com\peels\utils\TypeEnum.class
+ com\peels\service\impl\SupervisorServiceImpl.class
+-com\peels\mapper\AqiFeedbackMapper.class
++com\peels\utils\IpUtil\IpUtil.class
+ com\peels\service\IAdminsService.class
+ com\peels\annotation\Prevent.class
+ com\peels\service\impl\AqiServiceImpl.class
+ com\peels\service\IStatisticsService.class
+ com\peels\WebApplication.class
+-com\peels\service\IAqiFeedbackService.class
+ com\peels\service\impl\StatisticsServiceImpl.class
+ com\peels\mapper\AdminsMapper.class
+-com\peels\aspect\PreventAop.class
+ com\peels\controller\GridCityController.class
+-com\peels\mapper\StatisticsMapper.class
+-com\peels\controller\GridProvinceController.class
++com\peels\utils\ResponseResult.class
++com\peels\utils\AppHttpCodeEnum.class
+ com\peels\controller\GridMemberController.class
+-com\peels\mapper\GridCityMapper.class
+-com\peels\controller\SupervisorController.class
+-com\peels\service\IGridCityService.class
+ com\peels\service\ISupervisorService.class
+-com\peels\service\IGridProvinceService.class
+ com\peels\mapper\GridMemberMapper.class
+ com\peels\service\impl\AdminsServiceImpl.class
+ com\peels\controller\AqiFeedbackController.class
+ com\peels\controller\AqiController.class
+-com\peels\service\impl\GridCityService.class
+-com\peels\service\IGridMemberService.class
+ com\peels\service\impl\AqiFeedbackServiceImpl.class
+-com\peels\annotation\PreventStrategy.class
+ com\peels\service\impl\GridMemberService.class
+ com\peels\aspect\PreventAop$1.class
++com\peels\service\IAqiService.class
++com\peels\mapper\GridProvinceMapper.class
++com\peels\controller\StatisticsController.class
++com\peels\mapper\AqiMapper.class
++com\peels\mapper\AqiFeedbackMapper.class
++com\peels\utils\IpUtil\IpInfo.class
++com\peels\utils\RSAUtil.class
++com\peels\service\IAqiFeedbackService.class
++com\peels\aspect\PreventAop.class
++com\peels\mapper\StatisticsMapper.class
++com\peels\controller\GridProvinceController.class
++com\peels\mapper\GridCityMapper.class
++com\peels\controller\SupervisorController.class
++com\peels\service\IGridCityService.class
++com\peels\service\IGridProvinceService.class
++com\peels\service\impl\GridCityService.class
++com\peels\service\IGridMemberService.class
++com\peels\annotation\PreventStrategy.class
++com\peels\utils\AliyunProperties.class
+ com\peels\controller\AdminsController.class
+Index: web/src/main/java/com/peels/controller/GridProvinceController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.peels.controller;\r\n\r\n\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\n\r\nimport org.springframework.stereotype.Controller;\r\n\r\n/**\r\n * <p>\r\n *  前端控制器\r\n * </p>\r\n *\r\n * @author peelsannaw\r\n * @since 2023-06-26\r\n */\r\n@Controller\r\n@RequestMapping(\"/gridProvince\")\r\npublic class GridProvinceController {\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/web/src/main/java/com/peels/controller/GridProvinceController.java b/web/src/main/java/com/peels/controller/GridProvinceController.java
+--- a/web/src/main/java/com/peels/controller/GridProvinceController.java	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/web/src/main/java/com/peels/controller/GridProvinceController.java	(date 1687773032100)
+@@ -4,6 +4,7 @@
+ import org.springframework.web.bind.annotation.RequestMapping;
+ 
+ import org.springframework.stereotype.Controller;
++import org.springframework.web.bind.annotation.RestController;
+ 
+ /**
+  * <p>
+@@ -13,7 +14,7 @@
+  * @author peelsannaw
+  * @since 2023-06-26
+  */
+-@Controller
++@RestController
+ @RequestMapping("/gridProvince")
+ public class GridProvinceController {
+ 
+Index: web/src/main/java/com/peels/controller/StatisticsController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.peels.controller;\r\n\r\n\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\n\r\nimport org.springframework.stereotype.Controller;\r\n\r\n/**\r\n * <p>\r\n *  前端控制器\r\n * </p>\r\n *\r\n * @author peelsannaw\r\n * @since 2023-06-26\r\n */\r\n@Controller\r\n@RequestMapping(\"/statistics\")\r\npublic class StatisticsController {\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/web/src/main/java/com/peels/controller/StatisticsController.java b/web/src/main/java/com/peels/controller/StatisticsController.java
+--- a/web/src/main/java/com/peels/controller/StatisticsController.java	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/web/src/main/java/com/peels/controller/StatisticsController.java	(date 1687773032081)
+@@ -4,6 +4,7 @@
+ import org.springframework.web.bind.annotation.RequestMapping;
+ 
+ import org.springframework.stereotype.Controller;
++import org.springframework.web.bind.annotation.RestController;
+ 
+ /**
+  * <p>
+@@ -13,7 +14,7 @@
+  * @author peelsannaw
+  * @since 2023-06-26
+  */
+-@Controller
++@RestController
+ @RequestMapping("/statistics")
+ public class StatisticsController {
+ 
+Index: web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>D:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\aspect\\PreventAop.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\annotation\\PreventStrategy.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\IStatisticsService.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\controller\\GridCityController.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\annotation\\Prevent.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\IGridProvinceService.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\controller\\StatisticsController.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\controller\\SupervisorController.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\impl\\AqiFeedbackServiceImpl.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\impl\\StatisticsServiceImpl.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\IAqiService.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\impl\\AqiServiceImpl.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\mapper\\AqiMapper.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\mapper\\AqiFeedbackMapper.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\mapper\\GridMemberMapper.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\controller\\GridMemberController.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\impl\\SupervisorServiceImpl.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\WebApplication.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\mapper\\GridProvinceMapper.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\ISupervisorService.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\mapper\\GridCityMapper.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\impl\\AdminsServiceImpl.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\mapper\\AdminsMapper.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\impl\\GridMemberService.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\IAdminsService.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\IGridMemberService.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\controller\\AdminsController.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\mapper\\SupervisorMapper.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\IGridCityService.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\controller\\AqiController.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\IAqiFeedbackService.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\controller\\AqiFeedbackController.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\\impl\\GridCityService.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\controller\\GridProvinceController.java\r\nD:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\mapper\\StatisticsMapper.java\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst b/web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+--- a/web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(date 1687771630295)
+@@ -1,16 +1,19 @@
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\aspect\PreventAop.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\annotation\PreventStrategy.java
++D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\utils\TypeEnum.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service\IStatisticsService.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\controller\GridCityController.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\annotation\Prevent.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service\IGridProvinceService.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\controller\StatisticsController.java
++D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\utils\AppHttpCodeEnum.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\controller\SupervisorController.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service\impl\AqiFeedbackServiceImpl.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service\impl\StatisticsServiceImpl.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service\IAqiService.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service\impl\AqiServiceImpl.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\mapper\AqiMapper.java
++D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\utils\RSAUtil.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\mapper\AqiFeedbackMapper.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\mapper\GridMemberMapper.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\controller\GridMemberController.java
+@@ -23,13 +26,19 @@
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\mapper\AdminsMapper.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service\impl\GridMemberService.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service\IAdminsService.java
++D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\utils\AliyunProperties.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service\IGridMemberService.java
++D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\utils\IpUtil\IpInfo.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\controller\AdminsController.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\mapper\SupervisorMapper.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service\IGridCityService.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\controller\AqiController.java
++D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\utils\IpUtil\IpUtil.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service\IAqiFeedbackService.java
++D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\utils\JacksonObjectMapper.java
++D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\utils\ResponseResult.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\controller\AqiFeedbackController.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service\impl\GridCityService.java
++D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\utils\Base64Utils.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\controller\GridProvinceController.java
+ D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\mapper\StatisticsMapper.java
+Index: model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>com\\peels\\entity\\AqiFeedback.class\r\ncom\\peels\\entity\\Admins.class\r\ncom\\peels\\entity\\Aqi.class\r\ncom\\peels\\entity\\GridCity.class\r\ncom\\peels\\entity\\GridMember.class\r\ncom\\peels\\entity\\Statistics.class\r\ncom\\peels\\entity\\GridProvince.class\r\ncom\\peels\\entity\\Supervisor.class\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst b/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+--- a/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(date 1687771627032)
+@@ -1,8 +1,10 @@
+ com\peels\entity\AqiFeedback.class
+ com\peels\entity\Admins.class
+ com\peels\entity\Aqi.class
++com\peels\vo\AdminsVo.class
+ com\peels\entity\GridCity.class
+ com\peels\entity\GridMember.class
++com\peels\dto\AqiFeedBack.class
+ com\peels\entity\Statistics.class
+ com\peels\entity\GridProvince.class
+ com\peels\entity\Supervisor.class
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"bbb89fea-e17d-4f0c-89fe-aba102712f81\" name=\"Changes\" comment=\"init commit\">\r\n      <change afterPath=\"$PROJECT_DIR$/model/src/main/java/com/peels/dto/AqiFeedBack.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/model/src/main/java/com/peels/vo/AdminsVo.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiFeedbackController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiFeedbackController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/web/src/main/java/com/peels/controller/SupervisorController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/web/src/main/java/com/peels/controller/SupervisorController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiFeedbackService.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiFeedbackService.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiService.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiService.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiServiceImpl.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiServiceImpl.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/../..\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"GitToolBoxStore\">\r\n    <option name=\"projectConfigVersion\" value=\"5\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"localRepository\" value=\"D:\\Java_enviroment\\apache-maven-3.8.5\\maven-repo\" />\r\n        <option name=\"mavenHome\" value=\"$PROJECT_DIR$/../../../../Java_enviroment/apache-maven-3.8.5\" />\r\n        <option name=\"userSettingsFile\" value=\"D:\\Java_enviroment\\apache-maven-3.8.5\\conf\\settings.xml\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2RisdqHAOLzlCYaxb9tNBN9N3N6\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"sortByType\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\r\n    <property name=\"DatabaseDriversLRU\" value=\"mysql\" />\r\n    <property name=\"RequestMappingsPanelOrder0\" value=\"0\" />\r\n    <property name=\"RequestMappingsPanelOrder1\" value=\"1\" />\r\n    <property name=\"RequestMappingsPanelWidth0\" value=\"75\" />\r\n    <property name=\"RequestMappingsPanelWidth1\" value=\"75\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/web/src/main/java/com/peels\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.32670808\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"MavenSettings\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\" />\r\n      <recent name=\"D:\\JavaProjects\\sjz\\backend\\enviroment_backend\\model\\src\\main\\java\\com\\peels\\entity\" />\r\n      <recent name=\"D:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\mapper\" />\r\n      <recent name=\"D:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\java\\com\\peels\\service\" />\r\n      <recent name=\"D:\\JavaProjects\\sjz\\backend\\enviroment_backend\\web\\src\\main\\resources\\mapper\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"com.peels.interception\" />\r\n      <recent name=\"com.peels.handler\" />\r\n      <recent name=\"com.peels.interceptor\" />\r\n      <recent name=\"\" />\r\n      <recent name=\"com.peels.config\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Spring Boot.WebApplication\">\r\n    <configuration name=\"CodeGenerator\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"CodeGenerator\" />\r\n      <module name=\"web\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"WebApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"web\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.peels.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.peels.WebApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"lua.app\" factoryName=\"Lua Application\">\r\n      <option name=\"program\" value=\"lua.exe\" />\r\n      <option name=\"file\" value=\"\" />\r\n      <option name=\"workingDir\" value=\"$PROJECT_DIR$/model/src/main/java\" />\r\n      <option name=\"debuggerType\" value=\"1\" />\r\n      <option name=\"params\" value=\"\" />\r\n      <option name=\"charset\" value=\"UTF-8\" />\r\n      <option name=\"showConsole\" value=\"true\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Spring Boot.WebApplication\" />\r\n        <item itemvalue=\"Application.CodeGenerator\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"bbb89fea-e17d-4f0c-89fe-aba102712f81\" name=\"Changes\" comment=\"\" />\r\n      <created>1687744326751</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1687744326751</updated>\r\n      <workItem from=\"1687744328192\" duration=\"1442000\" />\r\n      <workItem from=\"1687745943792\" duration=\"8249000\" />\r\n      <workItem from=\"1687762976981\" duration=\"1129000\" />\r\n      <workItem from=\"1687764439459\" duration=\"5341000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"first commit\">\r\n      <created>1687746307591</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687746307591</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"init commit\">\r\n      <created>1687761529035</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687761529035</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"init commit\">\r\n      <created>1687761573364</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687761573364</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"init commit\">\r\n      <created>1687765963265</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687765963265</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"init commit\">\r\n      <created>1687765968142</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687765968142</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"init commit\">\r\n      <created>1687766018490</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687766018490</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"init commit\">\r\n      <created>1687766132504</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687766132504</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"first commit\" />\r\n    <MESSAGE value=\"init commit\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"init commit\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.RuntimeException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8b1a754a237feba60437c849a6622cc00f937749)
++++ b/.idea/workspace.xml	(date 1687773402145)
+@@ -5,16 +5,33 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="bbb89fea-e17d-4f0c-89fe-aba102712f81" name="Changes" comment="init commit">
+-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/AqiFeedBack.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/vo/AdminsVo.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/framework/target/framework-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/framework/target/framework-1.0-SNAPSHOT.jar" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridProvince.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridProvince.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/Admins.class" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/classes/com/peels/entity/Admins.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiFeedbackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiFeedbackController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/GridCityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/GridCityController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/GridMemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/GridMemberController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/GridProvinceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/GridProvinceController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/StatisticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/StatisticsController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/SupervisorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/SupervisorController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiFeedbackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiFeedbackService.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiService.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiServiceImpl.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiFeedbackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiFeedbackController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/SupervisorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/controller/SupervisorController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiFeedbackService.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiFeedbackService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiService.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AdminsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AdminsServiceImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiFeedbackServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiFeedbackServiceImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiServiceImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/web/target/web-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/web-1.0-SNAPSHOT.jar" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -145,7 +162,7 @@
+       <workItem from="1687744328192" duration="1442000" />
+       <workItem from="1687745943792" duration="8249000" />
+       <workItem from="1687762976981" duration="1129000" />
+-      <workItem from="1687764439459" duration="5341000" />
++      <workItem from="1687764439459" duration="8267000" />
+     </task>
+     <task id="LOCAL-00001" summary="first commit">
+       <created>1687746307591</created>
+@@ -196,7 +213,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1687766132504</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="init commit">
++      <created>1687769839745</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1687769839745</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
