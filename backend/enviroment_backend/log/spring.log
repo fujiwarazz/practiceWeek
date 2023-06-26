@@ -1042,3 +1042,7 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [admin
 2023-06-26 15:50:39.665 DEBUG 1268 --- [http-nio-9999-exec-4] com.peels.mapper.AdminsMapper.selectOne  : ==>  Preparing: SELECT admin_id,admin_code,password,remarks FROM admins WHERE (admin_code = ? AND password = ?)
 2023-06-26 15:50:39.684 DEBUG 1268 --- [http-nio-9999-exec-4] com.peels.mapper.AdminsMapper.selectOne  : ==> Parameters: admin(String), 123(String)
 2023-06-26 15:50:39.769 DEBUG 1268 --- [http-nio-9999-exec-4] com.peels.mapper.AdminsMapper.selectOne  : <==      Total: 1
+2023-06-26 15:53:35.238  INFO 1268 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-26 15:53:35.240  INFO 1268 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-26 15:53:35.264  INFO 1268 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-26 15:53:35.274  INFO 1268 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

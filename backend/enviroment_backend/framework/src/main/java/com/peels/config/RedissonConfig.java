@@ -12,12 +12,12 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class RedissonConfig {
-    @Bean
-    public RedissonClient redissonClient(){
-        // 配置
-        Config config = new Config();
-        // 创建RedissonClient对象
-        config.useSingleServer().setAddress("redis://127.0.0.1:6379");
-        return Redisson.create(config);
-    }
+//    @Bean
+//    public RedissonClient redissonClient(){
+////        // 配置
+////        Config config = new Config();
+////        // 创建RedissonClient对象
+////        config.useSingleServer().setAddress("redis://127.0.0.1:6379");
+////        return Redisson.create(config);
+//    }
 }
