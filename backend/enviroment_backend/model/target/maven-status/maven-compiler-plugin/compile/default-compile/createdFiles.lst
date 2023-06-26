@@ -1,0 +1,8 @@
+com\peels\entity\AqiFeedback.class
+com\peels\entity\Admins.class
+com\peels\entity\Aqi.class
+com\peels\entity\GridCity.class
+com\peels\entity\GridMember.class
+com\peels\entity\Statistics.class
+com\peels\entity\GridProvince.class
+com\peels\entity\Supervisor.class
