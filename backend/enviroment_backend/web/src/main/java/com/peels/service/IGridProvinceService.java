@@ -2,6 +2,9 @@ package com.peels.service;
 
 import com.peels.entity.GridProvince;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.peels.utils.ResponseResult;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IGridProvinceService extends IService<GridProvince> {
 
+
+    List<GridProvince> listGridProvinceAll();
 }
