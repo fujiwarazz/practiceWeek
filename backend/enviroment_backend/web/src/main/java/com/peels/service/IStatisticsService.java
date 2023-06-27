@@ -3,7 +3,7 @@ package com.peels.service;
 import com.peels.dto.*;
 import com.peels.entity.Statistics;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.peels.utils.ResponseResult;
+import com.peels.vo.PageResponseVo;
 
 import java.util.List;
 
@@ -23,15 +23,15 @@ public interface IStatisticsService extends IService<Statistics> {
     String getProvinceCoverage();
     String getCityCoverage();
 
-    List<AqiTrendTotalStatisDto> listAqiTrendTotalStatis();
+    List<AqiTrendTotalStatisticDto> listAqiTrendTotalStatis();
 
-    List<AqiDistributeTotalStatisDto> listAqiDistributeTotalStatis();
+    List<AqiDistributeTotalStatisticDto> listAqiDistributeTotalStatis();
 
-    List<ProvinceItemTotalStatisDto> listProvinceItemTotalStatis();
+    List<ProvinceItemTotalStatisticDto> listProvinceItemTotalStatis();
 
     Statistics getStatisticsById(Integer id);
 
-    PageResponseDto<Statistics> listStatisticsPage(StatisticsPageRequestDto statisticsPageRequestDto);
+    PageResponseVo<Statistics> listStatisticsPage(StatisticsPageRequestDto statisticsPageRequestDto);
 
     int saveStatistics(Statistics statistics);
 }

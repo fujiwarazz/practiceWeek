@@ -4,17 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbb89fea-e17d-4f0c-89fe-aba102712f81" name="Changes" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/AqiFeedBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/vo/AdminsVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiController.java" afterDir="false" />
+    <list default="true" id="bbb89fea-e17d-4f0c-89fe-aba102712f81" name="Changes" comment="AQI">
+      <change afterPath="$PROJECT_DIR$/log/spring.log.2023-06-26.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/AfPageRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/PageRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/spring.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/AqiDistributeTotalStatisDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/AqiDistributeTotalStatisticDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/AqiTrendTotalStatisDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/AqiTrendTotalStatisticDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/PageResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/vo/PageResponseVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/ProvinceItemTotalStatisDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/ProvinceItemTotalStatisticDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/StatisticsPageRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/StatisticsPageRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/AqiFeedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/AqiFeedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridProvince.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridProvince.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiFeedbackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiFeedbackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/StatisticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/StatisticsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/SupervisorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/SupervisorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/StatisticsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/StatisticsMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiFeedbackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiFeedbackService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IStatisticsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IStatisticsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/StatisticsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/StatisticsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/utils/ResponseResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/utils/ResponseResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/mapper/AqiFeedbackMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/AqiFeedbackMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/mapper/StatisticsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/StatisticsMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,20 +87,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/main/java/com/peels" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/model/src/main/java/com/peels/dto" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.32670808" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\dto" />
       <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels" />
       <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\entity" />
       <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\mapper" />
       <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\java\com\peels\service" />
-      <recent name="D:\JavaProjects\sjz\backend\enviroment_backend\web\src\main\resources\mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.peels.interception" />
@@ -146,6 +160,7 @@
       <workItem from="1687745943792" duration="8249000" />
       <workItem from="1687762976981" duration="1129000" />
       <workItem from="1687764439459" duration="5341000" />
+      <workItem from="1687828367351" duration="4130000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1687746307591</created>
@@ -217,7 +232,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit" />
     <MESSAGE value="init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+    <MESSAGE value="AQI" />
+    <option name="LAST_COMMIT_MESSAGE" value="AQI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

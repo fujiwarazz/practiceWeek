@@ -9,11 +9,6 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * 通用的结果返回类
- * @author peelsannaw
- * @param <T>
- */
 @SuppressWarnings("all")
 public class ResponseResult<T> implements Serializable {
 
@@ -151,7 +146,5 @@ public class ResponseResult<T> implements Serializable {
     public void setHost(String host) {
         this.host = host;
     }
-
-
 
 }

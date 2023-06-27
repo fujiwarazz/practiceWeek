@@ -1,6 +1,5 @@
 package com.peels.service.impl;
 
-import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.peels.dto.*;
 import com.peels.entity.Statistics;
@@ -10,6 +9,7 @@ import com.peels.mapper.StatisticsMapper;
 import com.peels.service.IStatisticsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.peels.utils.AppHttpCodeEnum;
+import com.peels.vo.PageResponseVo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -41,12 +41,12 @@ public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statist
 
 
     @Override
-    public List<AqiDistributeTotalStatisDto> listAqiDistributeTotalStatis() {
+    public List<AqiDistributeTotalStatisticDto> listAqiDistributeTotalStatis() {
         return statisticsMapper.listAqiDistributeTotalStatis();
     }
 
     @Override
-    public List<ProvinceItemTotalStatisDto> listProvinceItemTotalStatis() {
+    public List<ProvinceItemTotalStatisticDto> listProvinceItemTotalStatis() {
         return statisticsMapper.listProvinceItemTotalStatis();
     }
 
@@ -56,8 +56,8 @@ public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statist
     }
 
     @Override
-    public PageResponseDto<Statistics> listStatisticsPage(StatisticsPageRequestDto statisticsPageRequestDto) {
-//        PageResponseDto<Statistics> response = new PageResponseDto<>();
+    public PageResponseVo<Statistics> listStatisticsPage(StatisticsPageRequestDto statisticsPageRequestDto) {
+//        PageResponseVo<Statistics> response = new PageResponseVo<>();
 //
 //        // 获取总行数
 //        int totalRow = statisticsMapper.getStatisticsCount(statisticsPageRequestDto);
@@ -112,15 +112,15 @@ public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statist
     }
 
     @Override
-    public List<AqiTrendTotalStatisDto> listAqiTrendTotalStatis() {
+    public List<AqiTrendTotalStatisticDto> listAqiTrendTotalStatis() {
         //获取当前12个月列表，作为查询参数
-        List<AqiTrendTotalStatisDto> parameList = new ArrayList<>();
+        List<AqiTrendTotalStatisticDto> parameList = new ArrayList<>();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
         Calendar calendar = Calendar.getInstance();
         for(int i=0;i<12;i++) {
             //计算当前日期的前一个月
             calendar.add(Calendar.MONTH, -1);
-            AqiTrendTotalStatisDto dto = new AqiTrendTotalStatisDto();
+            AqiTrendTotalStatisticDto dto = new AqiTrendTotalStatisticDto();
             dto.setMonth(sdf.format(calendar.getTime()));
             parameList.add(dto);
         }
