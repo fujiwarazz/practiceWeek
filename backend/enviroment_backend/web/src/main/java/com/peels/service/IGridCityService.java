@@ -3,6 +3,8 @@ package com.peels.service;
 import com.peels.entity.GridCity;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IGridCityService extends IService<GridCity> {
 
+    List<GridCity> listGridCityByProvinceId(GridCity gridCity);
 }
