@@ -1,7 +1,12 @@
 package com.peels.service.impl;
 
+import cn.hutool.core.util.StrUtil;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.peels.dto.*;
+import com.peels.entity.AqiFeedback;
 import com.peels.entity.Statistics;
 import com.peels.mapper.GridCityMapper;
 import com.peels.mapper.GridProvinceMapper;
@@ -56,50 +61,40 @@ public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statist
     }
 
     @Override
-    public PageResponseVo<Statistics> listStatisticsPage(StatisticsPageRequestDto statisticsPageRequestDto) {
-//        PageResponseVo<Statistics> response = new PageResponseVo<>();
+    @SuppressWarnings("all")
+    public PageResponseVo<Statistics> listStatisticsPage(StatisticsPageRequestDto request) {
 //
-//        // 获取总行数
-//        int totalRow = statisticsMapper.getStatisticsCount(statisticsPageRequestDto);
-//        response.setTotalRow(totalRow);
-//
-//        // 如果总行数为0，那么直接返回
-//        if (totalRow == 0) {
-//            return response;
-//        }
-//
-//        // 计算总页数
-//        int totalPageNum = 0;
-//        if (totalRow % statisticsPageRequestDto.getMaxPageNum() == 0) {
-//            totalPageNum = totalRow / statisticsPageRequestDto.getMaxPageNum();
-//        } else {
-//            totalPageNum = totalRow / statisticsPageRequestDto.getMaxPageNum() + 1;
-//        }
-//        response.setTotalPageNum(totalPageNum);
-//
-//        // 计算上一页和下一页
-//        int pageNum = statisticsPageRequestDto.getPageNum();
-//        response.setPreNum(pageNum);
-//        response.setNextNum(pageNum);
-//        if (pageNum > 1) {
-//            response.setPreNum(pageNum - 1);
-//        }
-//        if (pageNum < totalPageNum) {
-//            response.setNextNum(pageNum + 1);
-//        }
-//
-//        // 计算开始查询记录数
-//        statisticsPageRequestDto.setBeginNum((pageNum - 1) * statisticsPageRequestDto.getMaxPageNum());
-//
-//        // 查询业务数据
-//        List<Statistics> list = statisticsMapper.listStatisticsPage(statisticsPageRequestDto);
-//        // 给返回值填充余下数据
-//        response.setPageNum(pageNum);
-//        response.setMaxPageNum(statisticsPageRequestDto.getMaxPageNum());
-//        response.setList(list);
-//
-//        return response;
-        return null;
+//        <sql id="statisticsSqlWhere">
+//	    <where>
+//	        <if test="provinceId!=0">
+//                and st.province_id = #{provinceId}
+//	        </if>
+//	        <if test="cityId!=0">
+//                and st.city_id = #{cityId}
+//	        </if>
+//	        <if test="confirmDate!=null and confirmDate!=''">
+//                and st.confirm_date = #{confirmDate}
+//	        </if>
+//	    </where>
+//	</sql>
+        Page<Statistics> page = this.page(new Page<Statistics>(request.getPageNum(), request.getMaxPageNum()), new LambdaQueryWrapper<Statistics>()
+                .eq(request.getProvinceId() != null && request.getProvinceId() != 0, Statistics::getProvinceId, request.getProvinceId())
+                .eq(request.getCityId() != null && request.getCityId() != 0, Statistics::getCityId, request.getCityId())
+                .eq(StrUtil.isNotBlank(request.getConfirmDate()), Statistics::getConfirmDate, request.getConfirmDate()));
+
+        PageResponseVo<Statistics> pageResponseVo = new PageResponseVo<>();
+        pageResponseVo.setList(page.getRecords());
+
+        pageResponseVo.setPageNum((int) page.getCurrent());
+        pageResponseVo.setBeginNum(request.getBeginNum());
+        pageResponseVo.setTotalRow((int) page.getTotal());
+        pageResponseVo.setNextNum(page.getCurrent()>page.getTotal()?(int) page.getCurrent()+1: (int) page.getTotal());
+        pageResponseVo.setPreNum(page.getCurrent()==request.getBeginNum()?request.getBeginNum(): (int) (page.getCurrent() - 1));
+        pageResponseVo.setTotalPageNum((int) page.getPages());
+        pageResponseVo.setMaxPageNum(request.getMaxPageNum());
+
+
+        return pageResponseVo;
     }
 
     @Override
@@ -151,8 +146,6 @@ public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statist
         long cityNum = gridCityMapper.selectCount(null);
         return String.format("%.2f",(cityNum/(double)106)*100);
     }
-
-
 
 
 }

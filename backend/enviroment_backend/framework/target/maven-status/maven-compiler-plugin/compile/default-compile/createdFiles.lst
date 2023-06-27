@@ -3,7 +3,6 @@ com\peels\utils\JacksonObjectMapper.class
 com\peels\utils\ResponseResult.class
 com\peels\utils\AppHttpCodeEnum.class
 com\peels\config\RedissonConfig.class
-com\peels\utils\Base64Utils.class
 com\peels\utils\TypeEnum.class
 com\peels\utils\IpUtil\IpUtil.class
 com\peels\config\WebSocketConfig.class

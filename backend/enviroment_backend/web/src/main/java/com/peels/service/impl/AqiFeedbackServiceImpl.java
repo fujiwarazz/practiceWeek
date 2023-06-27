@@ -96,8 +96,8 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
 //        private String afDate;
 //        private Integer state;
         Page<AqiFeedback> page = this.page(new Page<AqiFeedback>(afPageRequestDto.getPageNum(), afPageRequestDto.getMaxPageNum())
-                , new LambdaUpdateWrapper<AqiFeedback>().eq(afPageRequestDto.getProvinceId() != null, AqiFeedback::getProvinceId, afPageRequestDto.getProvinceId())
-                        .eq(afPageRequestDto.getCityId() != null, AqiFeedback::getCityId, afPageRequestDto.getCityId())
+                , new LambdaUpdateWrapper<AqiFeedback>().eq(afPageRequestDto.getProvinceId() != null && afPageRequestDto.getProvinceId() != 0, AqiFeedback::getProvinceId, afPageRequestDto.getProvinceId())
+                        .eq(afPageRequestDto.getCityId() != null && afPageRequestDto.getCityId() != 0, AqiFeedback::getCityId, afPageRequestDto.getCityId())
                         .like(afPageRequestDto.getEstimatedGrade() != null, AqiFeedback::getEstimatedGrade, afPageRequestDto.getEstimatedGrade())
                         .eq(StrUtil.isNotBlank(afPageRequestDto.getAfDate()), AqiFeedback::getAfDate, afPageRequestDto.getAfDate())
                         .eq(afPageRequestDto.getState() != null, AqiFeedback::getState, afPageRequestDto.getState())
@@ -109,8 +109,8 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
         pageResponseVo.setPageNum((int) page.getCurrent());
         pageResponseVo.setBeginNum(afPageRequestDto.getBeginNum());
         pageResponseVo.setTotalRow((int) page.getTotal());
-        pageResponseVo.setNextNum(page.getCurrent()>page.getTotal()?(int) page.getCurrent()+1: (int) page.getTotal());
-        pageResponseVo.setPreNum(page.getCurrent()==afPageRequestDto.getBeginNum()?afPageRequestDto.getBeginNum(): (int) (page.getCurrent() - 1));
+        pageResponseVo.setNextNum(page.getCurrent() > page.getTotal() ? (int) page.getCurrent() + 1 : (int) page.getTotal());
+        pageResponseVo.setPreNum(page.getCurrent() == afPageRequestDto.getBeginNum() ? afPageRequestDto.getBeginNum() : (int) (page.getCurrent() - 1));
         pageResponseVo.setTotalPageNum((int) page.getPages());
         pageResponseVo.setMaxPageNum(afPageRequestDto.getMaxPageNum());
 

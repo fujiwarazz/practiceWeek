@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author peelsannaw
@@ -20,7 +20,9 @@ public interface IStatisticsService extends IService<Statistics> {
     long getAqiCount();
 
     long getAqiGoodCount();
+
     String getProvinceCoverage();
+
     String getCityCoverage();
 
     List<AqiTrendTotalStatisticDto> listAqiTrendTotalStatis();
