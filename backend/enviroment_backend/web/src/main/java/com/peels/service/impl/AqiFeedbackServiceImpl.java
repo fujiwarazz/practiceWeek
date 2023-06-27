@@ -3,10 +3,8 @@ package com.peels.service.impl;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.peels.dto.AfPageRequestDto;
-import com.peels.dto.PageRequestDto;
 import com.peels.entity.AqiFeedback;
 import com.peels.mapper.AqiFeedbackMapper;
 import com.peels.service.IAqiFeedbackService;
@@ -37,6 +35,7 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
     @Resource
     private AqiFeedbackMapper aqiFeedbackMapper;
 
+    //TODO:修改
     @Override
     @Transactional(rollbackFor = SQLException.class)
     public Integer updateAqiFeedBackAssign(AqiFeedback aqiFeedback) {
@@ -118,16 +117,17 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
         return pageResponseVo;
     }
 
+    //TODO:修改
     @Override
     @Transactional
-    public ResponseResult<?> saveFeedBack(AqiFeedback aqiFeedback) {
+    public Integer saveFeedBack(AqiFeedback aqiFeedback) {
         try {
             if (StrUtil.isBlank(aqiFeedback.getTelId())
                     || aqiFeedback.getProvinceId() == null
                     || aqiFeedback.getCityId() == null
                     || aqiFeedback.getGmId() == null
                     || aqiFeedback.getInformation() == null) {
-                return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);
+                throw new RuntimeException(AppHttpCodeEnum.PARAM_INVALID.getErrorMessage());
             }
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
             String format = simpleDateFormat.format(new Date(System.currentTimeMillis()));
@@ -135,37 +135,36 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
 
             aqiFeedback.setAfDate(date[0]);
             aqiFeedback.setAfTime(date[1]);
+            aqiFeedback.setState(0);
 
             int flag = aqiFeedbackMapper.insert(aqiFeedback);
 
-            if (flag != 0) {
-                return ResponseResult.okResult();
-            } else return ResponseResult.errorResult(AppHttpCodeEnum.SERVER_ERROR);
+            return flag;
 
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseResult.errorResult(AppHttpCodeEnum.SERVER_ERROR);
+            return 0;
         }
     }
 
+
     @Override
-    public ResponseResult<?> getAqiList() {
-        List<AqiFeedback> list = this.lambdaQuery().orderByDesc(AqiFeedback::getAfTime).list();
-        if (list.size() == 0) {
-            return ResponseResult.okResult(200, "查询不到数据");
-        } else return ResponseResult.okResult(list);
+    public List<AqiFeedback> getAqiList(AqiFeedback aqiFeedback) {
+        List<AqiFeedback> list = this.lambdaQuery().eq(AqiFeedback::getTelId, aqiFeedback.getTelId())
+                .orderByDesc(AqiFeedback::getAfTime).list();
+        return list;
     }
 
     @Override
-    public ResponseResult<?> getAqiFeedbackById(AqiFeedback aqiFeedback) {
-        if (aqiFeedback.getTelId() == null) {
-            return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_REQUIRE);
+    public AqiFeedback getAqiFeedbackById(AqiFeedback aqiFeedback) {
+        if (aqiFeedback.getAfId() == null) {
+            return null;
         }
-        AqiFeedback byId = this.getById(aqiFeedback.getTelId());
+        AqiFeedback byId = this.getById(aqiFeedback.getAfId());
         if (byId == null) {
-            return ResponseResult.okResult(AppHttpCodeEnum.DATA_NOT_EXIST);
+            return null;
         } else {
-            return ResponseResult.okResult(byId);
+            return byId;
         }
     }
 }

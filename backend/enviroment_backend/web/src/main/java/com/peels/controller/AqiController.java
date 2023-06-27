@@ -1,6 +1,7 @@
 package com.peels.controller;
 
 
+import com.peels.entity.Aqi;
 import com.peels.entity.AqiFeedback;
 import com.peels.service.IAqiService;
 import com.peels.utils.ResponseResult;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
@@ -30,7 +32,7 @@ public class AqiController {
     private IAqiService aqiService;
 
     @PostMapping("/listAqiAll")
-    public ResponseResult<?> getAqiList(){
+    public List<Aqi> getAqiList(){
         return aqiService.getAqiList();
     }
 

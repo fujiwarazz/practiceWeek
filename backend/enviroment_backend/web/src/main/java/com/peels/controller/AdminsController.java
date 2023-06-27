@@ -7,6 +7,7 @@ import com.peels.service.IAdminsService;
 
 
 import com.peels.utils.*;
+import com.peels.vo.AdminsVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +36,7 @@ public class AdminsController {
     IAdminsService adminsService;
 
     @PostMapping("/getAdminsByCode")
-    public ResponseResult<?> getAdminsByCode(@RequestBody Admins admins) {
+    public AdminsVo getAdminsByCode(@RequestBody Admins admins) {
         return adminsService.getAdminByCode(admins);
     }
 }

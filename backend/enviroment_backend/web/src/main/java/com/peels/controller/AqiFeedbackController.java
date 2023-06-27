@@ -31,17 +31,17 @@ public class AqiFeedbackController {
     private IAqiFeedbackService aqiFeedbackService;
 
     @PostMapping("/saveAqiFeedback")
-    public ResponseResult<?> saveFeedBack(@RequestBody AqiFeedback aqiFeedback){
+    public Integer saveFeedBack(@RequestBody AqiFeedback aqiFeedback){
         return aqiFeedbackService.saveFeedBack(aqiFeedback);
     }
 
     @PostMapping("/listAqiFeedbackByTelId")
-    public ResponseResult<?> getAqiFeedbackByTelId(){
-        return aqiFeedbackService.getAqiList();
+    public List<AqiFeedback> getAqiFeedbackByTelId(@RequestBody AqiFeedback aqiFeedback){
+        return aqiFeedbackService.getAqiList(aqiFeedback);
     }
 
     @PostMapping("/getAqiFeedbackById")
-    public ResponseResult<?> getAqiFeedbackById(@RequestBody AqiFeedback aqiFeedback){
+    public AqiFeedback getAqiFeedbackById(@RequestBody AqiFeedback aqiFeedback){
         return aqiFeedbackService.getAqiFeedbackById(aqiFeedback);
     }
     @PostMapping("/updateAqiFeedbackAssign")
