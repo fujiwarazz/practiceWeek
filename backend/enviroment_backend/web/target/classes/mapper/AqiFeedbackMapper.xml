@@ -3,4 +3,47 @@
 <mapper namespace="com.peels.mapper.AqiFeedbackMapper">
 
 
+    <select id="listAqiFeedBackPage" parameterType="com.peels.dto.AfPageRequestDto" resultType="com.peels.vo.AqiDetailVo">
+        select * from
+            environment.aqi_feedback as af
+                left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id
+                left join environment.grid_member gm on gm.gm_id = af.gm_id
+                left join environment.grid_city gc on gc.city_id = af.city_id
+                left join environment.grid_province as gp on af.province_id = gp.province_id
+                left join environment.supervisor as ss on af.tel_id = ss.tel_id
+        <where>
+            <if test="provinceId != null" >
+                af.province_id = #{provinceId}
+            </if>
+            <if test="cityId !=null">
+                and af.city_id = #{cityId}
+            </if>
+            <if test="estimatedGrade!=null">
+                and af.estimated_grade = #{estimatedGrade}
+            </if>
+            <if test="state!=null">
+                and af.state = #{state}
+            </if>
+        </where>
+        limit #{pageNum},#{maxPageNum}
+    </select>
+    <select id="getPageTotal" resultType="java.lang.Integer">
+        select  count(*) as count from
+        environment.aqi_feedback as af
+        left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id
+        left join environment.grid_member gm on gm.gm_id = af.gm_id
+        left join environment.grid_city gc on gc.city_id = af.city_id
+        left join environment.grid_province as gp on af.province_id = gp.province_id
+        <where>
+            <if test="provinceId != null" >
+                af.province_id = #{provinceId}
+            </if>
+            <if test="cityId !=null">
+                and af.city_id = #{cityId}
+            </if>
+            <if test="estimatedGrade!=null">
+                and af.estimated_grade = #{estimatedGrade}
+            </if>
+        </where>
+    </select>
 </mapper>

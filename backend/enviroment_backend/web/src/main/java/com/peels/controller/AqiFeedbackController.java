@@ -6,6 +6,7 @@ import com.peels.entity.Aqi;
 import com.peels.entity.AqiFeedback;
 import com.peels.service.IAqiFeedbackService;
 import com.peels.utils.ResponseResult;
+import com.peels.vo.AqiDetailVo;
 import com.peels.vo.PageResponseVo;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.web.bind.annotation.*;
@@ -60,7 +61,7 @@ public class AqiFeedbackController {
     }
 
     @PostMapping("/listAqiFeedbackPage")
-    public PageResponseVo<AqiFeedback> listAqiFeedBackPage(@RequestBody AfPageRequestDto afPageRequestDto){
+    public PageResponseVo<AqiDetailVo> listAqiFeedBackPage(@RequestBody AfPageRequestDto afPageRequestDto){
         return aqiFeedbackService.listAqiFeedBackPage(afPageRequestDto);
 
     }

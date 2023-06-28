@@ -3,6 +3,7 @@ package com.peels.service;
 import com.peels.dto.AfPageRequestDto;
 import com.peels.entity.AqiFeedback;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.peels.vo.AqiDetailVo;
 import com.peels.vo.PageResponseVo;
 
 import java.util.List;
@@ -29,5 +30,5 @@ public interface IAqiFeedbackService extends IService<AqiFeedback> {
 
     Integer updateAqiFeedbackState(AqiFeedback aqiFeedback);
 
-    PageResponseVo<AqiFeedback> listAqiFeedBackPage(AfPageRequestDto afPageRequestDto);
+    PageResponseVo<AqiDetailVo> listAqiFeedBackPage(AfPageRequestDto afPageRequestDto);
 }

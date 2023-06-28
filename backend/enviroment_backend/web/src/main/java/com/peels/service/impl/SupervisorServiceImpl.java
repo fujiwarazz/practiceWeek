@@ -1,5 +1,6 @@
 package com.peels.service.impl;
 
+import cn.hutool.core.lang.RegexPool;
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -54,9 +55,11 @@ public class SupervisorServiceImpl extends ServiceImpl<SupervisorMapper, Supervi
         if (StrUtil.isBlank(supervisor.getTelId()) || StrUtil.isBlank(supervisor.getPassword())) {
             throw new RuntimeException(AppHttpCodeEnum.LOGIN_PARAMS_ERROR.getErrorMessage());
         }
+        if(!supervisor.getTelId().matches(RegexPool.TEL)){
+            return 500;
+        }
         this.saveOrUpdate(supervisor);
         return 200;
-
     }
 
     @Override
@@ -74,7 +77,5 @@ public class SupervisorServiceImpl extends ServiceImpl<SupervisorMapper, Supervi
              one.setPassword(null);
             return ResponseResult.okResult(one);
         }
-
-
     }
 }

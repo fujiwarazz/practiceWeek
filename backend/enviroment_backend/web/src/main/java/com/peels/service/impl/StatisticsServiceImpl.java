@@ -14,7 +14,9 @@ import com.peels.mapper.StatisticsMapper;
 import com.peels.service.IStatisticsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.peels.utils.AppHttpCodeEnum;
+import com.peels.vo.AqiDetailVo;
 import com.peels.vo.PageResponseVo;
+import com.peels.vo.StatisticDetailVo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -45,6 +47,7 @@ public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statist
     private StatisticsMapper statisticsMapper;
 
 
+
     @Override
     public List<AqiDistributeTotalStatisticDto> listAqiDistributeTotalStatis() {
         return statisticsMapper.listAqiDistributeTotalStatis();
@@ -62,39 +65,28 @@ public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statist
 
     @Override
     @SuppressWarnings("all")
-    public PageResponseVo<Statistics> listStatisticsPage(StatisticsPageRequestDto request) {
-//
-//        <sql id="statisticsSqlWhere">
-//	    <where>
-//	        <if test="provinceId!=0">
-//                and st.province_id = #{provinceId}
-//	        </if>
-//	        <if test="cityId!=0">
-//                and st.city_id = #{cityId}
-//	        </if>
-//	        <if test="confirmDate!=null and confirmDate!=''">
-//                and st.confirm_date = #{confirmDate}
-//	        </if>
-//	    </where>
-//	</sql>
-        Page<Statistics> page = this.page(new Page<Statistics>(request.getPageNum(), request.getMaxPageNum()), new LambdaQueryWrapper<Statistics>()
-                .eq(request.getProvinceId() != null && request.getProvinceId() != 0, Statistics::getProvinceId, request.getProvinceId())
-                .eq(request.getCityId() != null && request.getCityId() != 0, Statistics::getCityId, request.getCityId())
-                .eq(StrUtil.isNotBlank(request.getConfirmDate()), Statistics::getConfirmDate, request.getConfirmDate()));
+    public PageResponseVo<StatisticDetailVo> listStatisticsPage(StatisticsPageRequestDto request) {
 
-        PageResponseVo<Statistics> pageResponseVo = new PageResponseVo<>();
-        pageResponseVo.setList(page.getRecords());
-
-        pageResponseVo.setPageNum((int) page.getCurrent());
-        pageResponseVo.setBeginNum(request.getBeginNum());
-        pageResponseVo.setTotalRow((int) page.getTotal());
-        pageResponseVo.setNextNum(page.getCurrent()>page.getTotal()?(int) page.getCurrent()+1: (int) page.getTotal());
-        pageResponseVo.setPreNum(page.getCurrent()==request.getBeginNum()?request.getBeginNum(): (int) (page.getCurrent() - 1));
-        pageResponseVo.setTotalPageNum((int) page.getPages());
-        pageResponseVo.setMaxPageNum(request.getMaxPageNum());
+        request.setPageNum((request.getPageNum() <= 1 ? 0 : request.getPageNum() - 1) * request.getMaxPageNum());
 
 
-        return pageResponseVo;
+        List<StatisticDetailVo>list = statisticsMapper.listStatisticsPage(request);
+        Integer count = statisticsMapper.getStatisicCount(request);
+
+        PageResponseVo<StatisticDetailVo> statisticDetailVoPageResponseVo = new PageResponseVo<>();
+        statisticDetailVoPageResponseVo.setList(list);
+        statisticDetailVoPageResponseVo.setPageNum(list.size() % request.getMaxPageNum());
+        statisticDetailVoPageResponseVo.setBeginNum(request.getBeginNum());
+        statisticDetailVoPageResponseVo.setTotalRow(count);
+        statisticDetailVoPageResponseVo.setNextNum((request.getPageNum() * request.getMaxPageNum()>=count?request.getPageNum()+1:request.getPageNum()));
+        statisticDetailVoPageResponseVo.setPreNum(request.getPageNum()<=1 ? 1:request.getPageNum()-1);
+        statisticDetailVoPageResponseVo.setTotalPageNum(count % request.getMaxPageNum() == 0 ? count / request.getMaxPageNum() : count / request.getMaxPageNum() + 1);
+
+
+        statisticDetailVoPageResponseVo.setMaxPageNum(request.getMaxPageNum());
+
+        return statisticDetailVoPageResponseVo;
+
     }
 
     @Override

@@ -36,13 +36,11 @@ public class AqiServiceImpl extends ServiceImpl<AqiMapper, Aqi> implements IAqiS
     @Override
 
     public List<Aqi> getAqiList() {
-
         List<Aqi> list = this.list();
         if(list.size()==0){
             return new ArrayList<>();
         }
         return list;
-
     }
 
     @Override

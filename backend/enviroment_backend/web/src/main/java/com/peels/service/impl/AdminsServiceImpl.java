@@ -30,18 +30,12 @@ public class AdminsServiceImpl extends ServiceImpl<AdminsMapper, Admins> impleme
 
     @Override
     public AdminsVo getAdminByCode(Admins admins) {
-
-        System.out.println(JSON.toJSONString(admins));
-
-
         if(StrUtil.isBlank(admins.getAdminCode())|| StrUtil.isBlank(admins.getPassword())){
             throw new RuntimeException(AppHttpCodeEnum.LOGIN_PARAMS_ERROR.getErrorMessage());
         }
-
         Admins one = this.lambdaQuery()
                 .eq(Admins::getAdminCode, admins.getAdminCode())
                 .eq(Admins::getPassword, admins.getPassword()).one();
-
         AdminsVo adminsVo = BeanUtil.copyProperties(one, AdminsVo.class);
 
         if(one==null){

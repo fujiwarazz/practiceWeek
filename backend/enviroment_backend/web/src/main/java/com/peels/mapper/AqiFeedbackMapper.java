@@ -1,8 +1,12 @@
 package com.peels.mapper;
 
+import com.peels.dto.AfPageRequestDto;
 import com.peels.entity.AqiFeedback;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.peels.vo.AqiDetailVo;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,4 +20,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 public interface AqiFeedbackMapper extends BaseMapper<AqiFeedback> {
 
+    List<AqiDetailVo> listAqiFeedBackPage(AfPageRequestDto afPageRequestDto);
+
+    Integer getPageTotal(AfPageRequestDto afPageRequestDto);
 }

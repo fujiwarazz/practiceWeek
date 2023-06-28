@@ -3,8 +3,10 @@ package com.peels.mapper;
 import com.peels.dto.AqiDistributeTotalStatisticDto;
 import com.peels.dto.AqiTrendTotalStatisticDto;
 import com.peels.dto.ProvinceItemTotalStatisticDto;
+import com.peels.dto.StatisticsPageRequestDto;
 import com.peels.entity.Statistics;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.peels.vo.StatisticDetailVo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -27,6 +29,10 @@ public interface StatisticsMapper extends BaseMapper<Statistics> {
     List<ProvinceItemTotalStatisticDto> listProvinceItemTotalStatis();
 
     Statistics getStatisticsById(Integer id);
+
+    List<StatisticDetailVo> listStatisticsPage(StatisticsPageRequestDto request);
+
+    Integer getStatisicCount(StatisticsPageRequestDto request);
 
 //    public int getStatisticsCount(StatisticsPageRequestDto statisticsPageRequestDto);
 //

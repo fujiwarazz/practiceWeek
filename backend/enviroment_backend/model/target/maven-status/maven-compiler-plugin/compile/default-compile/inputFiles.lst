@@ -3,10 +3,13 @@ D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\dto
 D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\dto\AqiFeedBack.java
 D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\entity\GridMember.java
 D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\dto\StatisticsPageRequestDto.java
+D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\vo\AqiDetailVo.java
 D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\dto\AqiTrendTotalStatisticDto.java
 D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\vo\AdminsVo.java
 D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\dto\AfPageRequestDto.java
 D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\entity\Aqi.java
+D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\vo\StatisticDetailVo.java
+D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\dto\FeedBackIdDto.java
 D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\entity\Admins.java
 D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\dto\PageRequestDto.java
 D:\JavaProjects\sjz\backend\enviroment_backend\model\src\main\java\com\peels\entity\Supervisor.java

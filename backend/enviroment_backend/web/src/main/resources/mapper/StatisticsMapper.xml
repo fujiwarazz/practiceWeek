@@ -6,7 +6,7 @@
         <foreach collection="list" item="dto" open="" close="" separator="union all">
             select #{dto.month} month,
             count(*) total
-            from statistics
+            from environment.statistics
             where left(confirm_date,7)=#{dto.month} and aqi_id>2
         </foreach>
     </select>
@@ -14,7 +14,7 @@
         select a.aqi_id aqi_id,
                a.aqi_explain aqi_explain,
                count(s.aqi_id) total
-        from aqi a left join statistics s on a.aqi_id=s.aqi_id
+        from environment.aqi a left join environment.statistics s on a.aqi_id=s.aqi_id
         group by a.aqi_id
         order by a.aqi_id
     </select>
@@ -22,17 +22,63 @@
         select gp.province_id province_id,
                gp.province_abbr province_abbr,
                gp.province_name province_name,
-               (select count(s.so2_level) from statistics s where s.so2_level>2 and s.province_id=gp.province_id) so2_total,
-               (select count(s.co_level) from statistics s where s.co_level>2 and s.province_id=gp.province_id) co_total,
-               (select count(s.spm_level) from statistics s where s.spm_level>2 and s.province_id=gp.province_id) spm_total,
-               (select count(s.aqi_id) from statistics s where s.aqi_id>2 and s.province_id=gp.province_id) aqi_total
-        from grid_province gp
+               (select count(s.so2_level) from environment.statistics s where s.so2_level>2 and s.province_id=gp.province_id) so2_total,
+               (select count(s.co_level) from environment.statistics s where s.co_level>2 and s.province_id=gp.province_id) co_total,
+               (select count(s.spm_level) from environment.statistics s where s.spm_level>2 and s.province_id=gp.province_id) spm_total,
+               (select count(s.aqi_id) from environment.statistics s where s.aqi_id>2 and s.province_id=gp.province_id) aqi_total
+        from environment.grid_province gp
         order by gp.province_id
     </select>
+
     <select id="getStatisticsById" resultType="com.peels.entity.Statistics">
         select *
-        from statistics
+        from environment.statistics
         where id=#{id}
+    </select>
+
+
+
+    <select id="listStatisticsPage" parameterType="com.peels.dto.StatisticsPageRequestDto" resultType="com.peels.vo.StatisticDetailVo">
+        select *
+            from environment.statistics as ss
+            left join environment.grid_province as gp on gp.province_id = ss.province_id
+            left join environment.aqi as aqi on aqi.aqi_id = ss.aqi_id
+            left join environment.grid_city as gc on gc.city_id = ss.city_id
+            left join environment.supervisor as sp on sp.tel_id = ss.fd_id
+            left join environment.grid_member as gm on gm.gm_id = ss.gm_id
+        <where>
+            <if test="cityId != null">
+                ss.city_id = #{cityId}
+            </if>
+            <if test="provinceId != null">
+                and ss.province_id = #{provinceId}
+            </if>
+            <if test="confirmDate !=null">
+                and ss.confirm_date like concat('%',#{confirmDate},'%')
+            </if>
+        </where>
+        limit #{pageNum},#{maxPageNum}
+    </select>
+    <select id="getStatisicCount" parameterType="com.peels.dto.StatisticsPageRequestDto" resultType="java.lang.Integer">
+        select count(*)
+        from environment.statistics as ss
+        left join environment.grid_province as gp on gp.province_id = ss.province_id
+        left join environment.aqi as aqi on aqi.aqi_id = ss.aqi_id
+        left join environment.grid_city as gc on gc.city_id = ss.city_id
+        left join environment.supervisor as sp on sp.tel_id = ss.fd_id
+        left join environment.grid_member as gm on gm.gm_id = ss.gm_id
+        <where>
+            <if test="cityId != null">
+                ss.city_id = #{cityId}
+            </if>
+            <if test="provinceId != null">
+                and ss.province_id = #{provinceId}
+            </if>
+            <if test="confirmDate !=null">
+                and ss.confirm_date like concat('%',#{confirmDate},'%')
+            </if>
+        </where>
+        limit #{pageNum},#{maxPageNum}
     </select>
 
 </mapper>

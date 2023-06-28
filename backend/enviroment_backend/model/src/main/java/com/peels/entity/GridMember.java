@@ -26,7 +26,7 @@ public class  GridMember implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("网格员编号")
-      @TableId(value = "gm_id", type = IdType.AUTO)
+    @TableId(value = "gm_id", type = IdType.AUTO)
     private Integer gmId;
 
     @ApiModelProperty("网格员名称")
@@ -49,9 +49,5 @@ public class  GridMember implements Serializable {
 
     @ApiModelProperty("网格员状态（0:工作状态; 1:非工作状态（由考勤系统管理）; 2:其它）")
     private Integer state;
-
-    @ApiModelProperty("备注")
-    private String remarks;
-
 
 }

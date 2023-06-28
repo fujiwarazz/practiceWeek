@@ -5,6 +5,7 @@ import com.peels.dto.*;
 import com.peels.entity.Statistics;
 import com.peels.service.IStatisticsService;
 import com.peels.vo.PageResponseVo;
+import com.peels.vo.StatisticDetailVo;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,7 +36,7 @@ public class StatisticsController {
     }
 
     @PostMapping("/listStatisticsPage")
-    public PageResponseVo<Statistics> listStatisticsPage(@RequestBody StatisticsPageRequestDto statisticsPageRequestDto) {
+    public PageResponseVo<StatisticDetailVo> listStatisticsPage(@RequestBody StatisticsPageRequestDto statisticsPageRequestDto) {
         return statisticsService.listStatisticsPage(statisticsPageRequestDto);
     }
 

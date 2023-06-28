@@ -41,6 +41,4 @@ public class Supervisor implements Serializable {
 
     @ApiModelProperty("备注")
     private String remarks;
-
-
 }

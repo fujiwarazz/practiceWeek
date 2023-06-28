@@ -26,7 +26,7 @@ public class GridCity implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("系统网格覆盖市区域编号")
-      @TableId(value = "city_id", type = IdType.AUTO)
+    @TableId(value = "city_id", type = IdType.AUTO)
     private Integer cityId;
 
     @ApiModelProperty("系统网格覆盖市区域名称")

@@ -4,6 +4,7 @@ import com.peels.dto.*;
 import com.peels.entity.Statistics;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.peels.vo.PageResponseVo;
+import com.peels.vo.StatisticDetailVo;
 
 import java.util.List;
 
@@ -33,7 +34,7 @@ public interface IStatisticsService extends IService<Statistics> {
 
     Statistics getStatisticsById(Integer id);
 
-    PageResponseVo<Statistics> listStatisticsPage(StatisticsPageRequestDto statisticsPageRequestDto);
+    PageResponseVo<StatisticDetailVo> listStatisticsPage(StatisticsPageRequestDto statisticsPageRequestDto);
 
     int saveStatistics(Statistics statistics);
 }
