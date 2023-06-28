@@ -2031,3 +2031,236 @@ java.lang.NullPointerException: null
 2023-06-28 16:58:52.547  INFO 7492 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2023-06-28 16:58:52.552  INFO 7492 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-06-28 16:58:52.563  INFO 7492 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-28 16:58:58.838  INFO 10596 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-28 16:58:59.766  INFO 10596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-28 16:58:59.768  INFO 10596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-28 16:58:59.806  INFO 10596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 Redis repository interfaces.
+2023-06-28 16:59:00.056  INFO 10596 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d3ee5d9e-5141-3bc2-bba2-152a4487c594
+2023-06-28 16:59:00.573  INFO 10596 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-28 16:59:00.582  INFO 10596 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-28 16:59:00.583  INFO 10596 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-28 16:59:00.821  INFO 10596 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-28 16:59:00.821  INFO 10596 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1963 ms
+2023-06-28 16:59:02.718  INFO 10596 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-28 16:59:02.751  WARN 10596 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 16:59:02.751  INFO 10596 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 16:59:02.755  WARN 10596 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 16:59:02.755  INFO 10596 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 16:59:02.852  INFO 10596 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-28 16:59:03.300  INFO 10596 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-28 16:59:03.733  INFO 10596 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-28 16:59:03.964  INFO 10596 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-28 16:59:03.980  INFO 10596 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-28 16:59:04.016  INFO 10596 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-28 16:59:04.233  INFO 10596 --- [main] com.peels.WebApplication                 : Started WebApplication in 6.564 seconds (JVM running for 7.447)
+2023-06-28 16:59:13.186  INFO 10596 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-28 16:59:13.186  INFO 10596 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-28 16:59:13.196  INFO 10596 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2023-06-28 16:59:13.294  INFO 10596 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-28 16:59:14.895  INFO 10596 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-28 16:59:14.901 DEBUG 10596 --- [http-nio-9999-exec-1] c.p.m.A.listAqiFeedBackPage              : ==>  Preparing: select * from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.supervisor as ss on af.tel_id = ss.tel_id limit ?,?
+2023-06-28 16:59:14.921 DEBUG 10596 --- [http-nio-9999-exec-1] c.p.m.A.listAqiFeedBackPage              : ==> Parameters: 0(Integer), 10(Integer)
+2023-06-28 16:59:15.038 DEBUG 10596 --- [http-nio-9999-exec-1] c.p.m.A.listAqiFeedBackPage              : <==      Total: 10
+2023-06-28 16:59:15.044 DEBUG 10596 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getPageTotal     : ==>  Preparing: select count(*) as count from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id
+2023-06-28 16:59:15.044 DEBUG 10596 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getPageTotal     : ==> Parameters: 
+2023-06-28 16:59:15.138 DEBUG 10596 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getPageTotal     : <==      Total: 1
+2023-06-28 17:08:47.275 DEBUG 10596 --- [http-nio-9999-exec-3] c.p.m.A.listAqiFeedBackPage              : ==>  Preparing: select * from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.supervisor as ss on af.tel_id = ss.tel_id limit ?,?
+2023-06-28 17:08:47.275 DEBUG 10596 --- [http-nio-9999-exec-3] c.p.m.A.listAqiFeedBackPage              : ==> Parameters: 0(Integer), 10(Integer)
+2023-06-28 17:08:47.370 DEBUG 10596 --- [http-nio-9999-exec-3] c.p.m.A.listAqiFeedBackPage              : <==      Total: 10
+2023-06-28 17:08:47.371 DEBUG 10596 --- [http-nio-9999-exec-3] c.p.m.AqiFeedbackMapper.getPageTotal     : ==>  Preparing: select count(*) as count from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id
+2023-06-28 17:08:47.371 DEBUG 10596 --- [http-nio-9999-exec-3] c.p.m.AqiFeedbackMapper.getPageTotal     : ==> Parameters: 
+2023-06-28 17:08:47.440 DEBUG 10596 --- [http-nio-9999-exec-3] c.p.m.AqiFeedbackMapper.getPageTotal     : <==      Total: 1
+2023-06-28 16:58:58.838  INFO 10596 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-28 16:58:59.766  INFO 10596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-28 16:58:59.768  INFO 10596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-28 16:58:59.806  INFO 10596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 Redis repository interfaces.
+2023-06-28 16:59:00.056  INFO 10596 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d3ee5d9e-5141-3bc2-bba2-152a4487c594
+2023-06-28 16:59:00.573  INFO 10596 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-28 16:59:00.582  INFO 10596 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-28 16:59:00.583  INFO 10596 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-28 16:59:00.821  INFO 10596 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-28 16:59:00.821  INFO 10596 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1963 ms
+2023-06-28 16:59:02.718  INFO 10596 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-28 16:59:02.751  WARN 10596 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 16:59:02.751  INFO 10596 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 16:59:02.755  WARN 10596 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 16:59:02.755  INFO 10596 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 16:59:02.852  INFO 10596 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-28 16:59:03.300  INFO 10596 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-28 16:59:03.733  INFO 10596 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-28 16:59:03.964  INFO 10596 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-28 16:59:03.980  INFO 10596 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-28 16:59:04.016  INFO 10596 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-28 16:59:04.233  INFO 10596 --- [main] com.peels.WebApplication                 : Started WebApplication in 6.564 seconds (JVM running for 7.447)
+2023-06-28 16:59:13.186  INFO 10596 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-28 16:59:13.186  INFO 10596 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-28 16:59:13.196  INFO 10596 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2023-06-28 16:59:13.294  INFO 10596 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-28 16:59:14.895  INFO 10596 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-28 16:59:14.901 DEBUG 10596 --- [http-nio-9999-exec-1] c.p.m.A.listAqiFeedBackPage              : ==>  Preparing: select * from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.supervisor as ss on af.tel_id = ss.tel_id limit ?,?
+2023-06-28 16:59:14.921 DEBUG 10596 --- [http-nio-9999-exec-1] c.p.m.A.listAqiFeedBackPage              : ==> Parameters: 0(Integer), 10(Integer)
+2023-06-28 16:59:15.038 DEBUG 10596 --- [http-nio-9999-exec-1] c.p.m.A.listAqiFeedBackPage              : <==      Total: 10
+2023-06-28 16:59:15.044 DEBUG 10596 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getPageTotal     : ==>  Preparing: select count(*) as count from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id
+2023-06-28 16:59:15.044 DEBUG 10596 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getPageTotal     : ==> Parameters: 
+2023-06-28 16:59:15.138 DEBUG 10596 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getPageTotal     : <==      Total: 1
+2023-06-28 17:08:47.275 DEBUG 10596 --- [http-nio-9999-exec-3] c.p.m.A.listAqiFeedBackPage              : ==>  Preparing: select * from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.supervisor as ss on af.tel_id = ss.tel_id limit ?,?
+2023-06-28 17:08:47.275 DEBUG 10596 --- [http-nio-9999-exec-3] c.p.m.A.listAqiFeedBackPage              : ==> Parameters: 0(Integer), 10(Integer)
+2023-06-28 17:08:47.370 DEBUG 10596 --- [http-nio-9999-exec-3] c.p.m.A.listAqiFeedBackPage              : <==      Total: 10
+2023-06-28 17:08:47.371 DEBUG 10596 --- [http-nio-9999-exec-3] c.p.m.AqiFeedbackMapper.getPageTotal     : ==>  Preparing: select count(*) as count from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id
+2023-06-28 17:08:47.371 DEBUG 10596 --- [http-nio-9999-exec-3] c.p.m.AqiFeedbackMapper.getPageTotal     : ==> Parameters: 
+2023-06-28 17:08:47.440 DEBUG 10596 --- [http-nio-9999-exec-3] c.p.m.AqiFeedbackMapper.getPageTotal     : <==      Total: 1
+2023-06-28 17:53:31.761  INFO 10596 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-28 17:53:31.764  INFO 10596 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-28 17:53:31.769  INFO 10596 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-28 17:53:31.781  INFO 10596 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-28 17:53:41.172  INFO 7096 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-28 17:53:42.010  INFO 7096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-28 17:53:42.012  INFO 7096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-28 17:53:42.049  INFO 7096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 0 Redis repository interfaces.
+2023-06-28 17:53:42.296  INFO 7096 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d3ee5d9e-5141-3bc2-bba2-152a4487c594
+2023-06-28 17:53:42.812  INFO 7096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-28 17:53:42.822  INFO 7096 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-28 17:53:42.822  INFO 7096 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-28 17:53:43.036  INFO 7096 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-28 17:53:43.036  INFO 7096 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1845 ms
+2023-06-28 17:53:44.877  INFO 7096 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-28 17:53:44.910  WARN 7096 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 17:53:44.910  INFO 7096 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 17:53:44.914  WARN 7096 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 17:53:44.914  INFO 7096 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 17:53:45.008  INFO 7096 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-28 17:53:45.469  INFO 7096 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-28 17:53:45.901  INFO 7096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-28 17:53:46.125  INFO 7096 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-28 17:53:46.142  INFO 7096 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-28 17:53:46.177  INFO 7096 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-28 17:53:46.406  INFO 7096 --- [main] com.peels.WebApplication                 : Started WebApplication in 6.481 seconds (JVM running for 7.449)
+2023-06-28 17:55:30.179  INFO 16648 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-28 17:55:31.039  INFO 16648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-28 17:55:31.041  INFO 16648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-28 17:55:31.075  INFO 16648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 Redis repository interfaces.
+2023-06-28 17:55:31.327  INFO 16648 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d3ee5d9e-5141-3bc2-bba2-152a4487c594
+2023-06-28 17:55:31.856  INFO 16648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-28 17:55:31.865  INFO 16648 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-28 17:55:31.865  INFO 16648 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-28 17:55:32.080  INFO 16648 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-28 17:55:32.080  INFO 16648 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1882 ms
+2023-06-28 17:55:34.029  INFO 16648 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-28 17:55:34.065  WARN 16648 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 17:55:34.066  INFO 16648 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 17:55:34.073  WARN 16648 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 17:55:34.073  INFO 16648 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 17:55:34.184  INFO 16648 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-28 17:55:34.647  INFO 16648 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-28 17:55:35.086  INFO 16648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-28 17:55:35.327  INFO 16648 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-28 17:55:35.346  INFO 16648 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-28 17:55:35.383  INFO 16648 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-28 17:55:35.631  INFO 16648 --- [main] com.peels.WebApplication                 : Started WebApplication in 6.597 seconds (JVM running for 7.5)
+2023-06-28 17:56:48.600  INFO 16648 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-28 17:56:48.601  INFO 16648 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-28 17:56:48.610  INFO 16648 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2023-06-28 17:57:11.061  INFO 16648 --- [http-nio-9999-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-28 17:57:12.415  INFO 16648 --- [http-nio-9999-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-28 17:57:12.421 DEBUG 16648 --- [http-nio-9999-exec-7] c.p.m.A.listAqiFeedBackPage              : ==>  Preparing: select * from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.supervisor as ss on af.tel_id = ss.tel_id WHERE af.state = ? limit ?,?
+2023-06-28 17:57:12.442 DEBUG 16648 --- [http-nio-9999-exec-7] c.p.m.A.listAqiFeedBackPage              : ==> Parameters: 2(Integer), 0(Integer), 10(Integer)
+2023-06-28 17:57:12.541 DEBUG 16648 --- [http-nio-9999-exec-7] c.p.m.A.listAqiFeedBackPage              : <==      Total: 3
+2023-06-28 17:57:12.547 DEBUG 16648 --- [http-nio-9999-exec-7] c.p.m.AqiFeedbackMapper.getPageTotal     : ==>  Preparing: select count(*) as count from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id WHERE af.state = ?
+2023-06-28 17:57:12.548 DEBUG 16648 --- [http-nio-9999-exec-7] c.p.m.AqiFeedbackMapper.getPageTotal     : ==> Parameters: 2(Integer)
+2023-06-28 17:57:12.625 DEBUG 16648 --- [http-nio-9999-exec-7] c.p.m.AqiFeedbackMapper.getPageTotal     : <==      Total: 1
+2023-06-28 17:59:05.481  INFO 16648 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-28 17:59:05.483  INFO 16648 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-28 17:59:05.488  INFO 16648 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-28 17:59:05.499  INFO 16648 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-28 17:59:09.659  INFO 4480 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-28 17:59:10.480  INFO 4480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-28 17:59:10.482  INFO 4480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-28 17:59:10.517  INFO 4480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 Redis repository interfaces.
+2023-06-28 17:59:10.764  INFO 4480 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d3ee5d9e-5141-3bc2-bba2-152a4487c594
+2023-06-28 17:59:11.281  INFO 4480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-28 17:59:11.291  INFO 4480 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-28 17:59:11.292  INFO 4480 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-28 17:59:11.506  INFO 4480 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-28 17:59:11.507  INFO 4480 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1829 ms
+2023-06-28 17:59:13.414  INFO 4480 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-28 17:59:13.451  WARN 4480 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 17:59:13.451  INFO 4480 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 17:59:13.455  WARN 4480 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 17:59:13.456  INFO 4480 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 17:59:13.550  INFO 4480 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-28 17:59:14.006  INFO 4480 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-28 17:59:14.455  INFO 4480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-28 17:59:14.675  INFO 4480 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-28 17:59:14.695  INFO 4480 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-28 17:59:14.735  INFO 4480 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-28 17:59:14.977  INFO 4480 --- [main] com.peels.WebApplication                 : Started WebApplication in 6.454 seconds (JVM running for 7.335)
+2023-06-28 17:59:25.816  INFO 800 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-28 17:59:26.677  INFO 800 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-28 17:59:26.679  INFO 800 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-28 17:59:26.716  INFO 800 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23ms. Found 0 Redis repository interfaces.
+2023-06-28 17:59:26.980  INFO 800 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d3ee5d9e-5141-3bc2-bba2-152a4487c594
+2023-06-28 17:59:27.553  INFO 800 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-28 17:59:27.561  INFO 800 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-28 17:59:27.562  INFO 800 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-28 17:59:27.785  INFO 800 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-28 17:59:27.785  INFO 800 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1950 ms
+2023-06-28 17:59:29.703  INFO 800 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-28 17:59:29.738  WARN 800 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 17:59:29.738  INFO 800 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 17:59:29.741  WARN 800 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 17:59:29.742  INFO 800 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 17:59:29.842  INFO 800 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-28 17:59:30.297  INFO 800 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-28 17:59:30.736  INFO 800 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-28 17:59:30.963  INFO 800 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-28 17:59:30.979  INFO 800 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-28 17:59:31.014  INFO 800 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-28 17:59:31.239  INFO 800 --- [main] com.peels.WebApplication                 : Started WebApplication in 6.624 seconds (JVM running for 7.555)
+2023-06-28 17:59:32.012  INFO 800 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-28 17:59:32.012  INFO 800 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-28 17:59:32.022  INFO 800 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2023-06-28 17:59:32.131  INFO 800 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-28 17:59:33.508  INFO 800 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-28 17:59:33.514 DEBUG 800 --- [http-nio-9999-exec-1] c.p.m.A.listAqiFeedBackPage              : ==>  Preparing: select * from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.supervisor as ss on af.tel_id = ss.tel_id left join environment.statistics as ss on ss.aqi_id = aqi.aqi_id WHERE af.state = ? limit ?,?
+2023-06-28 17:59:33.533 DEBUG 800 --- [http-nio-9999-exec-1] c.p.m.A.listAqiFeedBackPage              : ==> Parameters: 2(Integer), 0(Integer), 10(Integer)
+2023-06-28 17:59:50.864  INFO 800 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-28 17:59:50.866  INFO 800 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-28 17:59:50.871  INFO 800 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-28 17:59:50.881  INFO 800 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-28 17:59:55.023  INFO 4848 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-28 17:59:55.849  INFO 4848 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-28 17:59:55.851  INFO 4848 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-28 17:59:55.885  INFO 4848 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 Redis repository interfaces.
+2023-06-28 17:59:56.132  INFO 4848 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d3ee5d9e-5141-3bc2-bba2-152a4487c594
+2023-06-28 17:59:56.631  INFO 4848 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-28 17:59:56.639  INFO 4848 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-28 17:59:56.640  INFO 4848 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-28 17:59:56.841  INFO 4848 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-28 17:59:56.841  INFO 4848 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1799 ms
+2023-06-28 17:59:58.667  INFO 4848 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-28 17:59:58.700  WARN 4848 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 17:59:58.700  INFO 4848 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 17:59:58.704  WARN 4848 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 17:59:58.704  INFO 4848 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 17:59:58.796  INFO 4848 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-28 17:59:59.246  INFO 4848 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-28 17:59:59.668  INFO 4848 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-28 17:59:59.885  INFO 4848 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-28 17:59:59.903  INFO 4848 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-28 17:59:59.941  INFO 4848 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-28 18:00:00.163  INFO 4848 --- [main] com.peels.WebApplication                 : Started WebApplication in 6.283 seconds (JVM running for 7.198)
+2023-06-28 18:00:05.258  INFO 4848 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-28 18:00:05.259  INFO 4848 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-28 18:00:05.268  INFO 4848 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2023-06-28 18:00:05.377  INFO 4848 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-28 18:00:06.983  INFO 4848 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-28 18:00:06.990 DEBUG 4848 --- [http-nio-9999-exec-1] c.p.m.A.listAqiFeedBackPage              : ==>  Preparing: select * from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.supervisor as ss on af.tel_id = ss.tel_id left join environment.statistics as sss on sss.aqi_id = aqi.aqi_id WHERE af.state = ? limit ?,?
+2023-06-28 18:00:07.009 DEBUG 4848 --- [http-nio-9999-exec-1] c.p.m.A.listAqiFeedBackPage              : ==> Parameters: 2(Integer), 0(Integer), 10(Integer)
+2023-06-28 18:00:07.129 DEBUG 4848 --- [http-nio-9999-exec-1] c.p.m.A.listAqiFeedBackPage              : <==      Total: 10
+2023-06-28 18:00:07.135 DEBUG 4848 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getPageTotal     : ==>  Preparing: select count(*) as count from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.statistics as ss on ss.aqi_id = aqi.aqi_id WHERE af.state = ?
+2023-06-28 18:00:07.135 DEBUG 4848 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getPageTotal     : ==> Parameters: 2(Integer)
+2023-06-28 18:00:07.217 DEBUG 4848 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getPageTotal     : <==      Total: 1
+2023-06-28 18:01:01.957  INFO 4848 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-28 18:01:01.959  INFO 4848 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-28 18:01:01.964  INFO 4848 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-28 18:01:01.974  INFO 4848 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

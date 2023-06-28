@@ -11,6 +11,7 @@
                 left join environment.grid_city gc on gc.city_id = af.city_id
                 left join environment.grid_province as gp on af.province_id = gp.province_id
                 left join environment.supervisor as ss on af.tel_id = ss.tel_id
+                left join environment.statistics as sss on sss.aqi_id = aqi.aqi_id
         <where>
             <if test="provinceId != null" >
                 af.province_id = #{provinceId}
@@ -34,6 +35,7 @@
         left join environment.grid_member gm on gm.gm_id = af.gm_id
         left join environment.grid_city gc on gc.city_id = af.city_id
         left join environment.grid_province as gp on af.province_id = gp.province_id
+        left join environment.statistics as ss on ss.aqi_id = aqi.aqi_id
         <where>
             <if test="provinceId != null" >
                 af.province_id = #{provinceId}
@@ -43,6 +45,9 @@
             </if>
             <if test="estimatedGrade!=null">
                 and af.estimated_grade = #{estimatedGrade}
+            </if>
+            <if test="state!=null">
+                and af.state = #{state}
             </if>
         </where>
     </select>

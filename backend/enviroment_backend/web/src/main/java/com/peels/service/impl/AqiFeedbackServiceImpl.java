@@ -103,7 +103,11 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
     public PageResponseVo<AqiDetailVo> listAqiFeedBackPage(AfPageRequestDto afPageRequestDto) {
 
         afPageRequestDto.setPageNum((afPageRequestDto.getPageNum() <= 1 ? 0 : afPageRequestDto.getPageNum() - 1) * afPageRequestDto.getMaxPageNum());
+
+
         List<AqiDetailVo> aqiDetailVos = aqiFeedbackMapper.listAqiFeedBackPage(afPageRequestDto);
+
+
         Integer count = aqiFeedbackMapper.getPageTotal(afPageRequestDto);
 
         PageResponseVo<AqiDetailVo> aqiDetailVoPageResponseVo = new PageResponseVo<>();

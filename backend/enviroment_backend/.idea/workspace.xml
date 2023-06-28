@@ -5,49 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbb89fea-e17d-4f0c-89fe-aba102712f81" name="Changes" comment="基本完成">
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/FeedBackIdDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/vo/AqiDetailVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/vo/StatisticDetailVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f3031dc2-8662-499e-8765-15683b1f871f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f3031dc2-8662-499e-8765-15683b1f871f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/target/framework-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/framework/target/framework-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/spring.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridCity.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridCity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/GridMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/Statistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/Supervisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/entity/Supervisor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/GridMember.class" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/classes/com/peels/entity/GridMember.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiFeedbackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiFeedbackController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/StatisticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/StatisticsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/AqiFeedbackMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/AqiFeedbackMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/StatisticsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/mapper/StatisticsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiFeedbackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiFeedbackService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IStatisticsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IStatisticsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/StatisticsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/StatisticsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/SupervisorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/SupervisorServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/resources/mapper/AqiFeedbackMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/AqiFeedbackMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/mapper/StatisticsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/mapper/StatisticsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiFeedbackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiFeedbackController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/StatisticsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/controller/StatisticsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/AqiFeedbackMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/AqiFeedbackMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/StatisticsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/StatisticsMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiFeedbackService.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiFeedbackService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IStatisticsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/IStatisticsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AdminsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AdminsServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiFeedbackServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiFeedbackServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/StatisticsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/StatisticsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/SupervisorServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/SupervisorServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/AqiFeedbackMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/mapper/AqiFeedbackMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/StatisticsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/mapper/StatisticsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/web-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/web-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +147,7 @@
       <workItem from="1687764439459" duration="5341000" />
       <workItem from="1687828367351" duration="10766000" />
       <workItem from="1687910177914" duration="20000000" />
-      <workItem from="1687938704126" duration="4352000" />
+      <workItem from="1687938704126" duration="5661000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1687746307591</created>
@@ -277,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687918063781</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="基本完成">
+      <created>1687943450281</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687943450281</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
