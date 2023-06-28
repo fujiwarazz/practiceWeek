@@ -29,7 +29,6 @@ public class AdminsServiceImpl extends ServiceImpl<AdminsMapper, Admins> impleme
     private AdminsMapper adminsMapper;
 
     @Override
-    @Prevent
     public AdminsVo getAdminByCode(Admins admins) {
 
         System.out.println(JSON.toJSONString(admins));

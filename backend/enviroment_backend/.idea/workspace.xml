@@ -4,27 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbb89fea-e17d-4f0c-89fe-aba102712f81" name="Changes" comment="完成所有接口 部分未测试">
+    <list default="true" id="bbb89fea-e17d-4f0c-89fe-aba102712f81" name="Changes" comment="基本完成">
+      <change afterPath="$PROJECT_DIR$/log/spring.log.2023-06-27.0.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/framework-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/framework/target/framework-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/spring.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AdminsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AdminsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/model.iml" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiFeedbackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiFeedbackController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAdminsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAdminsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiFeedbackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiFeedbackService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/StatisticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/StatisticsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AdminsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AdminsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiFeedbackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiFeedbackController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAdminsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAdminsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiFeedbackService.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiFeedbackService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiService.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/StatisticsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/controller/StatisticsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AdminsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AdminsServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiFeedbackServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiFeedbackServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/web-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/web-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +161,8 @@
       <workItem from="1687745943792" duration="8249000" />
       <workItem from="1687762976981" duration="1129000" />
       <workItem from="1687764439459" duration="5341000" />
-      <workItem from="1687828367351" duration="7379000" />
+      <workItem from="1687828367351" duration="10766000" />
+      <workItem from="1687910177914" duration="5187000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1687746307591</created>
@@ -231,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687836191617</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="基本完成">
+      <created>1687837433733</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1687837433733</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +265,8 @@
     <MESSAGE value="AQI" />
     <MESSAGE value="完成FeedBack 暂未测试" />
     <MESSAGE value="完成所有接口 部分未测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成所有接口 部分未测试" />
+    <MESSAGE value="基本完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="基本完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

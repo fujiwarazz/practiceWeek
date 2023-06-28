@@ -68,7 +68,6 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
 
         List<AqiFeedback> list = this.lambdaQuery()
                 .eq(AqiFeedback::getGmId, aqiFeedback.getGmId())
-                .eq(AqiFeedback::getState, aqiFeedback.getState())
                 .orderByDesc(AqiFeedback::getAfDate, AqiFeedback::getAfTime).list();
 
         return list;

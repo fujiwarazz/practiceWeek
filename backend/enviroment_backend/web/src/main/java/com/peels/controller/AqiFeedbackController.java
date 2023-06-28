@@ -50,7 +50,7 @@ public class AqiFeedbackController {
     }
 
     @PostMapping("/listAqiFeedbackByGmId")
-    public List<AqiFeedback>  listAqiFeedbackByGmId(AqiFeedback aqiFeedback) {
+    public List<AqiFeedback>  listAqiFeedbackByGmId(@RequestBody AqiFeedback aqiFeedback) {
         return aqiFeedbackService.listAqiFeedBackByGmId(aqiFeedback);
     }
 

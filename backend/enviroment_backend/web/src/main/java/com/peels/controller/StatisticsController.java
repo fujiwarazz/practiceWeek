@@ -26,8 +26,6 @@ import java.util.List;
 @RequestMapping("/statistics")
 public class StatisticsController {
 
-
-
     @Resource
     IStatisticsService statisticsService;
 
