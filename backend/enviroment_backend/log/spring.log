@@ -589,3 +589,28 @@ java.lang.NumberFormatException: For input string: ""
 2023-06-28 08:35:24.862 DEBUG 17068 --- [http-nio-9999-exec-5] c.p.mapper.AqiFeedbackMapper.selectById  : ==>  Preparing: SELECT af_id,tel_id,province_id,city_id,address,information,estimated_grade,af_date,af_time,gm_id,assign_date,assign_time,state,remarks FROM aqi_feedback WHERE af_id=?
 2023-06-28 08:35:24.862 DEBUG 17068 --- [http-nio-9999-exec-5] c.p.mapper.AqiFeedbackMapper.selectById  : ==> Parameters: 2(Integer)
 2023-06-28 08:35:24.941 DEBUG 17068 --- [http-nio-9999-exec-5] c.p.mapper.AqiFeedbackMapper.selectById  : <==      Total: 1
+2023-06-28 09:07:06.173  INFO 14652 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-28 09:07:07.017  INFO 14652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-28 09:07:07.019  INFO 14652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-28 09:07:07.052  INFO 14652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 0 Redis repository interfaces.
+2023-06-28 09:07:07.312  INFO 14652 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d3ee5d9e-5141-3bc2-bba2-152a4487c594
+2023-06-28 09:07:07.812  INFO 14652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-28 09:07:07.820  INFO 14652 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-28 09:07:07.820  INFO 14652 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-28 09:07:08.023  INFO 14652 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-28 09:07:08.024  INFO 14652 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1831 ms
+2023-06-28 09:07:09.843  INFO 14652 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-28 09:07:09.876  WARN 14652 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 09:07:09.877  INFO 14652 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 09:07:09.880  WARN 14652 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-28 09:07:09.880  INFO 14652 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-28 09:07:09.974  INFO 14652 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-28 09:07:10.418  INFO 14652 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-28 09:07:10.840  INFO 14652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-28 09:07:11.057  INFO 14652 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-28 09:07:11.074  INFO 14652 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-28 09:07:11.108  INFO 14652 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-28 09:07:11.321  INFO 14652 --- [main] com.peels.WebApplication                 : Started WebApplication in 6.32 seconds (JVM running for 7.232)
+2023-06-28 09:07:23.341  INFO 14652 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-28 09:07:23.341  INFO 14652 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-28 09:07:23.351  INFO 14652 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
