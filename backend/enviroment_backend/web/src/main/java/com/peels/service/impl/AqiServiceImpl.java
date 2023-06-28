@@ -1,8 +1,6 @@
 package com.peels.service.impl;
 
 import cn.hutool.core.util.StrUtil;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.peels.entity.Aqi;
 import com.peels.entity.AqiFeedback;
 import com.peels.mapper.AqiFeedbackMapper;
@@ -16,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -35,13 +34,14 @@ public class AqiServiceImpl extends ServiceImpl<AqiMapper, Aqi> implements IAqiS
     @Resource
     private AqiFeedbackMapper aqiFeedbackMapper;
     @Override
-    public ResponseResult<?> getAqiList() {
+
+    public List<Aqi> getAqiList() {
 
         List<Aqi> list = this.list();
         if(list.size()==0){
-            return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST);
+            return new ArrayList<>();
         }
-        return ResponseResult.okResult(list);
+        return list;
 
     }
 

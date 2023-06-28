@@ -1,11 +1,11 @@
-package com.peels.dto;
+package com.peels.vo;
 
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class PageResponseDto<T> {
+public class PageResponseVo<T> {
     private Integer totalRow;       //总行数
     private Integer totalPageNum;   //总页数
     private Integer preNum;         //上一页

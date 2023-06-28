@@ -3,7 +3,7 @@ package com.peels.dto;
 import lombok.Data;
 
 @Data
-public class ProvinceItemTotalStatisDto {
+public class ProvinceItemTotalStatisticDto {
     private Integer provinceId;
     private String provinceAbbr;
     private String provinceName;

@@ -21,7 +21,7 @@ import lombok.Setter;
 @Setter
 @TableName("grid_member")
 @ApiModel(value = "GridMember对象", description = "")
-public class GridMember implements Serializable {
+public class  GridMember implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

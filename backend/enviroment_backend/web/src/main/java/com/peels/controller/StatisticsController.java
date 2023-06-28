@@ -3,14 +3,12 @@ package com.peels.controller;
 
 import com.peels.dto.*;
 import com.peels.entity.Statistics;
-import com.peels.entity.Supervisor;
 import com.peels.service.IStatisticsService;
-import com.peels.utils.ResponseResult;
+import com.peels.vo.PageResponseVo;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -28,8 +26,6 @@ import java.util.List;
 @RequestMapping("/statistics")
 public class StatisticsController {
 
-
-
     @Resource
     IStatisticsService statisticsService;
 
@@ -39,7 +35,7 @@ public class StatisticsController {
     }
 
     @PostMapping("/listStatisticsPage")
-    public PageResponseDto<Statistics> listStatisticsPage(@RequestBody StatisticsPageRequestDto statisticsPageRequestDto) {
+    public PageResponseVo<Statistics> listStatisticsPage(@RequestBody StatisticsPageRequestDto statisticsPageRequestDto) {
         return statisticsService.listStatisticsPage(statisticsPageRequestDto);
     }
 
@@ -49,17 +45,17 @@ public class StatisticsController {
     }
 
     @PostMapping("/listProvinceItemTotalStatis")
-    public List<ProvinceItemTotalStatisDto> listProvinceItemTotalStatis() {
+    public List<ProvinceItemTotalStatisticDto> listProvinceItemTotalStatis() {
         return statisticsService.listProvinceItemTotalStatis();
     }
 
     @PostMapping("/listAqiDistributeTotalStatis")
-    public List<AqiDistributeTotalStatisDto> listAqiDistributeTotalStatis() {
+    public List<AqiDistributeTotalStatisticDto> listAqiDistributeTotalStatis() {
         return statisticsService.listAqiDistributeTotalStatis();
     }
 
     @PostMapping("/listAqiTrendTotalStatis")
-    public List<AqiTrendTotalStatisDto> listAqiTrendTotalStatis() {
+    public List<AqiTrendTotalStatisticDto> listAqiTrendTotalStatis() {
         return statisticsService.listAqiTrendTotalStatis();
     }
 

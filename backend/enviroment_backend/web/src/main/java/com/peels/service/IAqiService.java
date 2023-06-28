@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.peels.entity.AqiFeedback;
 import com.peels.utils.ResponseResult;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -15,7 +17,7 @@ import com.peels.utils.ResponseResult;
  */
 public interface IAqiService extends IService<Aqi> {
 
-    ResponseResult<?> getAqiList();
+    List<Aqi> getAqiList();
 
     ResponseResult<?> saveFeedBack(AqiFeedback aqiFeedback);
 }

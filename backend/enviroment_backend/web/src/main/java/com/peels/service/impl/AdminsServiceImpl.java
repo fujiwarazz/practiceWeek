@@ -9,10 +9,8 @@ import com.peels.mapper.AdminsMapper;
 import com.peels.service.IAdminsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.peels.utils.AppHttpCodeEnum;
-import com.peels.utils.ResponseResult;
 import com.peels.vo.AdminsVo;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 
@@ -31,8 +29,7 @@ public class AdminsServiceImpl extends ServiceImpl<AdminsMapper, Admins> impleme
     private AdminsMapper adminsMapper;
 
     @Override
-    @Prevent
-    public ResponseResult<?> getAdminByCode(Admins admins) {
+    public AdminsVo getAdminByCode(Admins admins) {
 
         System.out.println(JSON.toJSONString(admins));
 
@@ -44,11 +41,13 @@ public class AdminsServiceImpl extends ServiceImpl<AdminsMapper, Admins> impleme
         Admins one = this.lambdaQuery()
                 .eq(Admins::getAdminCode, admins.getAdminCode())
                 .eq(Admins::getPassword, admins.getPassword()).one();
+
         AdminsVo adminsVo = BeanUtil.copyProperties(one, AdminsVo.class);
+
         if(one==null){
-            return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST);
+            return null;
         }else{
-            return ResponseResult.okResult(adminsVo);
+            return adminsVo;
         }
     }
 }
