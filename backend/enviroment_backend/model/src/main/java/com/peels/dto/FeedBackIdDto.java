@@ -8,6 +8,6 @@ import lombok.Data;
  */
 @Data
 public class FeedBackIdDto {
-      //"telId": "string"
+
     private String telId;
 }

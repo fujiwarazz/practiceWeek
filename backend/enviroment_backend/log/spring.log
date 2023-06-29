@@ -2475,3 +2475,39 @@ java.lang.NullPointerException: null
 2023-06-29 23:12:15.621  INFO 18952 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2023-06-29 23:12:15.626  INFO 18952 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-06-29 23:12:15.638  INFO 18952 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-29 23:12:26.451  INFO 20784 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-29 23:12:27.353  INFO 20784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-29 23:12:27.355  INFO 20784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-29 23:12:27.393  INFO 20784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 0 Redis repository interfaces.
+2023-06-29 23:12:27.674  INFO 20784 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=75c1d7a9-810e-34bb-88b2-3b917cee6959
+2023-06-29 23:12:28.245  INFO 20784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-29 23:12:28.255  INFO 20784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-29 23:12:28.255  INFO 20784 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-29 23:12:28.413  INFO 20784 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-29 23:12:28.413  INFO 20784 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1942 ms
+2023-06-29 23:12:30.418  INFO 20784 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-29 23:12:30.458  WARN 20784 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-29 23:12:30.458  INFO 20784 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-29 23:12:30.462  WARN 20784 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-29 23:12:30.462  INFO 20784 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-29 23:12:30.577  INFO 20784 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-29 23:12:31.051  INFO 20784 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-29 23:12:31.482  INFO 20784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-29 23:12:31.711  INFO 20784 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-29 23:12:31.727  INFO 20784 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-29 23:12:31.765  INFO 20784 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-29 23:12:32.033  INFO 20784 --- [main] com.peels.WebApplication                 : Started WebApplication in 7.045 seconds (JVM running for 8.37)
+2023-06-29 23:15:56.573  INFO 20784 --- [http-nio-9999-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-29 23:15:56.573  INFO 20784 --- [http-nio-9999-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-29 23:15:56.581  INFO 20784 --- [http-nio-9999-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2023-06-29 23:15:56.648  INFO 20784 --- [http-nio-9999-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-29 23:15:57.565  INFO 20784 --- [http-nio-9999-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-29 23:15:57.658 DEBUG 20784 --- [http-nio-9999-exec-5] c.peels.mapper.AqiFeedbackMapper.update  : ==>  Preparing: UPDATE aqi_feedback SET gm_id=?,assign_date=?,state=?,assign_time=? WHERE (af_id = ?)
+2023-06-29 23:15:57.685 DEBUG 20784 --- [http-nio-9999-exec-5] c.peels.mapper.AqiFeedbackMapper.update  : ==> Parameters: 1(Integer), 2023-06-29(String), 1(Integer), 11:15:57(String), 1(Integer)
+2023-06-29 23:15:57.738 DEBUG 20784 --- [http-nio-9999-exec-5] c.peels.mapper.AqiFeedbackMapper.update  : <==    Updates: 1
+2023-06-29 23:15:57.741 DEBUG 20784 --- [http-nio-9999-exec-5] c.p.mapper.GridMemberMapper.selectById   : ==>  Preparing: SELECT gm_id,gm_name,gm_code,password,province_id,city_id,tel,state FROM grid_member WHERE gm_id=?
+2023-06-29 23:15:57.741 DEBUG 20784 --- [http-nio-9999-exec-5] c.p.mapper.GridMemberMapper.selectById   : ==> Parameters: 1(Integer)
+2023-06-29 23:15:57.785 DEBUG 20784 --- [http-nio-9999-exec-5] c.p.mapper.GridMemberMapper.selectById   : <==      Total: 1
+2023-06-29 23:15:57.792 DEBUG 20784 --- [http-nio-9999-exec-5] c.peels.mapper.GridMemberMapper.update   : ==>  Preparing: UPDATE grid_member SET gm_name=?, gm_code=?, password=?, province_id=?, city_id=?, tel=?, state=?, state=? WHERE (gm_id = ?)
+2023-06-29 23:15:57.792 DEBUG 20784 --- [http-nio-9999-exec-5] c.peels.mapper.GridMemberMapper.update   : ==> Parameters: 曹操(String), caocao(String), 123(String), 1(Integer), 1(Integer), 12687643458(String), 0(Integer), 1(Integer), 1(Integer)
+2023-06-29 23:15:57.845 DEBUG 20784 --- [http-nio-9999-exec-5] c.peels.mapper.GridMemberMapper.update   : <==    Updates: 1
