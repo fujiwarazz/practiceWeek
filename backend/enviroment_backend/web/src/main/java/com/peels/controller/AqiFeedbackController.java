@@ -1,17 +1,13 @@
 package com.peels.controller;
 
 
-import com.peels.dto.AfPageRequestDto;
-import com.peels.entity.Aqi;
+import com.peels.dto.*;
 import com.peels.entity.AqiFeedback;
 import com.peels.service.IAqiFeedbackService;
 import com.peels.utils.ResponseResult;
 import com.peels.vo.AqiDetailVo;
 import com.peels.vo.PageResponseVo;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.web.bind.annotation.*;
-
-import org.springframework.stereotype.Controller;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -32,32 +28,32 @@ public class AqiFeedbackController {
     private IAqiFeedbackService aqiFeedbackService;
 
     @PostMapping("/saveAqiFeedback")
-    public Integer saveFeedBack(@RequestBody AqiFeedback aqiFeedback){
+    public ResponseResult<?> saveFeedBack(@RequestBody AqiFeedBackDto aqiFeedback){
         return aqiFeedbackService.saveFeedBack(aqiFeedback);
     }
 
     @PostMapping("/listAqiFeedbackByTelId")
-    public List<AqiFeedback> getAqiFeedbackByTelId(@RequestBody AqiFeedback aqiFeedback){
-        return aqiFeedbackService.getAqiList(aqiFeedback);
+    public List<AqiFeedback> getAqiFeedbackByTelId(@RequestBody TelIdDto  telId){
+        return aqiFeedbackService.getAqiList(telId);
     }
 
     @PostMapping("/getAqiFeedbackById")
-    public AqiFeedback getAqiFeedbackById(@RequestBody AqiFeedback aqiFeedback){
-        return aqiFeedbackService.getAqiFeedbackById(aqiFeedback);
+    public AqiFeedback getAqiFeedbackById(@RequestBody AfIdDto afId){
+        return aqiFeedbackService.getAqiFeedbackById(afId);
     }
     @PostMapping("/updateAqiFeedbackAssign")
-    public Integer updateAqiFeedbackAssign(@RequestBody AqiFeedback aqiFeedback){
-        return aqiFeedbackService.updateAqiFeedBackAssign(aqiFeedback);
+    public ResponseResult<?> updateAqiFeedbackAssign(@RequestBody UpdateFeedBackAssignDto updateFeedBackAssignDto){
+        return aqiFeedbackService.updateAqiFeedBackAssign(updateFeedBackAssignDto);
     }
 
     @PostMapping("/listAqiFeedbackByGmId")
-    public List<AqiFeedback>  listAqiFeedbackByGmId(@RequestBody AqiFeedback aqiFeedback) {
-        return aqiFeedbackService.listAqiFeedBackByGmId(aqiFeedback);
+    public List<AqiFeedback>  listAqiFeedbackByGmId(@RequestBody GmIdDto gmId) {
+        return aqiFeedbackService.listAqiFeedBackByGmId(gmId);
     }
 
     @PostMapping("/updateAqiFeedbackState")
-    public Integer updateAqiFeedbackState(@RequestBody AqiFeedback aqiFeedback){
-        return aqiFeedbackService.updateAqiFeedbackState(aqiFeedback);
+    public ResponseResult<?> updateAqiFeedbackState(@RequestBody UpdateFeedBackStateDto updateFeedBackStateDto){
+        return aqiFeedbackService.updateAqiFeedbackState(updateFeedBackStateDto);
     }
 
     @PostMapping("/listAqiFeedbackPage")

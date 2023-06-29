@@ -1,7 +1,5 @@
 package com.peels.dto;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -10,7 +8,7 @@ import lombok.Data;
  * @create 26/06/2023 16:26
  */
 @Data
-public class AqiFeedBack {
+public class AqiFeedBackDto {
 
     @ApiModelProperty("所属公众监督员编号（即手机号码）")
     private String telId;
@@ -30,18 +28,16 @@ public class AqiFeedBack {
     @ApiModelProperty("反馈者对空气质量指数级别的预估等级")
     private Integer estimatedGrade;
 
-    @ApiModelProperty("指派网格员编号")
-    private Integer gmId;
+//    @ApiModelProperty("指派网格员编号")
+//    private Integer gmId;
+//
+//    @ApiModelProperty("指派日期")
+//    private String assignDate;
+//
+//    @ApiModelProperty("指派时间")
+//    private String assignTime;
 
-    @ApiModelProperty("指派日期")
-    private String assignDate;
+//    @ApiModelProperty("信息状态: 0:未指派; 1:已指派; 2:已确认")
+//    private Integer state;
 
-    @ApiModelProperty("指派时间")
-    private String assignTime;
-
-    @ApiModelProperty("信息状态: 0:未指派; 1:已指派; 2:已确认")
-    private Integer state;
-
-    @ApiModelProperty("备注")
-    private String remarks;
 }

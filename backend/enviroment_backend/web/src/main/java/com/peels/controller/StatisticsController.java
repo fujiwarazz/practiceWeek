@@ -31,8 +31,8 @@ public class StatisticsController {
     IStatisticsService statisticsService;
 
     @PostMapping("/saveStatistics")
-    public int saveStatistics(@RequestBody Statistics statistics) {
-        return statisticsService.saveStatistics(statistics);
+    public int saveStatistics(@RequestBody SaveStatisticDto saveStatisticDto) {
+        return statisticsService.saveStatistics(saveStatisticDto);
     }
 
     @PostMapping("/listStatisticsPage")

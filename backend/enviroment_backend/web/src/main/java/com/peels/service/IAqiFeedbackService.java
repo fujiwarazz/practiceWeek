@@ -1,8 +1,9 @@
 package com.peels.service;
 
-import com.peels.dto.AfPageRequestDto;
+import com.peels.dto.*;
 import com.peels.entity.AqiFeedback;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.peels.utils.ResponseResult;
 import com.peels.vo.AqiDetailVo;
 import com.peels.vo.PageResponseVo;
 
@@ -18,17 +19,17 @@ import java.util.List;
  */
 public interface IAqiFeedbackService extends IService<AqiFeedback> {
 
-    Integer saveFeedBack(AqiFeedback aqiFeedback);
+    ResponseResult<?> saveFeedBack(AqiFeedBackDto aqiFeedback);
 
-    List<AqiFeedback> getAqiList(AqiFeedback aqiFeedback);
+    List<AqiFeedback> getAqiList(TelIdDto telId);
 
-    AqiFeedback getAqiFeedbackById(AqiFeedback aqiFeedback);
+    AqiFeedback getAqiFeedbackById(AfIdDto afId);
 
-    Integer updateAqiFeedBackAssign(AqiFeedback aqiFeedback);
+    ResponseResult<?> updateAqiFeedBackAssign(UpdateFeedBackAssignDto updateFeedBackAssignDto);
 
-    List<AqiFeedback> listAqiFeedBackByGmId(AqiFeedback aqiFeedback);
+    List<AqiFeedback> listAqiFeedBackByGmId(GmIdDto gmId);
 
-    Integer updateAqiFeedbackState(AqiFeedback aqiFeedback);
+    ResponseResult<?> updateAqiFeedbackState(UpdateFeedBackStateDto updateFeedBackStateDto);
 
     PageResponseVo<AqiDetailVo> listAqiFeedBackPage(AfPageRequestDto afPageRequestDto);
 }

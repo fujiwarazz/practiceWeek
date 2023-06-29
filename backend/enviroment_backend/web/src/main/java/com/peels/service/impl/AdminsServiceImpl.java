@@ -2,8 +2,7 @@ package com.peels.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
-import com.alibaba.fastjson.JSON;
-import com.peels.annotation.Prevent;
+import com.peels.dto.AdminLoginDto;
 import com.peels.entity.Admins;
 import com.peels.mapper.AdminsMapper;
 import com.peels.service.IAdminsService;
@@ -29,7 +28,7 @@ public class AdminsServiceImpl extends ServiceImpl<AdminsMapper, Admins> impleme
     private AdminsMapper adminsMapper;
 
     @Override
-    public AdminsVo getAdminByCode(Admins admins) {
+    public AdminsVo getAdminByCode(AdminLoginDto admins) {
         if(StrUtil.isBlank(admins.getAdminCode())|| StrUtil.isBlank(admins.getPassword())){
             throw new RuntimeException(AppHttpCodeEnum.LOGIN_PARAMS_ERROR.getErrorMessage());
         }

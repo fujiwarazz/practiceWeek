@@ -3,27 +3,22 @@ package com.peels.service.impl;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.lang.RegexPool;
 import cn.hutool.core.util.StrUtil;
-import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.peels.dto.AfPageRequestDto;
-import com.peels.dto.PageRequestDto;
+import com.peels.dto.*;
 import com.peels.entity.*;
 import com.peels.mapper.*;
 import com.peels.service.IAqiFeedbackService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.peels.utils.AppHttpCodeEnum;
+import com.peels.utils.ResponseResult;
 import com.peels.vo.AqiDetailVo;
 import com.peels.vo.PageResponseVo;
-import net.bytebuddy.implementation.bind.annotation.Super;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -56,46 +51,62 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
     @Resource
     AqiMapper aqiMapper;
 
-    //TODO:修改
+
+
     @Override
     @Transactional(rollbackFor = SQLException.class)
-    public Integer updateAqiFeedBackAssign(AqiFeedback aqiFeedback) {
-        if (StrUtil.isBlank(aqiFeedback.getAssignDate())
-                || aqiFeedback.getGmId() == null
-                || StrUtil.isBlank(aqiFeedback.getAssignTime())
-                || aqiFeedback.getState() == null
-                || aqiFeedback.getAfId() == null) {
+    public ResponseResult<?> updateAqiFeedBackAssign(UpdateFeedBackAssignDto updateFeedBackAssignDto) {
+
+        if (updateFeedBackAssignDto.getGmId() == null
+                || updateFeedBackAssignDto.getState() == null
+                || updateFeedBackAssignDto.getAfId() == null) {
             throw new RuntimeException(AppHttpCodeEnum.PARAM_INVALID.getErrorMessage());
         }
 
-        boolean update = this.lambdaUpdate().eq(AqiFeedback::getAfId, aqiFeedback.getAfId())
-                .set(AqiFeedback::getGmId, aqiFeedback.getGmId())
-                .set(AqiFeedback::getAssignDate, aqiFeedback.getAssignDate())
-                .set(AqiFeedback::getState, aqiFeedback.getState())
-                .set(AqiFeedback::getAssignTime, aqiFeedback.getAssignTime()).update(aqiFeedback);
+        try {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            String format = simpleDateFormat.format(new Date(System.currentTimeMillis()));
+            String[] date = format.split(" ");
 
-        return update ? 1 : 0;
+
+            boolean update = this.lambdaUpdate()
+                    .eq(AqiFeedback::getAfId, updateFeedBackAssignDto.getAfId())
+                    .set(AqiFeedback::getGmId, updateFeedBackAssignDto.getGmId())
+                    .set(AqiFeedback::getAssignDate,date[0])
+                    .set(AqiFeedback::getState, updateFeedBackAssignDto.getState())
+                    .set(AqiFeedback::getAssignTime, date[1]).update();
+
+            GridMember gridMember = gridMemberMapper.selectById(updateFeedBackAssignDto.getGmId());
+
+            gridMemberMapper.update(gridMember,new LambdaUpdateWrapper<GridMember>()
+                    .eq(GridMember::getGmId,gridMember.getGmId())
+                    .set(GridMember::getState,updateFeedBackAssignDto.getState()));
+
+
+            return update ? ResponseResult.okResult("更新成功") : ResponseResult.errorResult(400, "更新失败");
+        } catch (Exception e) {
+            return ResponseResult.errorResult(AppHttpCodeEnum.SERVER_ERROR);
+        }
     }
 
     @Override
     @SuppressWarnings("all")
-    public List<AqiFeedback> listAqiFeedBackByGmId(AqiFeedback aqiFeedback) {
+    public List<AqiFeedback> listAqiFeedBackByGmId(GmIdDto gmId) {
 
-        List<AqiFeedback> list = this.lambdaQuery()
-                .eq(AqiFeedback::getGmId, aqiFeedback.getGmId())
+        List<AqiFeedback> list = this.<AqiFeedback>lambdaQuery()
+                .eq(AqiFeedback::getGmId, gmId.getGmId())
                 .orderByDesc(AqiFeedback::getAfDate, AqiFeedback::getAfTime).list();
-
         return list;
     }
 
     @Override
-    public Integer updateAqiFeedbackState(AqiFeedback aqiFeedback) {
-        if (aqiFeedback.getState() == null) {
+    public ResponseResult<?> updateAqiFeedbackState(UpdateFeedBackStateDto dto) {
+        if (dto.getState() == null) {
             throw new RuntimeException(AppHttpCodeEnum.PARAM_INVALID.getErrorMessage());
         }
-        boolean update = this.lambdaUpdate().eq(AqiFeedback::getAfId, aqiFeedback.getAfId())
-                .set(AqiFeedback::getState, aqiFeedback.getState()).update();
-        return update ? 1 : 0;
+        boolean update = this.lambdaUpdate().eq(AqiFeedback::getAfId, dto.getAfId())
+                .set(AqiFeedback::getState, dto.getState()).update();
+        return update ? ResponseResult.okResult("更新成功") : ResponseResult.errorResult(400, "更新失败");
     }
 
     @Override
@@ -118,28 +129,27 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
         aqiDetailVoPageResponseVo.setBeginNum(afPageRequestDto.getBeginNum());
 
         aqiDetailVoPageResponseVo.setTotalRow(count);
-        aqiDetailVoPageResponseVo.setNextNum((afPageRequestDto.getPageNum() * afPageRequestDto.getMaxPageNum()>=count?afPageRequestDto.getPageNum()+1:afPageRequestDto.getPageNum()));
-        aqiDetailVoPageResponseVo.setPreNum(afPageRequestDto.getPageNum()<=1 ? 1:afPageRequestDto.getPageNum()-1);
+        aqiDetailVoPageResponseVo.setNextNum((afPageRequestDto.getPageNum() * afPageRequestDto.getMaxPageNum() >= count ? afPageRequestDto.getPageNum() + 1 : afPageRequestDto.getPageNum()));
+        aqiDetailVoPageResponseVo.setPreNum(afPageRequestDto.getPageNum() <= 1 ? 1 : afPageRequestDto.getPageNum() - 1);
         aqiDetailVoPageResponseVo.setTotalPageNum(count % afPageRequestDto.getMaxPageNum() == 0 ? count / afPageRequestDto.getMaxPageNum() : count / afPageRequestDto.getMaxPageNum() + 1);
         aqiDetailVoPageResponseVo.setMaxPageNum(afPageRequestDto.getMaxPageNum());
 
         return aqiDetailVoPageResponseVo;
     }
 
-    //TODO:修改
+
     @Override
     @Transactional
-    public Integer saveFeedBack(AqiFeedback aqiFeedback) {
+    public ResponseResult<?> saveFeedBack(AqiFeedBackDto aqiFeedback) {
         if (StrUtil.isBlank(aqiFeedback.getTelId())
                 || aqiFeedback.getProvinceId() == null
                 || aqiFeedback.getCityId() == null
-                || aqiFeedback.getGmId() == null
                 || aqiFeedback.getInformation() == null) {
             throw new RuntimeException(AppHttpCodeEnum.PARAM_INVALID.getErrorMessage());
         }
 
-        if (!aqiFeedback.getTelId().matches(RegexPool.TEL)) {
-            throw new RuntimeException(AppHttpCodeEnum.PARAM_INVALID.getErrorMessage());
+        if (!aqiFeedback.getTelId().matches(RegexPool.MOBILE)) {
+            throw new RuntimeException("电话号码格式错误");
         }
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -147,31 +157,32 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
         String[] date = format.split(" ");
 
         try {
-            aqiFeedback.setAfDate(date[0]);
-            aqiFeedback.setAfTime(date[1]);
-            aqiFeedback.setState(0);
-
-            return aqiFeedbackMapper.insert(aqiFeedback);
+            AqiFeedback feedback = new AqiFeedback();
+            feedback.setState(0);
+            feedback.setAfDate(date[0]);
+            feedback.setAfTime(date[1]);
+            BeanUtil.copyProperties(aqiFeedback, feedback);
+            this.save(feedback);
+            return ResponseResult.okResult("插入数据成功");
         } catch (Exception e) {
-            e.printStackTrace();
-            return 0;
+            return ResponseResult.errorResult(AppHttpCodeEnum.SERVER_ERROR);
         }
     }
 
 
     @Override
-    public List<AqiFeedback> getAqiList(AqiFeedback aqiFeedback) {
-        List<AqiFeedback> list = this.lambdaQuery().eq(AqiFeedback::getTelId, aqiFeedback.getTelId())
+    public List<AqiFeedback> getAqiList(TelIdDto telId) {
+        List<AqiFeedback> list = this.lambdaQuery().eq(AqiFeedback::getTelId, telId.getTelId())
                 .orderByDesc(AqiFeedback::getAfTime).list();
         return list;
     }
 
     @Override
-    public AqiFeedback getAqiFeedbackById(AqiFeedback aqiFeedback) {
-        if (aqiFeedback.getAfId() == null) {
+    public AqiFeedback getAqiFeedbackById(AfIdDto afId) {
+        if (afId == null) {
             return null;
         }
-        AqiFeedback byId = this.getById(aqiFeedback.getAfId());
+        AqiFeedback byId = this.getById(afId.getAfId());
         if (byId == null) {
             return null;
         } else {

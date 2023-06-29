@@ -2,6 +2,7 @@ package com.peels.controller;
 
 
 import cn.hutool.json.JSON;
+import com.peels.dto.AdminLoginDto;
 import com.peels.entity.Admins;
 import com.peels.service.IAdminsService;
 
@@ -36,7 +37,7 @@ public class AdminsController {
     IAdminsService adminsService;
 
     @PostMapping("/getAdminsByCode")
-    public AdminsVo getAdminsByCode(@RequestBody Admins admins) {
+    public AdminsVo getAdminsByCode(@RequestBody AdminLoginDto admins) {
         return adminsService.getAdminByCode(admins);
     }
 }

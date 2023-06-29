@@ -36,5 +36,5 @@ public interface IStatisticsService extends IService<Statistics> {
 
     PageResponseVo<StatisticDetailVo> listStatisticsPage(StatisticsPageRequestDto statisticsPageRequestDto);
 
-    int saveStatistics(Statistics statistics);
+    int saveStatistics(SaveStatisticDto saveStatisticDto );
 }

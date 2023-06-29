@@ -1,5 +1,6 @@
 package com.peels.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -90,12 +91,15 @@ public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statist
     }
 
     @Override
-    public int saveStatistics(Statistics statistics) {
-        if (statistics.getId() == null ) {
-            throw new RuntimeException(AppHttpCodeEnum.LOGIN_PARAMS_ERROR.getErrorMessage());
+    public int saveStatistics(SaveStatisticDto statistics) {
+
+        try {
+            Statistics sta = BeanUtil.copyProperties(statistics, Statistics.class);
+            this.saveOrUpdate(sta);
+            return 200;
+        } catch (Exception e) {
+            return 500;
         }
-        this.saveOrUpdate(statistics);
-        return 200;
     }
 
     @Override
