@@ -5,38 +5,94 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbb89fea-e17d-4f0c-89fe-aba102712f81" name="Changes" comment="基本完成">
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/AdminLoginDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/AfIdDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/GmIdDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/SaveStatisticDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/TelIdDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/UpdateFeedBackAssignDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/UpdateFeedBackStateDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/framework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/spring.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/AqiFeedBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/peels/dto/AqiFeedBackDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/dto/AqiFeedBack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AdminsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AdminsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiFeedbackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/AqiFeedbackController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/StatisticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/controller/StatisticsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAdminsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAdminsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiFeedbackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IAqiFeedbackService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IStatisticsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/IStatisticsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AdminsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/AqiFeedbackServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/StatisticsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/peels/service/impl/StatisticsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AdminsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AdminsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiFeedbackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiFeedbackController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/StatisticsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/controller/StatisticsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAdminsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAdminsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiFeedbackService.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiFeedbackService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IStatisticsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/IStatisticsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AdminsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AdminsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiFeedbackServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiFeedbackServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/StatisticsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/StatisticsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/web.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/config/MyBatisPlusConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/config/RedissonConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/config/RestTemplateConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/config/WebMvcConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/config/WebSocketConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/handler/MyMetaObjectHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/interception/BusinessException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/interception/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/AliyunProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/AppHttpCodeEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/IpUtil/IpInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/IpUtil/IpUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/JacksonObjectMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/RSAUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/ResponseResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/target/classes/com/peels/utils/TypeEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/dto/AfPageRequestDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/dto/AqiDistributeTotalStatisticDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/dto/AqiTrendTotalStatisticDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/dto/PageRequestDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/dto/ProvinceItemTotalStatisticDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/dto/StatisticsPageRequestDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/Admins.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/Aqi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/AqiFeedback.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/GridCity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/GridMember.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/GridProvince.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/Statistics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/entity/Supervisor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/vo/AdminsVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/peels/vo/PageResponseVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/WebApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/annotation/Prevent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/annotation/PreventStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/aspect/PreventAop$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/aspect/PreventAop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AdminsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/AqiFeedbackController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/GridCityController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/GridMemberController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/GridProvinceController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/StatisticsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/controller/SupervisorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/AdminsMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/AqiFeedbackMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/AqiMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/GridCityMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/GridMemberMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/GridProvinceMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/StatisticsMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/mapper/SupervisorMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAdminsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiFeedbackService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IAqiService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IGridCityService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IGridMemberService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IGridProvinceService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/IStatisticsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/ISupervisorService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AdminsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiFeedbackServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/AqiServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/GridCityServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/GridMemberServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/GridProvinceServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/StatisticsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/service/impl/SupervisorServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/utils/AliyunProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/utils/AppHttpCodeEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/utils/IpUtil/IpInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/utils/IpUtil/IpUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/utils/JacksonObjectMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/utils/RSAUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/utils/ResponseResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/peels/utils/TypeEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/AdminsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/AqiFeedbackMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/AqiMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/GridCityMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/GridMemberMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/GridProvinceMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/StatisticsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mapper/SupervisorMapper.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
