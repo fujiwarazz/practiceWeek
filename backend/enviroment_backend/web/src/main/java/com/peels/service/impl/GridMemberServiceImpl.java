@@ -43,10 +43,20 @@ public class GridMemberServiceImpl extends ServiceImpl<GridMemberMapper, GridMem
 
     @Override
     public List<GridMember> listGridMemberByProvinceId(GridMember gridMember) {
-        QueryWrapper<GridMember> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("province_id", gridMember.getProvinceId());
-        queryWrapper.eq("city_id", gridMember.getCityId());
-        queryWrapper.eq("state", gridMember.getState());
-        return gridMemberMapper.selectList(queryWrapper);
+
+        List<GridMember> one = gridMemberMapper.selectList(new QueryWrapper<GridMember>()
+                .eq("province_id", gridMember.getProvinceId())
+                .eq("city_id", gridMember.getCityId())
+                .eq("state",0)
+        );
+
+
+//        QueryWrapper<GridMember> queryWrapper = new QueryWrapper<>();
+//        queryWrapper.eq("province_id", gridMember.getProvinceId());
+//        queryWrapper.eq("city_id", gridMember.getCityId());
+//        queryWrapper.eq("state", gridMember.getState());
+//        return gridMemberMapper.selectList(queryWrapper);
+        System.out.println(one);
+        return one;
     }
 }
