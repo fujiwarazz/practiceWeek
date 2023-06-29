@@ -138,7 +138,7 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
             throw new RuntimeException(AppHttpCodeEnum.PARAM_INVALID.getErrorMessage());
         }
 
-        if (!aqiFeedback.getTelId().matches(RegexPool.TEL)) {
+        if (!aqiFeedback.getTelId().matches(RegexPool.MOBILE)) {
             throw new RuntimeException(AppHttpCodeEnum.PARAM_INVALID.getErrorMessage());
         }
 
