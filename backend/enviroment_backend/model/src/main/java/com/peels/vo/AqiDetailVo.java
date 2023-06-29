@@ -6,7 +6,6 @@ import com.peels.entity.AqiFeedback;
 import com.peels.entity.GridMember;
 import com.peels.entity.Statistics;
 import com.peels.entity.Supervisor;
-import com.sun.org.glassfish.external.statistics.Statistic;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
