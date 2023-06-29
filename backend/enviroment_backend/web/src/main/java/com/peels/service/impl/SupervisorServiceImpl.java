@@ -55,8 +55,13 @@ public class SupervisorServiceImpl extends ServiceImpl<SupervisorMapper, Supervi
         if (StrUtil.isBlank(supervisor.getTelId()) || StrUtil.isBlank(supervisor.getPassword())) {
             throw new RuntimeException(AppHttpCodeEnum.LOGIN_PARAMS_ERROR.getErrorMessage());
         }
-        if(!supervisor.getTelId().matches(RegexPool.TEL)){
+        if(!supervisor.getTelId().matches(RegexPool.MOBILE)){
             return 500;
+        }
+        Supervisor one = supervisorMapper.selectOne(new QueryWrapper<Supervisor>()
+                .eq("tel_id", supervisor.getTelId()));
+        if (one != null) {
+            return 501;
         }
         this.saveOrUpdate(supervisor);
         return 200;
