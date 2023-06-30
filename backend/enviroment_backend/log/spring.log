@@ -1596,3 +1596,96 @@ Caused by: java.net.NoRouteToHostException: No route to host: connect
 2023-06-30 11:08:43.112  INFO 14556 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
 2023-06-30 11:08:43.146  INFO 14556 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
 2023-06-30 11:08:43.378  INFO 14556 --- [main] com.peels.WebApplication                 : Started WebApplication in 6.559 seconds (JVM running for 7.582)
+2023-06-30 11:10:54.083  INFO 14556 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-30 11:10:54.083  INFO 14556 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-30 11:10:54.092  INFO 14556 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2023-06-30 11:10:54.175  INFO 14556 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-30 11:10:55.763  INFO 14556 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-30 11:10:55.770 DEBUG 14556 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getFeedBackVos   : ==>  Preparing: select aqi_feedback.* , gc.city_name as cityName , gp.province_name as provinceName from environment.aqi_feedback left join environment.grid_city gc on aqi_feedback.city_id = gc.city_id left join environment.grid_province as gp on aqi_feedback.province_id = gp.province_id where tel_id = ?
+2023-06-30 11:10:55.793 DEBUG 14556 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getFeedBackVos   : ==> Parameters: 15960123456(String)
+2023-06-30 11:10:55.893 DEBUG 14556 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getFeedBackVos   : <==      Total: 15
+2023-06-30 11:13:55.430 DEBUG 14556 --- [http-nio-9999-exec-4] c.p.m.A.listAqiFeedBackPage              : ==>  Preparing: select * from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.supervisor as ss on af.tel_id = ss.tel_id # left join environment.statistics as sss on sss.aqi_id = aqi.aqi_id WHERE af.af_date like concat('%',?,'%') limit ?,?
+2023-06-30 11:13:55.431 DEBUG 14556 --- [http-nio-9999-exec-4] c.p.m.A.listAqiFeedBackPage              : ==> Parameters: 2023-06-29(String), 0(Integer), 10(Integer)
+2023-06-30 11:13:55.531 DEBUG 14556 --- [http-nio-9999-exec-4] c.p.m.A.listAqiFeedBackPage              : <==      Total: 0
+2023-06-30 11:13:55.531 DEBUG 14556 --- [http-nio-9999-exec-4] c.p.m.AqiFeedbackMapper.getPageTotal     : ==>  Preparing: select count(*) as count from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id # left join environment.statistics as ss on ss.aqi_id = aqi.aqi_id
+2023-06-30 11:13:55.532 DEBUG 14556 --- [http-nio-9999-exec-4] c.p.m.AqiFeedbackMapper.getPageTotal     : ==> Parameters: 
+2023-06-30 11:13:55.609 DEBUG 14556 --- [http-nio-9999-exec-4] c.p.m.AqiFeedbackMapper.getPageTotal     : <==      Total: 1
+2023-06-30 11:14:20.459 DEBUG 14556 --- [http-nio-9999-exec-3] c.p.m.A.listAqiFeedBackPage              : ==>  Preparing: select * from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.supervisor as ss on af.tel_id = ss.tel_id # left join environment.statistics as sss on sss.aqi_id = aqi.aqi_id WHERE af.af_date like concat('%',?,'%') limit ?,?
+2023-06-30 11:14:20.460 DEBUG 14556 --- [http-nio-9999-exec-3] c.p.m.A.listAqiFeedBackPage              : ==> Parameters: 2023-06-29(String), 0(Integer), 10(Integer)
+2023-06-30 11:14:20.636 DEBUG 14556 --- [http-nio-9999-exec-3] c.p.m.A.listAqiFeedBackPage              : <==      Total: 0
+2023-06-30 11:14:20.637 DEBUG 14556 --- [http-nio-9999-exec-3] c.p.m.AqiFeedbackMapper.getPageTotal     : ==>  Preparing: select count(*) as count from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id # left join environment.statistics as ss on ss.aqi_id = aqi.aqi_id
+2023-06-30 11:14:20.637 DEBUG 14556 --- [http-nio-9999-exec-3] c.p.m.AqiFeedbackMapper.getPageTotal     : ==> Parameters: 
+2023-06-30 11:14:20.812 DEBUG 14556 --- [http-nio-9999-exec-3] c.p.m.AqiFeedbackMapper.getPageTotal     : <==      Total: 1
+2023-06-30 11:15:22.545 DEBUG 14556 --- [http-nio-9999-exec-9] c.p.m.A.listAqiFeedBackPage              : ==>  Preparing: select * from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.supervisor as ss on af.tel_id = ss.tel_id # left join environment.statistics as sss on sss.aqi_id = aqi.aqi_id WHERE af.af_date like concat('%',?,'%') limit ?,?
+2023-06-30 11:15:22.545 DEBUG 14556 --- [http-nio-9999-exec-9] c.p.m.A.listAqiFeedBackPage              : ==> Parameters: 2022-01-26(String), 0(Integer), 10(Integer)
+2023-06-30 11:15:22.632 DEBUG 14556 --- [http-nio-9999-exec-9] c.p.m.A.listAqiFeedBackPage              : <==      Total: 2
+2023-06-30 11:15:22.632 DEBUG 14556 --- [http-nio-9999-exec-9] c.p.m.AqiFeedbackMapper.getPageTotal     : ==>  Preparing: select count(*) as count from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id # left join environment.statistics as ss on ss.aqi_id = aqi.aqi_id
+2023-06-30 11:15:22.633 DEBUG 14556 --- [http-nio-9999-exec-9] c.p.m.AqiFeedbackMapper.getPageTotal     : ==> Parameters: 
+2023-06-30 11:15:22.717 DEBUG 14556 --- [http-nio-9999-exec-9] c.p.m.AqiFeedbackMapper.getPageTotal     : <==      Total: 1
+2023-06-30 11:16:06.654  INFO 14556 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-30 11:16:06.656  INFO 14556 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-30 11:16:06.660  INFO 14556 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-30 11:16:06.671  INFO 14556 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-30 11:16:13.223  INFO 5732 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-30 11:16:14.074  INFO 5732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-30 11:16:14.076  INFO 5732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-30 11:16:14.117  INFO 5732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 Redis repository interfaces.
+2023-06-30 11:16:14.382  INFO 5732 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=75c1d7a9-810e-34bb-88b2-3b917cee6959
+2023-06-30 11:16:14.904  INFO 5732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-30 11:16:14.913  INFO 5732 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-30 11:16:14.913  INFO 5732 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-30 11:16:15.052  INFO 5732 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-30 11:16:15.053  INFO 5732 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1812 ms
+2023-06-30 11:16:17.044  INFO 5732 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-30 11:16:17.078  WARN 5732 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-30 11:16:17.079  INFO 5732 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-30 11:16:17.082  WARN 5732 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-30 11:16:17.082  INFO 5732 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-30 11:16:17.180  INFO 5732 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-30 11:16:17.586  INFO 5732 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-30 11:16:18.006  INFO 5732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-30 11:16:18.220  INFO 5732 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-30 11:16:18.235  INFO 5732 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-30 11:16:18.271  INFO 5732 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-30 11:16:18.498  INFO 5732 --- [main] com.peels.WebApplication                 : Started WebApplication in 6.459 seconds (JVM running for 7.442)
+2023-06-30 11:16:50.994  INFO 5732 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-30 11:16:50.996  INFO 5732 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-30 11:16:54.969  INFO 17776 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-30 11:16:55.770  INFO 17776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-30 11:16:55.772  INFO 17776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-30 11:16:55.815  INFO 17776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 Redis repository interfaces.
+2023-06-30 11:16:56.094  INFO 17776 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=75c1d7a9-810e-34bb-88b2-3b917cee6959
+2023-06-30 11:16:56.612  INFO 17776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-30 11:16:56.621  INFO 17776 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-30 11:16:56.621  INFO 17776 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-30 11:16:56.765  INFO 17776 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-30 11:16:56.765  INFO 17776 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1778 ms
+2023-06-30 11:16:58.661  INFO 17776 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-30 11:16:58.695  WARN 17776 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-30 11:16:58.695  INFO 17776 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-30 11:16:58.699  WARN 17776 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-30 11:16:58.699  INFO 17776 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-30 11:16:58.792  INFO 17776 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-30 11:16:59.211  INFO 17776 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-30 11:16:59.625  INFO 17776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-30 11:16:59.840  INFO 17776 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-30 11:16:59.860  INFO 17776 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-30 11:16:59.894  INFO 17776 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-30 11:17:00.120  INFO 17776 --- [main] com.peels.WebApplication                 : Started WebApplication in 6.309 seconds (JVM running for 7.18)
+2023-06-30 11:17:05.005  INFO 17776 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-30 11:17:05.006  INFO 17776 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-30 11:17:05.015  INFO 17776 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2023-06-30 11:17:05.128  INFO 17776 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-30 11:17:06.877  INFO 17776 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-30 11:17:06.883 DEBUG 17776 --- [http-nio-9999-exec-1] c.p.m.A.listAqiFeedBackPage              : ==>  Preparing: select * from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.supervisor as ss on af.tel_id = ss.tel_id # left join environment.statistics as sss on sss.aqi_id = aqi.aqi_id WHERE af.af_date like concat('%',?,'%') limit ?,?
+2023-06-30 11:17:06.903 DEBUG 17776 --- [http-nio-9999-exec-1] c.p.m.A.listAqiFeedBackPage              : ==> Parameters: 2022-01-26(String), 0(Integer), 10(Integer)
+2023-06-30 11:17:07.008 DEBUG 17776 --- [http-nio-9999-exec-1] c.p.m.A.listAqiFeedBackPage              : <==      Total: 2
+2023-06-30 11:17:07.014 DEBUG 17776 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getPageTotal     : ==>  Preparing: select count(*) as count from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.supervisor as ss on af.tel_id = ss.tel_id # left join environment.statistics as sss on sss.aqi_id = aqi.aqi_id WHERE af.af_date like concat('%',?,'%') # limit ?,?
+2023-06-30 11:17:57.712 DEBUG 17776 --- [http-nio-9999-exec-6] c.p.m.A.listAqiFeedBackPage              : ==>  Preparing: select * from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.supervisor as ss on af.tel_id = ss.tel_id # left join environment.statistics as sss on sss.aqi_id = aqi.aqi_id limit ?,?
+2023-06-30 11:17:57.712 DEBUG 17776 --- [http-nio-9999-exec-6] c.p.m.A.listAqiFeedBackPage              : ==> Parameters: 0(Integer), 10(Integer)
+2023-06-30 11:17:57.893 DEBUG 17776 --- [http-nio-9999-exec-6] c.p.m.A.listAqiFeedBackPage              : <==      Total: 10
+2023-06-30 11:17:57.894 DEBUG 17776 --- [http-nio-9999-exec-6] c.p.m.AqiFeedbackMapper.getPageTotal     : ==>  Preparing: select count(*) as count from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id left join environment.supervisor as ss on af.tel_id = ss.tel_id # left join environment.statistics as sss on sss.aqi_id = aqi.aqi_id # limit ?,?
+2023-06-30 11:18:47.543  INFO 17776 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-30 11:18:47.545  INFO 17776 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-30 11:18:47.550  INFO 17776 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-30 11:18:47.561  INFO 17776 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

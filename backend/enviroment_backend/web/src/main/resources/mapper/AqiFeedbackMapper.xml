@@ -45,12 +45,11 @@
         left join environment.grid_city gc on gc.city_id = af.city_id
         left join environment.grid_province as gp on af.province_id = gp.province_id
 #         left join environment.statistics as ss on ss.aqi_id = aqi.aqi_id
-
         <where>
             <if test="provinceId != null" >
                 af.province_id = #{provinceId}
             </if>
-            <if test="provinceId != null" >
+            <if test="afDate != null" >
                 and af.af_date like concat('%',#{afDate},'%')
             </if>
             <if test="cityId !=null">
