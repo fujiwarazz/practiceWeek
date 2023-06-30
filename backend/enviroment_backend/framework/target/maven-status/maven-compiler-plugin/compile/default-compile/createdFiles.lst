@@ -6,6 +6,7 @@ com\peels\config\RedissonConfig.class
 com\peels\utils\TypeEnum.class
 com\peels\utils\IpUtil\IpUtil.class
 com\peels\config\WebSocketConfig.class
+com\peels\utils\FunctionUtil.class
 com\peels\utils\IpUtil\IpInfo.class
 com\peels\config\MyBatisPlusConfig.class
 com\peels\interception\BusinessException.class

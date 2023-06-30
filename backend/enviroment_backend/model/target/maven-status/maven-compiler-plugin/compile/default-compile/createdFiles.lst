@@ -1,4 +1,5 @@
 com\peels\dto\AfPageRequestDto.class
+com\peels\vo\FeedBackVo.class
 com\peels\dto\AfIdDto.class
 com\peels\entity\Admins.class
 com\peels\entity\Aqi.class
@@ -11,8 +12,10 @@ com\peels\dto\AdminLoginDto.class
 com\peels\entity\GridMember.class
 com\peels\entity\GridProvince.class
 com\peels\dto\PageRequestDto.class
+com\peels\vo\StatisticDetailVo.class
 com\peels\dto\ProvinceItemTotalStatisticDto.class
 com\peels\entity\AqiFeedback.class
+com\peels\vo\AqiDetailVo.class
 com\peels\dto\UpdateFeedBackStateDto.class
 com\peels\entity\GridCity.class
 com\peels\dto\SaveStatisticDto.class
@@ -21,4 +24,5 @@ com\peels\dto\TelIdDto.class
 com\peels\dto\AqiTrendTotalStatisticDto.class
 com\peels\entity\Statistics.class
 com\peels\dto\AqiDistributeTotalStatisticDto.class
+com\peels\dto\FeedBackIdDto.class
 com\peels\vo\PageResponseVo.class
