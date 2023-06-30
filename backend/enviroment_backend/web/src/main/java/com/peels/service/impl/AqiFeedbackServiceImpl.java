@@ -10,9 +10,12 @@ import com.peels.mapper.*;
 import com.peels.service.IAqiFeedbackService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.peels.utils.AppHttpCodeEnum;
+import com.peels.utils.FunctionUtil;
 import com.peels.utils.ResponseResult;
 import com.peels.vo.AqiDetailVo;
+import com.peels.vo.FeedBackVo;
 import com.peels.vo.PageResponseVo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,7 +23,10 @@ import javax.annotation.Resource;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -31,6 +37,7 @@ import java.util.List;
  * @since 2023-06-26
  */
 @Service
+@Slf4j
 public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFeedback> implements IAqiFeedbackService {
 
     @Resource
@@ -73,14 +80,14 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
                     .eq(AqiFeedback::getAfId, updateFeedBackAssignDto.getAfId())
                     .set(AqiFeedback::getGmId, updateFeedBackAssignDto.getGmId())
                     .set(AqiFeedback::getAssignDate,date[0])
-                    .set(AqiFeedback::getState, updateFeedBackAssignDto.getState())
+                    .set(AqiFeedback::getState, 1)
                     .set(AqiFeedback::getAssignTime, date[1]).update();
 
-            GridMember gridMember = gridMemberMapper.selectById(updateFeedBackAssignDto.getGmId());
-
-            gridMemberMapper.update(gridMember,new LambdaUpdateWrapper<GridMember>()
-                    .eq(GridMember::getGmId,gridMember.getGmId())
-                    .set(GridMember::getState,updateFeedBackAssignDto.getState()));
+//            GridMember gridMember = gridMemberMapper.selectById(updateFeedBackAssignDto.getGmId());
+//
+//            gridMemberMapper.update(gridMember,new LambdaUpdateWrapper<GridMember>()
+//                    .eq(GridMember::getGmId,gridMember.getGmId())
+//                    .set(GridMember::getState,updateFeedBackAssignDto.getState()));
 
 
             return update ? ResponseResult.okResult("更新成功") : ResponseResult.errorResult(400, "更新失败");
@@ -112,12 +119,13 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
     @Override
     @SuppressWarnings("all")
     public PageResponseVo<AqiDetailVo> listAqiFeedBackPage(AfPageRequestDto afPageRequestDto) {
-
         afPageRequestDto.setPageNum((afPageRequestDto.getPageNum() <= 1 ? 0 : afPageRequestDto.getPageNum() - 1) * afPageRequestDto.getMaxPageNum());
-
-
         List<AqiDetailVo> aqiDetailVos = aqiFeedbackMapper.listAqiFeedBackPage(afPageRequestDto);
+        Set<Integer>set = new HashSet<>();
 
+//        aqiDetailVos.stream()
+//                .filter(FunctionUtil.distinctByKey(AqiDetailVo::getAfId))
+//                .collect(Collectors.toList());
 
         Integer count = aqiFeedbackMapper.getPageTotal(afPageRequestDto);
 
@@ -158,10 +166,11 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
 
         try {
             AqiFeedback feedback = new AqiFeedback();
+
+            BeanUtil.copyProperties(aqiFeedback, feedback);
             feedback.setState(0);
             feedback.setAfDate(date[0]);
             feedback.setAfTime(date[1]);
-            BeanUtil.copyProperties(aqiFeedback, feedback);
             this.save(feedback);
             return ResponseResult.okResult("插入数据成功");
         } catch (Exception e) {
@@ -171,10 +180,13 @@ public class AqiFeedbackServiceImpl extends ServiceImpl<AqiFeedbackMapper, AqiFe
 
 
     @Override
-    public List<AqiFeedback> getAqiList(TelIdDto telId) {
-        List<AqiFeedback> list = this.lambdaQuery().eq(AqiFeedback::getTelId, telId.getTelId())
-                .orderByDesc(AqiFeedback::getAfTime).list();
-        return list;
+    public List<FeedBackVo> getAqiList(TelIdDto telId) {
+
+        List<FeedBackVo> aqiDetailVos = aqiFeedbackMapper.getFeedBackVos(telId.getTelId());
+
+        return aqiDetailVos;
+
+
     }
 
     @Override

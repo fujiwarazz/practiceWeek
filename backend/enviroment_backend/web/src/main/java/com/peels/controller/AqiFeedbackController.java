@@ -6,6 +6,7 @@ import com.peels.entity.AqiFeedback;
 import com.peels.service.IAqiFeedbackService;
 import com.peels.utils.ResponseResult;
 import com.peels.vo.AqiDetailVo;
+import com.peels.vo.FeedBackVo;
 import com.peels.vo.PageResponseVo;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,7 +34,7 @@ public class AqiFeedbackController {
     }
 
     @PostMapping("/listAqiFeedbackByTelId")
-    public List<AqiFeedback> getAqiFeedbackByTelId(@RequestBody TelIdDto  telId){
+    public List<FeedBackVo> getAqiFeedbackByTelId(@RequestBody TelIdDto  telId){
         return aqiFeedbackService.getAqiList(telId);
     }
 
@@ -41,6 +42,7 @@ public class AqiFeedbackController {
     public AqiFeedback getAqiFeedbackById(@RequestBody AfIdDto afId){
         return aqiFeedbackService.getAqiFeedbackById(afId);
     }
+
     @PostMapping("/updateAqiFeedbackAssign")
     public ResponseResult<?> updateAqiFeedbackAssign(@RequestBody UpdateFeedBackAssignDto updateFeedBackAssignDto){
         return aqiFeedbackService.updateAqiFeedBackAssign(updateFeedBackAssignDto);
@@ -59,7 +61,6 @@ public class AqiFeedbackController {
     @PostMapping("/listAqiFeedbackPage")
     public PageResponseVo<AqiDetailVo> listAqiFeedBackPage(@RequestBody AfPageRequestDto afPageRequestDto){
         return aqiFeedbackService.listAqiFeedBackPage(afPageRequestDto);
-
     }
 }
 

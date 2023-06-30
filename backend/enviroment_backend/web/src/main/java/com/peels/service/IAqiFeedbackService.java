@@ -5,6 +5,7 @@ import com.peels.entity.AqiFeedback;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.peels.utils.ResponseResult;
 import com.peels.vo.AqiDetailVo;
+import com.peels.vo.FeedBackVo;
 import com.peels.vo.PageResponseVo;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public interface IAqiFeedbackService extends IService<AqiFeedback> {
 
     ResponseResult<?> saveFeedBack(AqiFeedBackDto aqiFeedback);
 
-    List<AqiFeedback> getAqiList(TelIdDto telId);
+    List<FeedBackVo> getAqiList(TelIdDto telId);
 
     AqiFeedback getAqiFeedbackById(AfIdDto afId);
 
