@@ -49,8 +49,6 @@ public class GridMemberServiceImpl extends ServiceImpl<GridMemberMapper, GridMem
                 .eq("city_id", gridMember.getCityId())
                 .eq("state",0)
         );
-
-
 //        QueryWrapper<GridMember> queryWrapper = new QueryWrapper<>();
 //        queryWrapper.eq("province_id", gridMember.getProvinceId());
 //        queryWrapper.eq("city_id", gridMember.getCityId());

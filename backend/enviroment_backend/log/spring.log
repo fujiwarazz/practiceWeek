@@ -1722,3 +1722,49 @@ Caused by: java.net.NoRouteToHostException: No route to host: connect
 2023-06-30 11:19:05.069 DEBUG 3536 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getPageTotal     : ==>  Preparing: select count(*) as count from environment.aqi_feedback as af left join environment.aqi as aqi on af.estimated_grade = aqi.aqi_id left join environment.grid_member gm on gm.gm_id = af.gm_id left join environment.grid_city gc on gc.city_id = af.city_id left join environment.grid_province as gp on af.province_id = gp.province_id # left join environment.statistics as ss on ss.aqi_id = aqi.aqi_id WHERE af.af_date like concat('%',?,'%')
 2023-06-30 11:19:05.070 DEBUG 3536 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getPageTotal     : ==> Parameters: 2022-01-26(String)
 2023-06-30 11:19:05.139 DEBUG 3536 --- [http-nio-9999-exec-1] c.p.m.AqiFeedbackMapper.getPageTotal     : <==      Total: 1
+2023-06-30 11:27:27.210 DEBUG 3536 --- [http-nio-9999-exec-3] c.p.mapper.GridMemberMapper.selectList   : ==>  Preparing: SELECT gm_id,gm_name,gm_code,password,province_id,city_id,tel,state FROM grid_member WHERE (province_id = ? AND city_id = ? AND state = ?)
+2023-06-30 11:27:27.210 DEBUG 3536 --- [http-nio-9999-exec-3] c.p.mapper.GridMemberMapper.selectList   : ==> Parameters: 4(Integer), 4(Integer), 0(Integer)
+2023-06-30 11:27:27.330 DEBUG 3536 --- [http-nio-9999-exec-3] c.p.mapper.GridMemberMapper.selectList   : <==      Total: 0
+2023-06-30 11:38:50.185  INFO 3536 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-30 11:38:50.188  INFO 3536 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-30 11:38:50.192  INFO 3536 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-30 11:38:50.203  INFO 3536 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-30 11:38:57.985  INFO 19796 --- [main] com.peels.WebApplication                 : No active profile set, falling back to default profiles: default
+2023-06-30 11:38:58.773  INFO 19796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-30 11:38:58.774  INFO 19796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-30 11:38:58.809  INFO 19796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 Redis repository interfaces.
+2023-06-30 11:38:59.056  INFO 19796 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=75c1d7a9-810e-34bb-88b2-3b917cee6959
+2023-06-30 11:38:59.573  INFO 19796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-30 11:38:59.581  INFO 19796 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-30 11:38:59.581  INFO 19796 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2023-06-30 11:38:59.718  INFO 19796 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-30 11:38:59.719  INFO 19796 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1716 ms
+2023-06-30 11:39:01.619  INFO 19796 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-30 11:39:01.653  WARN 19796 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-30 11:39:01.653  INFO 19796 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-30 11:39:01.657  WARN 19796 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-06-30 11:39:01.657  INFO 19796 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-06-30 11:39:01.751  INFO 19796 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-30 11:39:02.170  INFO 19796 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2023-06-30 11:39:02.594  INFO 19796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-30 11:39:02.804  INFO 19796 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-30 11:39:02.819  INFO 19796 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-30 11:39:02.854  INFO 19796 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-30 11:39:03.081  INFO 19796 --- [main] com.peels.WebApplication                 : Started WebApplication in 6.226 seconds (JVM running for 7.295)
+2023-06-30 11:39:39.311  INFO 19796 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-30 11:39:39.311  INFO 19796 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-30 11:39:39.321  INFO 19796 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2023-06-30 11:39:57.898  INFO 19796 --- [http-nio-9999-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-30 11:39:59.217  INFO 19796 --- [http-nio-9999-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-30 11:39:59.224 DEBUG 19796 --- [http-nio-9999-exec-4] c.p.mapper.AqiFeedbackMapper.selectById  : ==>  Preparing: SELECT af_id,tel_id,province_id,city_id,address,information,estimated_grade,af_date,af_time,gm_id,assign_date,assign_time,state,remarks FROM aqi_feedback WHERE af_id=?
+2023-06-30 11:39:59.244 DEBUG 19796 --- [http-nio-9999-exec-4] c.p.mapper.AqiFeedbackMapper.selectById  : ==> Parameters: 1(Integer)
+2023-06-30 11:39:59.338 DEBUG 19796 --- [http-nio-9999-exec-4] c.p.mapper.AqiFeedbackMapper.selectById  : <==      Total: 1
+2023-06-30 11:39:59.365 DEBUG 19796 --- [http-nio-9999-exec-4] c.p.mapper.AqiFeedbackMapper.updateById  : ==>  Preparing: UPDATE aqi_feedback SET tel_id=?, province_id=?, city_id=?, address=?, information=?, estimated_grade=?, af_date=?, af_time=?, gm_id=?, assign_date=?, assign_time=?, state=? WHERE af_id=?
+2023-06-30 11:39:59.368 DEBUG 19796 --- [http-nio-9999-exec-4] c.p.mapper.AqiFeedbackMapper.updateById  : ==> Parameters: 13147859658(String), 1(Integer), 1(Integer), 朝阳区建国路123号(String), 空气能见度不足，稍有异味。(String), 3(Integer), 2022-01-26(String), 09:28:04(String), 1(Integer), 2023-06-29(String), 11:15:57(String), 2(Integer), 1(Integer)
+2023-06-30 11:39:59.494 DEBUG 19796 --- [http-nio-9999-exec-4] c.p.mapper.AqiFeedbackMapper.updateById  : <==    Updates: 1
+2023-06-30 11:39:59.497 DEBUG 19796 --- [http-nio-9999-exec-4] c.peels.mapper.StatisticsMapper.insert   : ==>  Preparing: INSERT INTO statistics ( province_id, city_id, address, so2_value, so2_level, co_value, co_level, spm_value, spm_level, aqi_id, confirm_date, confirm_time, fd_id, information ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2023-06-30 11:39:59.498 DEBUG 19796 --- [http-nio-9999-exec-4] c.peels.mapper.StatisticsMapper.insert   : ==> Parameters: 5(Integer), 5(Integer), 123(String), 1(Integer), 1(Integer), 2(Integer), 1(Integer), 3(Integer), 1(Integer), 1(Integer), 2023-06-30(String), 11:39:57(String), 15960123456(String), 321(String)
+2023-06-30 11:40:22.498  INFO 19796 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2023-06-30 11:40:22.500  INFO 19796 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-30 11:40:22.505  INFO 19796 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-30 11:40:22.514  INFO 19796 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

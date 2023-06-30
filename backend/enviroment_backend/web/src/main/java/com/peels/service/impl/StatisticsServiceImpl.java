@@ -25,6 +25,7 @@ import javax.annotation.Resource;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -94,10 +95,16 @@ public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statist
 
     @Override
     public int saveStatistics(SaveStatisticDto statistics) {
-
         try {
             Integer afId = statistics.getAfId();
             Statistics sta = BeanUtil.copyProperties(statistics, Statistics.class);
+
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            String format = simpleDateFormat.format(new Date(System.currentTimeMillis()));
+            String[] date = format.split(" ");
+
+            sta.setConfirmDate(date[0]);
+            sta.setConfirmTime(date[1]);
 
             AqiFeedback feedback = aqiFeedbackMapper.selectById(afId);
             feedback.setState(2);
@@ -106,6 +113,7 @@ public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statist
             this.saveOrUpdate(sta);
             return 200;
         } catch (Exception e) {
+            e.printStackTrace();
             return 500;
         }
     }
