@@ -19,6 +19,7 @@ import com.peels.utils.AppHttpCodeEnum;
 import com.peels.vo.AqiDetailVo;
 import com.peels.vo.PageResponseVo;
 import com.peels.vo.StatisticDetailVo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -36,6 +37,7 @@ import java.util.List;
  * @author peelsannaw
  * @since 2023-06-26
  */
+@Slf4j
 @Service
 public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statistics> implements IStatisticsService {
 

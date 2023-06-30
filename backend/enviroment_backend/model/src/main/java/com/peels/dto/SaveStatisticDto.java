@@ -43,6 +43,7 @@ public class SaveStatisticDto {
     @ApiModelProperty("空气质量指数级别")
     private Integer aqiId;
 
+    @ApiModelProperty("空气质量指数值")
     private Integer afId;
 
 
