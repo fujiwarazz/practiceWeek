@@ -99,11 +99,9 @@ public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statist
             Integer afId = statistics.getAfId();
             Statistics sta = BeanUtil.copyProperties(statistics, Statistics.class);
 
-
             AqiFeedback feedback = aqiFeedbackMapper.selectById(afId);
             feedback.setState(2);
             aqiFeedbackMapper.updateById(feedback);
-
 
             this.saveOrUpdate(sta);
             return 200;
