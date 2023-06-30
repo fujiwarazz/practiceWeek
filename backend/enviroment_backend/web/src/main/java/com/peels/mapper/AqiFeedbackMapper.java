@@ -4,6 +4,7 @@ import com.peels.dto.AfPageRequestDto;
 import com.peels.entity.AqiFeedback;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.peels.vo.AqiDetailVo;
+import com.peels.vo.FeedBackVo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -23,4 +24,6 @@ public interface AqiFeedbackMapper extends BaseMapper<AqiFeedback> {
     List<AqiDetailVo> listAqiFeedBackPage(AfPageRequestDto afPageRequestDto);
 
     Integer getPageTotal(AfPageRequestDto afPageRequestDto);
+
+    List<FeedBackVo> getFeedBackVos(String telId);
 }

@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.peels.dto.*;
 import com.peels.entity.AqiFeedback;
 import com.peels.entity.Statistics;
+import com.peels.mapper.AqiFeedbackMapper;
 import com.peels.mapper.GridCityMapper;
 import com.peels.mapper.GridProvinceMapper;
 import com.peels.mapper.StatisticsMapper;
@@ -47,7 +48,8 @@ public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statist
     @Resource
     private StatisticsMapper statisticsMapper;
 
-
+    @Resource
+    private AqiFeedbackMapper aqiFeedbackMapper;
 
     @Override
     public List<AqiDistributeTotalStatisticDto> listAqiDistributeTotalStatis() {
@@ -94,7 +96,13 @@ public class StatisticsServiceImpl extends ServiceImpl<StatisticsMapper, Statist
     public int saveStatistics(SaveStatisticDto statistics) {
 
         try {
+            Integer afId = statistics.getAfId();
             Statistics sta = BeanUtil.copyProperties(statistics, Statistics.class);
+
+            AqiFeedback feedback = aqiFeedbackMapper.selectById(afId);
+            feedback.setState(2);
+            aqiFeedbackMapper.updateById(feedback);
+
             this.saveOrUpdate(sta);
             return 200;
         } catch (Exception e) {
